@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+
+        <record model="res.group" id="group_aeat_340_admin">
+            <field name="name">AEAT 340 Administration</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_aeat_340_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_aeat_340_admin"/>
+        </record>
+        <record model="res.user-res.group" id="user_trigger_group_aeat_340_admin">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_aeat_340_admin"/>
+        </record>
+        <record model="res.group" id="group_aeat_340">
+            <field name="name">Aeat_340</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_aeat_340">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_aeat_340"/>
+        </record>
+        <record model="res.user-res.group" id="user_trigger_group_aeat_340">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_aeat_340"/>
+        </record>
+
+        <record model="ir.ui.view" id="aeat_340_report_form_view">
+            <field name="model">aeat.340.report</field>
+            <field name="type">form</field>
+            <field name="name">report_form</field>
+        </record>
+        <record model="ir.ui.view" id="aeat_340_report_tree_view">
+            <field name="model">aeat.340.report</field>
+            <field name="type">tree</field>
+            <field name="name">report_tree</field>
+        </record>
+        <record model="ir.action.act_window" id="act_aeat_340_report">
+            <field name="name">AEAT 340 Report</field>
+            <field name="res_model">aeat.340.report</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="aeat_340_report_tree_view"/>
+            <field name="act_window" ref="act_aeat_340_report"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="aeat_340_report_form_view"/>
+            <field name="act_window" ref="act_aeat_340_report"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report">
+            <field name="model" search="[('model', '=', 'aeat.340.report')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_admin">
+            <field name="model" search="[('model', '=', 'aeat.340.report')]"/>
+            <field name="group" ref="group_aeat_340_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.ui.view" id="aeat_340_report_issued_form_view">
+            <field name="model">aeat.340.report.issued</field>
+            <field name="type">form</field>
+            <field name="name">issued_form</field>
+        </record>
+        <record model="ir.ui.view" id="aeat_340_report_issued_tree_view">
+            <field name="model">aeat.340.report.issued</field>
+            <field name="type">tree</field>
+            <field name="name">issued_tree</field>
+        </record>
+        <record model="ir.action.act_window" id="act_aeat_340_report_issued">
+            <field name="name">AEAT 340 Report Issued</field>
+            <field name="res_model">aeat.340.report.issued</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_issued_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="aeat_340_report_issued_tree_view"/>
+            <field name="act_window" ref="act_aeat_340_report_issued"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_issued_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="aeat_340_report_issued_form_view"/>
+            <field name="act_window" ref="act_aeat_340_report_issued"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_issued">
+            <field name="model" search="[('model', '=', 'aeat.340.report.issued')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_issued_admin">
+            <field name="model" search="[('model', '=', 'aeat.340.report.issued')]"/>
+            <field name="group" ref="group_aeat_340_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.ui.view" id="aeat_340_report_received_form_view">
+            <field name="model">aeat.340.report.received</field>
+            <field name="type">form</field>
+            <field name="name">received_form</field>
+        </record>
+        <record model="ir.ui.view" id="aeat_340_report_received_tree_view">
+            <field name="model">aeat.340.report.received</field>
+            <field name="type">tree</field>
+            <field name="name">received_tree</field>
+        </record>
+        <record model="ir.action.act_window" id="act_aeat_340_report_received">
+            <field name="name">AEAT 340 Report Received</field>
+            <field name="res_model">aeat.340.report.received</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_received_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="aeat_340_report_received_tree_view"/>
+            <field name="act_window" ref="act_aeat_340_report_received"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_received_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="aeat_340_report_received_form_view"/>
+            <field name="act_window" ref="act_aeat_340_report_received"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_received">
+            <field name="model" search="[('model', '=', 'aeat.340.report.received')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_received_admin">
+            <field name="model" search="[('model', '=', 'aeat.340.report.received')]"/>
+            <field name="group" ref="group_aeat_340_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.ui.view" id="aeat_340_report_investment_form_view">
+            <field name="model">aeat.340.report.investment</field>
+            <field name="type">form</field>
+            <field name="name">investment_form</field>
+        </record>
+        <record model="ir.ui.view" id="aeat_340_report_investment_tree_view">
+            <field name="model">aeat.340.report.investment</field>
+            <field name="type">tree</field>
+            <field name="name">investment_tree</field>
+        </record>
+        <record model="ir.action.act_window" id="act_aeat_340_report_investment">
+            <field name="name">AEAT 340 Report Investment</field>
+            <field name="res_model">aeat.340.report.investment</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_investment_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="aeat_340_report_investment_tree_view"/>
+            <field name="act_window" ref="act_aeat_340_report_investment"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_investment_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="aeat_340_report_investment_form_view"/>
+            <field name="act_window" ref="act_aeat_340_report_investment"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_investment">
+            <field name="model" search="[('model', '=', 'aeat.340.report.investment')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_investment_admin">
+            <field name="model" search="[('model', '=', 'aeat.340.report.investment')]"/>
+            <field name="group" ref="group_aeat_340_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.ui.view" id="aeat_340_report_intracommunity_form_view">
+            <field name="model">aeat.340.report.intracommunity</field>
+            <field name="type">form</field>
+            <field name="name">intracommunity_form</field>
+        </record>
+        <record model="ir.ui.view" id="aeat_340_report_intracommunity_tree_view">
+            <field name="model">aeat.340.report.intracommunity</field>
+            <field name="type">tree</field>
+            <field name="name">intracommunity_tree</field>
+        </record>
+        <record model="ir.action.act_window" id="act_aeat_340_report_intracommunity">
+            <field name="name">AEAT 340 Report Intracommunity</field>
+            <field name="res_model">aeat.340.report.intracommunity</field>
+            <field name="search_value"></field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_intracommunity_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="aeat_340_report_intracommunity_tree_view"/>
+            <field name="act_window" ref="act_aeat_340_report_intracommunity"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_aeat_340_report_intracommunity_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="aeat_340_report_intracommunity_form_view"/>
+            <field name="act_window" ref="act_aeat_340_report_intracommunity"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_intracommunity">
+            <field name="model" search="[('model', '=', 'aeat.340.report.intracommunity')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_aeat_340_report_intracommunity_admin">
+            <field name="model" search="[('model', '=', 'aeat.340.report.intracommunity')]"/>
+            <field name="group" ref="group_aeat_340_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <!-- Menus -->
+        <menuitem action="act_aeat_340_report" id="menu_aeat_340_report"
+            parent="account.menu_reporting" sequence="340"
+            name="AEAT 340 Report"/>
+        <menuitem action="act_aeat_340_report_issued"
+            id="menu_aeat_340_report_issued"
+            parent="menu_aeat_340_report" sequence="10"
+            name="AEAT 340 Issued"/>
+        <menuitem action="act_aeat_340_report_received"
+            id="menu_aeat_340_report_received"
+            parent="menu_aeat_340_report" sequence="20"
+            name="AEAT 340 Received"/>
+        <menuitem action="act_aeat_340_report_investment"
+            id="menu_aeat_340_report_investment"
+            parent="menu_aeat_340_report" sequence="30"
+            name="AEAT 340 Investment"/>
+        <menuitem action="act_aeat_340_report_intracommunity"
+            id="menu_aeat_340_report_intracommunity"
+            parent="menu_aeat_340_report" sequence="40"
+            name="AEAT 340 Intracommunity"/>
+    </data>
+</tryton>
