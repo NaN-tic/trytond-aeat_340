@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--The COPYRIGHT file at the top level of this repository
+contains the full copyright notices and license terms. -->
+<form string="AEAT 340 Record">
+    <label name="party_nif"/>
+    <field name="party_nif"/>
+    <label name="party_name"/>
+    <field name="party_name"/>
+    <label name="party_country"/>
+    <field name="party_country"/>
+    <label name="party_identifier_type"/>
+    <field name="party_identifier_type"/>
+    <label name="party_identifier"/>
+    <field name="party_identifier"/>
+    <label name="book_key"/>
+    <field name="book_key"/>
+    <label name="operation_key"/>
+    <field name="operation_key"/>
+    <label name="issue_date"/>
+    <field name="issue_date"/>
+    <label name="operation_date"/>
+    <field name="operation_date"/>
+    <label name="tax_rate"/>
+    <field name="tax_rate"/>
+    <label name="base"/>
+    <field name="base"/>
+    <label name="tax"/>
+    <field name="tax"/>
+    <label name="total"/>
+    <field name="total"/>
+    <label name="invoice_number"/>
+    <field name="invoice_number"/>
+    <label name="issued"/>
+    <field name="issued"/>
+    <label name="received"/>
+    <field name="received"/>
+    <label name="investment"/>
+    <field name="investment"/>
+    <label name="intracommunity"/>
+    <field name="intracommunity"/>
+</form>

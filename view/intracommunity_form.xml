@@ -1,58 +1,65 @@
 <?xml version="1.0"?>
 <form string="AEAT 340 Intracommunity Operation">
-    <label name="report"/>
-    <field name="report" colspan="3"/>
-    <label name="party_nif"/>
-    <field name="party_nif"/>
-    <label name="representative_nif"/>
-    <field name="representative_nif"/>
-    <label name="party_name"/>
-    <field name="party_name"/>
-    <label name="party_country"/>
-    <field name="party_country"/>
-    <label name="party_identifier_type"/>
-    <field name="party_identifier_type"/>
-    <label name="party_identifier"/>
-    <field name="party_identifier"/>
-    <label name="book_key"/>
-    <field name="book_key"/>
-    <label name="operation_key"/>
-    <field name="operation_key"/>
-    <label name="issue_date"/>
-    <field name="issue_date"/>
-    <label name="operation_date"/>
-    <field name="operation_date"/>
-    <label name="tax_rate"/>
-    <field name="tax_rate"/>
-    <label name="base"/>
-    <field name="base"/>
-    <label name="tax"/>
-    <field name="tax"/>
-    <label name="total"/>
-    <field name="total"/>
-    <label name="cost"/>
-    <field name="cost"/>
-    <label name="invoice_number"/>
-    <field name="invoice_number"/>
-    <label name="record_number"/>
-    <field name="record_number"/>
-    <!-- Intracommunity -->
-    <label name="intracommunity_operation_type"/>
-    <field name="intracommunity_operation_type"/>
-    <label name="declaring_key"/>
-    <field name="declaring_key"/>
-    <label name="intracommunity_country"/>
-    <field name="intracommunity_country"/>
-    <label name="operation_term"/>
-    <field name="operation_term"/>
-    <label name="goods_description"/>
-    <field name="goods_description"/>
-    <label name="party_street"/>
-    <field name="party_street"/>
-    <label name="party_city"/>
-    <field name="party_city"/>
-    <label name="party_zip"/>
-    <field name="party_zip"/>
-    <label name="other_documentation"/>
-    <field name="other_documentation"/>
+    <notebook>
+        <page string="General" id="general">
+            <label name="report"/>
+            <field name="report" colspan="3"/>
+            <label name="party_nif"/>
+            <field name="party_nif"/>
+            <label name="representative_nif"/>
+            <field name="representative_nif"/>
+            <label name="party_name"/>
+            <field name="party_name"/>
+            <label name="party_country"/>
+            <field name="party_country"/>
+            <label name="party_identifier_type"/>
+            <field name="party_identifier_type"/>
+            <label name="party_identifier"/>
+            <field name="party_identifier"/>
+            <label name="book_key"/>
+            <field name="book_key"/>
+            <label name="operation_key"/>
+            <field name="operation_key"/>
+            <label name="issue_date"/>
+            <field name="issue_date"/>
+            <label name="operation_date"/>
+            <field name="operation_date"/>
+            <label name="tax_rate"/>
+            <field name="tax_rate"/>
+            <label name="base"/>
+            <field name="base"/>
+            <label name="tax"/>
+            <field name="tax"/>
+            <label name="total"/>
+            <field name="total"/>
+            <label name="cost"/>
+            <field name="cost"/>
+            <label name="invoice_number"/>
+            <field name="invoice_number"/>
+            <label name="record_number"/>
+            <field name="record_number"/>
+            <!-- Intracommunity -->
+            <label name="intracommunity_operation_type"/>
+            <field name="intracommunity_operation_type"/>
+            <label name="declaring_key"/>
+            <field name="declaring_key"/>
+            <label name="intracommunity_country"/>
+            <field name="intracommunity_country"/>
+            <label name="operation_term"/>
+            <field name="operation_term"/>
+            <label name="goods_description"/>
+            <field name="goods_description"/>
+            <label name="party_street"/>
+            <field name="party_street"/>
+            <label name="party_city"/>
+            <field name="party_city"/>
+            <label name="party_zip"/>
+            <field name="party_zip"/>
+            <label name="other_documentation"/>
+            <field name="other_documentation"/>
+        </page>
+        <page string="Records" id="records">
+            <field name="records" colspan="4"/>
+        </page>
+   </notebook>
 </form>

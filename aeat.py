@@ -6,6 +6,7 @@ import datetime
 from trytond.model import ModelSQL, ModelView, fields, Workflow
 from trytond.pyson import Eval
 from trytond.pool import Pool
+from trytond.transaction import Transaction
 from decimal import Decimal
 
 __all__ = ['Report', 'Issued', 'Received', 'Investment', 'Intracommunity']
@@ -23,30 +24,30 @@ BOOK_KEY = [
     ]
 
 OPERATION_KEY = [
-    ('A', ''),
-    ('B', ''),
-    ('C', ''),
-    ('D', ''),
-    ('E', '(optional)'),
-    ('F', ''),
-    ('G', ''),
-    ('H', ''),
-    ('I', ''),
-    ('J', ''),
-    ('K', ''),
-    ('L', ''),
-    ('M', '(optional)'),
-    ('N', ''),
-    ('O', '(optional)'),
-    ('P', '(optional)'),
-    ('Q', '(optional)'),
-    ('R', ''),
-    ('S', ''),
-    ('T', ''),
-    ('U', ''),
-    ('V', ''),
-    ('W', ''),
-    ('X', ''),
+    ('A', 'A - Invoice\'s Summary'),
+    ('B', 'B - Ticket\'s Summary'),
+    ('C', 'C - Invoice with several taxes'),
+    ('D', 'D - Credit Note'),
+#    ('E', '(optional)'),
+    ('F', 'F - Travel agencies acquisitions'),
+    ('G', 'G - Special arrangment parties on IVA or IGIC'),
+    ('H', 'H - Gold inversion special arrangment'),
+    ('I', 'I - Passive subject inversion'),
+    ('J', 'J - Tickets'),
+    ('K', 'K - Rectification of registry mistakes'),
+    ('L', 'L - Acquisitions to retailers of IGIC'),
+#    ('M', '(optional)'),
+    ('N', 'N - Services to travel agencies'),
+#    ('O', '(optional)'),
+#    ('P', '(optional)'),
+#    ('Q', '(optional)'),
+    ('R', 'R - Operations of lease of bussiness place'),
+    ('S', 'S - Grants, aids and subsidies'),
+    ('T', 'T - Intelectual properties charges'),
+    ('U', 'U - Insurance Operations'),
+    ('V', 'V - Travel angencies buys'),
+    ('W', 'W - Operations subject to taxes of Ceuta and Melilla'),
+    ('X', 'X - Agricultural or farming compensations'),
     ('', 'None of the Above'),
     ]
 
@@ -91,17 +92,17 @@ class Report(Workflow, ModelSQL, ModelView):
             'readonly': Eval('state') == 'done',
             }, depends=['state'])
     type = fields.Selection([
-            ('N','Normal'),
-            ('C','Complementary'),
-            ('S','Substitutive')
+            ('N', 'Normal'),
+            ('C', 'Complementary'),
+            ('S', 'Substitutive')
             ], 'Statement Type', required=True, states={
-            'readonly': Eval('state') == 'done',
+                'readonly': Eval('state') == 'done',
             }, depends=['state'])
     support_type = fields.Selection([
-            ('C','DVD'),
-            ('T','Telematics'),
+            ('C', 'DVD'),
+            ('T', 'Telematics'),
             ], 'Support Type', required=True, states={
-            'readonly': Eval('state') == 'done',
+                'readonly': Eval('state') == 'done',
             }, depends=['state'])
     calculation_date = fields.DateTime('Calculation Date', readonly=True)
     state = fields.Selection([
@@ -111,24 +112,24 @@ class Report(Workflow, ModelSQL, ModelView):
             ('cancelled', 'Cancelled')
             ], 'State', readonly=True)
     contact_phone = fields.Char('Phone', size=9)
-    contact_name = fields.Char('Name And Surname Contact',size=40)
+    contact_name = fields.Char('Name And Surname Contact', size=40)
     period = fields.Selection([
-            ('1T','First quarter'),
-            ('2T','Second quarter'),
-            ('3T','Third quarter'),
-            ('4T','Fourth quarter'),
-            ('01','January'),
-            ('02','February'),
-            ('03','March'),
-            ('04','April'),
-            ('05','May'),
-            ('06','June'),
-            ('07','July'),
-            ('08','August'),
-            ('09','September'),
-            ('10','October'),
-            ('11','November'),
-            ('12','December'),
+            ('1T', 'First quarter'),
+            ('2T', 'Second quarter'),
+            ('3T', 'Third quarter'),
+            ('4T', 'Fourth quarter'),
+            ('01', 'January'),
+            ('02', 'February'),
+            ('03', 'March'),
+            ('04', 'April'),
+            ('05', 'May'),
+            ('06', 'June'),
+            ('07', 'July'),
+            ('08', 'August'),
+            ('09', 'September'),
+            ('10', 'October'),
+            ('11', 'November'),
+            ('12', 'December'),
             ], 'Period', sort=False, required=True)
     issued_lines = fields.One2Many('aeat.340.report.issued', 'report', 'Issued')
     received_lines = fields.One2Many('aeat.340.report.received', 'report',
@@ -138,17 +139,12 @@ class Report(Workflow, ModelSQL, ModelView):
     intracommunity_lines = fields.One2Many('aeat.340.report.intracommunity',
         'report', 'Intracommunity Operations')
     taxable_total = fields.Function(fields.Numeric('Taxable Total',
-            digits=(16, 2), help='The declaration will include parties with '
-            'the total of operations over this limit'), 'get_totals')
+            digits=(16, 2),), 'get_totals')
     sharetax_total = fields.Function(fields.Numeric('Share Tax Total',
-            digits=(16, 2), help='The declaration will include parties with '
-            'the total of operations over this limit'), 'get_totals')
-    record_count = fields.Function(fields.Integer('Record Count',
-            help='The declaration will include parties with the total of '
-            'operations over this limit'), 'get_totals')
-    total = fields.Function(fields.Numeric('Total', digits=(16, 2),
-            help='The declaration will include parties with the total of '
-            'operations over this limit'), 'get_totals')
+            digits=(16, 2),), 'get_totals')
+    record_count = fields.Function(fields.Integer('Record Count'), 'get_totals')
+    total = fields.Function(fields.Numeric('Total', digits=(16, 2)),
+        'get_totals')
     file_ = fields.Binary('File', states={
             'invisible': Eval('state') != 'done',
             })
@@ -197,6 +193,20 @@ class Report(Workflow, ModelSQL, ModelView):
     def default_state():
         return 'draft'
 
+    @staticmethod
+    def default_company():
+        return Transaction().context.get('company')
+
+    @staticmethod
+    def default_fiscalyear():
+        FiscalYear = Pool().get('account.fiscalyear')
+        return FiscalYear.find(
+            Transaction().context.get('company'), exception=False)
+
+    def get_rec_name(self, name):
+        return '%s - %s/%s' % (self.company.rec_name,
+            self.fiscalyear.name, self.period)
+
     def get_currency(self, name):
         return self.company.currency.id
 
@@ -234,12 +244,6 @@ class Report(Workflow, ModelSQL, ModelView):
         for report in reports:
             base = sum([x.base for x in report.lines])
             tax = sum([x.tax for x in report.lines])
-            #base = sum([x.base for x in itertools.chain(report.issued_lines,
-                        #report.received_lines, report.investment_lines,
-                        #report.intracommunity_lines)])
-            #tax = sum([x.tax for x in itertools.chain(report.issued_lines,
-                        #report.received_lines, report.investment_lines,
-                        #report.intracommunity_lines)
             res['record_count'][report.id] += (len(report.issued_lines) +
                 len(report.received_lines) + len(report.investment_lines) +
                 len(report.intracommunity_lines))
@@ -255,6 +259,85 @@ class Report(Workflow, ModelSQL, ModelView):
     @ModelView.button
     @Workflow.transition('calculated')
     def calculate(cls, reports):
+        pool = Pool()
+        Data = pool.get('aeat.340.record')
+        Issued = pool.get('aeat.340.report.issued')
+        Received = pool.get('aeat.340.report.received')
+        Investment = pool.get('aeat.340.report.investment')
+        Intracomunity = pool.get('aeat.340.report.intracommunity')
+        transaction = Transaction()
+        with transaction.set_user(0) and \
+                transaction.set_context(from_report=True):
+            Issued.delete(Issued.search([
+                ('report', 'in', [r.id for r in reports])]))
+            Received.delete(Received.search([
+                ('report', 'in', [r.id for r in reports])]))
+            Investment.delete(Investment.search([
+                ('report', 'in', [r.id for r in reports])]))
+            Intracomunity.delete(Intracomunity.search([
+                ('report', 'in', [r.id for r in reports])]))
+
+        issued_to_create = {}
+        received_to_create = {}
+        investment_to_create = {}
+        intracomunity_to_create = {}
+        for report in reports:
+            fiscalyear = report.fiscalyear
+            multiplier = 1
+            period = report.period
+            if 'T' in period:
+                period = period[0]
+                multiplier = 3
+
+            start_month = int(period) * multiplier
+            end_month = start_month + multiplier
+
+            to_create = {}
+            for record in Data.search([('fiscalyear', '=', fiscalyear.id),
+                ('month', '>=', start_month),
+                ('month', '<', end_month)
+            ]):
+
+                key = '%s-%s-%s-%s-%s' % (report.id, record.invoice.id,
+                    record.book_key, record.operation_key, record.tax_rate)
+
+                if record.book_key in ['E', 'F']:
+                    to_create = issued_to_create
+                elif record.book_key in ['R', 'S']:
+                    to_create = received_to_create
+                elif record.book_key in ['I', 'J']:
+                    to_create = investment_to_create
+                else:
+                    to_create = intracomunity_to_create
+                if key in to_create:
+                    to_create[key]['base'] += record.base
+                    to_create[key]['tax'] += record.tax
+                    to_create[key]['total'] += record.total
+                    to_create[key]['records'][0][1].append(record.id)
+                else:
+                    to_create[key] = {
+                        'base': record.base,
+                        'party_name': record.party_name,
+                        'party_nif': record.party_nif,
+                        'party_country': record.party_country,
+                        'party_identifier_type': record.party_identifier_type,
+                        'base': record.base,
+                        'tax': record.tax,
+                        'tax_rate': record.tax_rate,
+                        'total': record.total,
+                        'operation_key': record.operation_key,
+                        'book_key': record.book_key,
+                        'issue_date': record.issue_date,
+                        'operation_date': record.operation_date,
+                        'report': report.id,
+                        'records': [('set', [record.id])],
+                    }
+        with transaction.set_user(0):
+            Issued.create(issued_to_create.values())
+            Received.create(received_to_create.values())
+            Investment.create(investment_to_create.values())
+            Intracomunity.create(intracomunity_to_create.values())
+
         cls.write(reports, {
                 'calculation_date': datetime.datetime.now(),
                 })
@@ -283,20 +366,20 @@ class Report(Workflow, ModelSQL, ModelView):
         record = retrofix.Record(aeat340.PRESENTER_HEADER_RECORD)
         record.fiscalyear = str(self.fiscalyear_code)
         record.nif = self.company_vat
-        #record.presenter_name = 
+        #record.presenter_name =
         record.support_type = self.support_type
         record.contact_phone = self.contact_phone
         record.contact_name = self.contact_name
-        #record.declaration_number = 
-        #record.complementary = 
-        #record.replacement = 
+        #record.declaration_number =
+        #record.complementary =
+        #record.replacement =
         record.previous_declaration_number = self.previous_number
         record.period = self.period
         record.record_count = self.record_count
         record.total_base = self.taxable_total
         record.total_tax = self.sharetax_total
         record.total = self.total
-        #record.representative_nif = 
+        #record.representative_nif =
         records.append(record)
         for line in self.lines:
             record = line.get_record()
@@ -320,7 +403,8 @@ class LineMixin(object):
     party_identifier_type = fields.Selection(PARTY_IDENTIFIER_TYPE,
         'Party Identifier Type', required=True)
     party_identifier = fields.Char('Party Identifier', size=20)
-    book_key = fields.Selection(BOOK_KEY, 'Book Key', sort=False, required=True)
+    book_key = fields.Selection(BOOK_KEY, 'Book Key',
+        sort=False, required=True)
     operation_key = fields.Selection(OPERATION_KEY, 'Operation Key', sort=False,
         required=True)
     issue_date = fields.Date('Issue Date', required=True)
@@ -345,7 +429,8 @@ class LineMixin(object):
                     'its report is not in draft state.'),
                 'delete_state_invalid': ('Line "%s" cannot be deleted because '
                     'its report is not in draft state.'),
-                'invalid_book_key': ('Invalid Book Key for record "%s".')
+                'invalid_book_key': ('Invalid Book Key "%(key)s" for record '
+                    '"%(record)s".')
                 })
 
     @classmethod
@@ -359,14 +444,23 @@ class LineMixin(object):
         if self.report and self.report.state != 'draft':
             self.raise_user_error('check_state_invalid', self.rec_name)
 
+    def get_rec_name(self, name):
+        report = self.report.rec_name + ':' if self.report else ''
+        return "%s %s-%s : %s" % (report, self.book_key,
+                self.operation_key, self.invoice_number)
+
     def check_key(self):
-        pass
+        if self._possible_keys and self.book_key not in self._possible_keys:
+            self.raise_user_error('invalid_book_key',
+                {'key': self.book_key, 'record': self.rec_name})
 
     @classmethod
     def delete(cls, lines):
-        for line in lines:
-            if line.report and line.report.state != 'draft':
-                cls.raise_user_error('delete_state_invalid', line.rec_name)
+        if not Transaction().context.get('from_report'):
+            for line in lines:
+                if line.report and line.report.state != 'draft':
+                    cls.raise_user_error('delete_state_invalid', line.rec_name)
+        super(LineMixin, cls).delete(lines)
 
     def on_change_with_cost(self):
         if self.operation_key == 'G':
@@ -374,12 +468,13 @@ class LineMixin(object):
         return self.cost
 
     def set_values(self, record):
-        columns = [getattr(self, x) for x in dir(self)
-            if isinstance(getattr(self, x), fields.Field)]
-        columns = [x for x in columns if x.name != 'report']
+        columns = [x for x in dir(self.__class__)
+            if isinstance(getattr(self.__class__, x), fields.Field)]
+        columns = [x for x in columns if x in record._fields]
         for column in columns:
-            setattr(record, column, record[column])
-
+            value = getattr(self, column)
+            if value:
+                setattr(record, column, getattr(self, column))
 
 
 class Issued(LineMixin, ModelSQL, ModelView):
@@ -404,10 +499,10 @@ class Issued(LineMixin, ModelSQL, ModelView):
     invoice_fiscalyear = fields.Integer('Fiscal Year')
     property_transfer_amount = fields.Numeric('Property Transfer Amount',
         digits=(16, 2))
+    records = fields.One2Many('aeat.340.record', 'issued',
+        'AEAT 340 Records', readonly=True)
 
-    def check_key(self):
-        if self.book_key != 'E':
-            self.raise_user_error('invalid_book_key', self.rec_name)
+    _possible_keys = ['E', 'F']
 
     def on_change_with_property_state(self):
         if self.operation_key == 'R':
@@ -417,7 +512,7 @@ class Issued(LineMixin, ModelSQL, ModelView):
     def on_change_with_cadaster_number(self):
         if self.operation_key == 'R':
             return None
-        return self.cadaster_Number
+        return self.cadaster_number
 
     def get_record(self):
         record = retrofix.Record(aeat340.ISSUED_RECORD)
@@ -435,10 +530,10 @@ class Received(LineMixin, ModelSQL, ModelView):
     first_invoice_number = fields.Char('First Invoice Number', size=40)
     last_invoice_number = fields.Char('Last Invoice Number', size=40)
     deducible_amount = fields.Numeric('Deducible Amount', digits=(16, 2))
+    records = fields.One2Many('aeat.340.record', 'received',
+        'AEAT 340 Records', readonly=True)
 
-    def check_key(self):
-        if self.book_key != 'R':
-            self.raise_user_error('invalid_book_key', self.rec_name)
+    _possible_keys = ['R', 'S']
 
     def get_record(self):
         record = retrofix.Record(aeat340.RECEIVED_RECORD)
@@ -458,10 +553,10 @@ class Investment(LineMixin, ModelSQL, ModelView):
     transmissions = fields.Numeric('Transmissions', digits=(16, 2))
     usage_start_date = fields.Date('Usage Start Date')
     good_identifier = fields.Char('Good Identifier', size=17)
+    records = fields.One2Many('aeat.340.record', 'investment',
+        'AEAT 340 Records', readonly=True)
 
-    def check_key(self):
-        if self.book_key != 'I':
-            self.raise_user_error('invalid_book_key', self.rec_name)
+    _possible_keys = ['I', 'J']
 
     def get_record(self):
         record = retrofix.Record(aeat340.INVESTMENT_RECORD)
@@ -484,10 +579,10 @@ class Intracommunity(LineMixin, ModelSQL, ModelView):
     party_city = fields.Char('Party City', size=22)
     party_zip = fields.Char('Party Zip', size=10)
     other_documentation = fields.Char('Other Documentation', size=135)
+    records = fields.One2Many('aeat.340.record', 'intracommunity',
+        'AEAT 340 Records', readonly=True)
 
-    def check_key(self):
-        if self.book_key != 'U':
-            self.raise_user_error('invalid_book_key', self.rec_name)
+    _possible_keys = ['U']
 
     def get_record(self):
         record = retrofix.Record(aeat340.INTRACOMMUNITY_RECORD)

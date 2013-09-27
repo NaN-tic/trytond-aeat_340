@@ -1,6 +1,7 @@
-<tree string="AEAT 340 Report Line">
+<tree string="AEAT 340 Intracomunity Line">
     <field name="issue_date"/>
     <field name="party_name"/>
+    <field name="operation_key"/>
     <field name="base"/>
     <field name="tax"/>
     <field name="total"/>

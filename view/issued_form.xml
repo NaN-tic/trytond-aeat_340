@@ -1,64 +1,71 @@
 <?xml version="1.0"?>
 <form string="AEAT 340 Issued">
-    <label name="report"/>
-    <field name="report" colspan="3"/>
-    <label name="party_nif"/>
-    <field name="party_nif"/>
-    <label name="representative_nif"/>
-    <field name="representative_nif"/>
-    <label name="party_name"/>
-    <field name="party_name"/>
-    <label name="party_country"/>
-    <field name="party_country"/>
-    <label name="party_identifier_type"/>
-    <field name="party_identifier_type"/>
-    <label name="party_identifier"/>
-    <field name="party_identifier"/>
-    <label name="book_key"/>
-    <field name="book_key"/>
-    <label name="operation_key"/>
-    <field name="operation_key"/>
-    <label name="issue_date"/>
-    <field name="issue_date"/>
-    <label name="operation_date"/>
-    <field name="operation_date"/>
-    <label name="tax_rate"/>
-    <field name="tax_rate"/>
-    <label name="base"/>
-    <field name="base"/>
-    <label name="tax"/>
-    <field name="tax"/>
-    <label name="total"/>
-    <field name="total"/>
-    <label name="cost"/>
-    <field name="cost"/>
-    <label name="invoice_number"/>
-    <field name="invoice_number"/>
-    <label name="record_number"/>
-    <field name="record_number"/>
-    <!-- Issued -->
-    <label name="invoice_count"/>
-    <field name="invoice_count"/>
-    <label name="record_count"/>
-    <field name="record_count"/>
-    <label name="first_invoice_number"/>
-    <field name="first_invoice_number"/>
-    <label name="last_invoice_number"/>
-    <field name="last_invoice_number"/>
-    <label name="corrective_invoice_number"/>
-    <field name="corrective_invoice_number"/>
-    <label name="equivalence_tax_rate"/>
-    <field name="equivalence_tax_rate"/>
-    <label name="equivalence_tax"/>
-    <field name="equivalence_tax"/>
-    <label name="property_state"/>
-    <field name="property_state"/>
-    <label name="cadaster_number"/>
-    <field name="cadaster_number"/>
-    <label name="cash_amount"/>
-    <field name="cash_amount"/>
-    <label name="invoice_fiscalyear"/>
-    <field name="invoice_fiscalyear"/>
-    <label name="property_transfer_amount"/>
-    <field name="property_transfer_amount"/>
+    <notebook>
+        <page string="General" id="general">
+            <label name="report"/>
+            <field name="report" colspan="3"/>
+            <label name="party_nif"/>
+            <field name="party_nif"/>
+            <label name="representative_nif"/>
+            <field name="representative_nif"/>
+            <label name="party_name"/>
+            <field name="party_name"/>
+            <label name="party_country"/>
+            <field name="party_country"/>
+            <label name="party_identifier_type"/>
+            <field name="party_identifier_type"/>
+            <label name="party_identifier"/>
+            <field name="party_identifier"/>
+            <label name="book_key"/>
+            <field name="book_key"/>
+            <label name="operation_key"/>
+            <field name="operation_key"/>
+            <label name="issue_date"/>
+            <field name="issue_date"/>
+            <label name="operation_date"/>
+            <field name="operation_date"/>
+            <label name="tax_rate"/>
+            <field name="tax_rate"/>
+            <label name="base"/>
+            <field name="base"/>
+            <label name="tax"/>
+            <field name="tax"/>
+            <label name="total"/>
+            <field name="total"/>
+            <label name="cost"/>
+            <field name="cost"/>
+            <label name="invoice_number"/>
+            <field name="invoice_number"/>
+            <label name="record_number"/>
+            <field name="record_number"/>
+            <!-- Issued -->
+            <label name="invoice_count"/>
+            <field name="invoice_count"/>
+            <label name="record_count"/>
+            <field name="record_count"/>
+            <label name="first_invoice_number"/>
+            <field name="first_invoice_number"/>
+            <label name="last_invoice_number"/>
+            <field name="last_invoice_number"/>
+            <label name="corrective_invoice_number"/>
+            <field name="corrective_invoice_number"/>
+            <label name="equivalence_tax_rate"/>
+            <field name="equivalence_tax_rate"/>
+            <label name="equivalence_tax"/>
+            <field name="equivalence_tax"/>
+            <label name="property_state"/>
+            <field name="property_state"/>
+            <label name="cadaster_number"/>
+            <field name="cadaster_number"/>
+            <label name="cash_amount"/>
+            <field name="cash_amount"/>
+            <label name="invoice_fiscalyear"/>
+            <field name="invoice_fiscalyear"/>
+            <label name="property_transfer_amount"/>
+            <field name="property_transfer_amount"/>
+        </page>
+        <page string="Records" id="records">
+            <field name="records" colspan="4"/>
+        </page>
+   </notebook>
 </form>

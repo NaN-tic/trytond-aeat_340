@@ -1,6 +1,9 @@
-<tree string="AEAT 340 Issued Line">
+<tree string="AEAT 340 Record">
+    <field name="fiscalyear"/>
+    <field name="month"/>
     <field name="issue_date"/>
     <field name="party_name"/>
+    <field name="book_key"/>
     <field name="operation_key"/>
     <field name="base"/>
     <field name="tax"/>

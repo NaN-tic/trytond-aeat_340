@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form string="AEAT 340 Data Reasignation" col="2">
+        <label string="Select Key's to reasign invoices:"
+            id="reasing"/>
+        <newline/>
+        <label string="Lines won't be modified if values left blank"
+            id="reasing2"/>
+        <newline/>
+        <label name="aeat_340_type"/>
+        <field name="aeat_340_type"/>
+        <label name="operation_key"/>
+        <field name="operation_key"/>
+</form>
