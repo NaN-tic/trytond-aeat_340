@@ -395,6 +395,7 @@ class Report(Workflow, ModelSQL, ModelView):
 class LineMixin(object):
     _rec_name = 'party_name'
 
+    company = fields.Many2One('company.company', 'Company', required=True)
     report = fields.Many2One('aeat.340.report', 'Report', ondelete='CASCADE')
     party_nif = fields.Char('Party CIF/NIF', size=9)
     representative_nif = fields.Char('Representative NIF', size=9)
@@ -432,6 +433,10 @@ class LineMixin(object):
                 'invalid_book_key': ('Invalid Book Key "%(key)s" for record '
                     '"%(record)s".')
                 })
+
+    @staticmethod
+    def default_company():
+        return Transaction().context.get('company')
 
     @classmethod
     def validate(cls, lines):

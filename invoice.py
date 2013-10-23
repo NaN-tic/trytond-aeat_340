@@ -6,9 +6,9 @@ from trytond.transaction import Transaction
 from sql.operators import In
 from .aeat import BOOK_KEY, OPERATION_KEY, PARTY_IDENTIFIER_TYPE
 
-__all__ = ['Type', 'TypeTax', 'Record', 'Tax', 'Invoice', 'InvoiceLine',
-    'Recalculate340RecordStart', 'Recalculate340RecordEnd',
-    'Recalculate340Record', 'Reasign340RecordStart',
+__all__ = ['Type', 'TypeTax', 'TypeTemplateTax', 'Record', 'TemplateTax',
+    'Tax', 'Invoice', 'InvoiceLine', 'Recalculate340RecordStart',
+    'Recalculate340RecordEnd', 'Recalculate340Record', 'Reasign340RecordStart',
     'Reasign340RecordEnd', 'Reasign340Record']
 
 __metaclass__ = PoolMeta
@@ -48,6 +48,18 @@ class TypeTax(ModelSQL):
         ondelete='CASCADE', select=True, required=True)
     tax = fields.Many2One('account.tax', 'Tax', ondelete='CASCADE',
         select=True, required=True)
+
+
+class TypeTemplateTax(ModelSQL):
+    """
+    AEAT 340 Type-Template Tax Relation
+    """
+    __name__ = 'aeat.340.type-account.tax.template'
+
+    aeat_340_type = fields.Many2One('aeat.340.type', 'Book Key',
+        ondelete='CASCADE', select=True, required=True)
+    tax = fields.Many2One('account.tax.template', 'Template Tax',
+        ondelete='CASCADE', select=True, required=True)
 
 
 class Record(ModelSQL, ModelView):
@@ -101,6 +113,40 @@ class Record(ModelSQL, ModelView):
 
     def get_invoice_number(self, name=None):
         return self.invoice.rec_name
+
+
+class TemplateTax:
+    __name__ = 'account.tax.template'
+
+    aeat340_book_keys = fields.Many2Many('aeat.340.type-account.tax.template',
+        'tax', 'aeat_340_type', 'Available Book Keys')
+    aeat340_default_out_book_key = fields.Many2One('aeat.340.type',
+        'Default Out Book Key',
+        domain=[('id', 'in', Eval('aeat340_book_keys', []))],
+        depends=['aeat340_book_keys'])
+    aeat340_default_in_book_key = fields.Many2One('aeat.340.type',
+        'Default In Book Key',
+        domain=[('id', 'in', Eval('aeat340_book_keys', []))],
+        depends=['aeat340_book_keys'])
+
+    def _get_tax_value(self, tax=None):
+        res = super(TemplateTax, self)._get_tax_value()
+
+        res['aeat340_book_keys'] = []
+        if tax and len(tax.aeat_340_book_keys) > 0:
+            res['aeat340_book_keys'].append(['unlink_all'])
+        if len(self.aeat340_book_keys) > 0:
+            ids = [c.id for c in self.aeat340_book_keys]
+            res['aeat340_book_keys'].append(['set', ids])
+        for direction in ('in', 'out'):
+            field = "aeat340_default_%s_book_key" % (direction)
+            if not tax or getattr(tax, field) != getattr(self, field):
+                value = getattr(self, field)
+                if value:
+                    res[field] = getattr(self, field).id
+                else:
+                    res[field] = None
+        return res
 
 
 class Tax:

@@ -81,7 +81,8 @@ Create chart of accounts::
 
     >>> AccountTemplate = Model.get('account.account.template')
     >>> Account = Model.get('account.account')
-    >>> account_template, = AccountTemplate.find([('parent', '=', None)])
+    >>> account_template, = AccountTemplate.find([('parent', '=', None),
+    ...     ('name', 'ilike', 'Plan General Contable%')])
     >>> create_chart = Wizard('account.create_chart')
     >>> create_chart.execute('account')
     >>> create_chart.form.account_template = account_template
@@ -89,76 +90,27 @@ Create chart of accounts::
     >>> create_chart.execute('create_account')
     >>> receivable, = Account.find([
     ...         ('kind', '=', 'receivable'),
+    ...         ('code', '=', '4300'),
     ...         ('company', '=', company.id),
     ...         ])
     >>> payable, = Account.find([
     ...         ('kind', '=', 'payable'),
+    ...         ('code', '=', '4100'),
     ...         ('company', '=', company.id),
     ...         ])
     >>> revenue, = Account.find([
     ...         ('kind', '=', 'revenue'),
+    ...         ('code', '=', '7000'),
     ...         ('company', '=', company.id),
     ...         ])
     >>> expense, = Account.find([
     ...         ('kind', '=', 'expense'),
+    ...         ('code', '=', '600'),
     ...         ('company', '=', company.id),
-    ...         ])
-    >>> account_tax, = Account.find([
-    ...         ('kind', '=', 'other'),
-    ...         ('company', '=', company.id),
-    ...         ('name', '=', 'Main Tax'),
     ...         ])
     >>> create_chart.form.account_receivable = receivable
     >>> create_chart.form.account_payable = payable
     >>> create_chart.execute('create_properties')
-
-Create tax::
-
-    >>> TaxCode = Model.get('account.tax.code')
-    >>> Tax = Model.get('account.tax')
-    >>> tax = Tax()
-    >>> tax.name = 'Tax'
-    >>> tax.description = 'Tax'
-    >>> tax.type = 'percentage'
-    >>> tax.rate = Decimal('.10')
-    >>> tax.invoice_account = account_tax
-    >>> tax.credit_note_account = account_tax
-    >>> invoice_base_code = TaxCode(name='invoice base')
-    >>> invoice_base_code.save()
-    >>> tax.invoice_base_code = invoice_base_code
-    >>> invoice_tax_code = TaxCode(name='invoice tax')
-    >>> invoice_tax_code.save()
-    >>> tax.invoice_tax_code = invoice_tax_code
-    >>> credit_note_base_code = TaxCode(name='credit note base')
-    >>> credit_note_base_code.save()
-    >>> tax.credit_note_base_code = credit_note_base_code
-    >>> credit_note_tax_code = TaxCode(name='credit note tax')
-    >>> credit_note_tax_code.save()
-    >>> tax.credit_note_tax_code = credit_note_tax_code
-    >>> Type = Model.get('aeat.340.type')
-    >>> etype = Type()
-    >>> etype.book_key = 'E'
-    >>> etype.save()
-    >>> itype = Type()
-    >>> itype.book_key = 'I'
-    >>> itype.save()
-    >>> rtype = Type()
-    >>> rtype.book_key = 'R'
-    >>> rtype.save()
-    >>> utype = Type()
-    >>> utype.book_key = 'U'
-    >>> utype.save()
-    >>> tax.aeat340_book_keys.extend([etype, rtype, utype, itype])
-    >>> tax.aeat340_default_in_book_key = rtype
-    >>> tax.aeat340_default_out_book_key = etype
-    >>> tax.save()
-    >>> tax.reload()
-    >>> len(tax.aeat340_book_keys) == 4
-    True
-    >>> tax.aeat340_default_in_book_key == rtype
-    True
-    >>> tax.aeat340_default_out_book_key == etype
-    True
 
 Create party::
 
@@ -169,6 +121,7 @@ Create party::
 Create product::
 
     >>> ProductUom = Model.get('product.uom')
+    >>> Tax = Model.get('account.tax')
     >>> unit, = ProductUom.find([('name', '=', 'Unit')])
     >>> ProductTemplate = Model.get('product.template')
     >>> Product = Model.get('product.product')
@@ -181,8 +134,15 @@ Create product::
     >>> template.cost_price = Decimal('25')
     >>> template.account_expense = expense
     >>> template.account_revenue = revenue
+    >>> tax, = Tax.find([
+    ...     ('group.kind', '=', 'sale'),
+    ...     ('name', '=', 'IVA 21%'),
+    ...     ], limit = 1)
     >>> template.customer_taxes.append(tax)
-    >>> tax = Tax(1)
+    >>> tax, = Tax.find([
+    ...     ('group.kind', '=', 'purchase'),
+    ...     ('name', '=', '21% IVA Soportado (operaciones corrientes)'),
+    ...     ], limit = 1)
     >>> template.supplier_taxes.append(tax)
     >>> template.save()
     >>> product.template = template
@@ -214,58 +174,30 @@ Create out invoice::
     >>> line.quantity = 5
     >>> len(line.taxes) == 1
     True
-    >>> line.aeat340_book_key == etype
-    True
-    >>> line.aeat340_operation_key == 'C'
+    >>> line.aeat340_book_key.book_key == 'E'
     True
     >>> line.amount == Decimal(200)
     True
-    >>> line = InvoiceLine()
-    >>> invoice.lines.append(line)
-    >>> len(line.taxes) == 0
-    True
-    >>> line.account = revenue
-    >>> line.description = 'Test 2'
-    >>> line.quantity = 1
-    >>> line.unit_price = Decimal(40)
-    >>> tax = Tax(1)
-    >>> line.taxes.append(tax)
-    >>> line.aeat340_book_key = itype
-    >>> line.aeat340_operation_key = 'A'
-    >>> line.amount == Decimal(40)
-    True
     >>> invoice.save()
     >>> Invoice.post([invoice.id], config.context)
-    >>> (rec1, rec2) = Record.find([('invoice', '=', invoice.id)])
+    >>> rec1, = Record.find([('invoice', '=', invoice.id)])
     >>> rec1.party_name == 'Party'
     True
     >>> rec1.party_nif == '00000000T'
     True
     >>> rec1.month == today.month
     True
-    >>> rec1.book_key == 'I'
+    >>> rec1.book_key == 'E'
     True
-    >>> rec1.operation_key == 'A'
+    >>> rec1.operation_key == 'C'
     True
-    >>> rec1.base == Decimal(240)
+    >>> rec1.base == Decimal('200')
     True
-    >>> rec1.tax_rate == Decimal(10)
+    >>> rec1.tax_rate == Decimal('21')
     True
-    >>> rec1.tax == Decimal(24)
+    >>> rec1.tax == Decimal('42.0')
     True
-    >>> rec1.total == Decimal(264)
-    True
-    >>> rec2.book_key == 'E'
-    True
-    >>> rec2.operation_key == 'C'
-    True
-    >>> rec2.base == Decimal(240)
-    True
-    >>> rec2.tax_rate == Decimal(10)
-    True
-    >>> rec2.tax == Decimal(24)
-    True
-    >>> rec2.total == Decimal(264)
+    >>> rec1.total == Decimal('242.0')
     True
 
 Create in invoice::
@@ -281,58 +213,30 @@ Create in invoice::
     >>> line.quantity = 5
     >>> len(line.taxes) == 1
     True
-    >>> line.aeat340_book_key == rtype
-    True
-    >>> line.aeat340_operation_key == 'C'
+    >>> line.aeat340_book_key.book_key == 'R'
     True
     >>> line.amount == Decimal(125)
     True
-    >>> line = InvoiceLine()
-    >>> invoice.lines.append(line)
-    >>> len(line.taxes) == 0
-    True
-    >>> line.account = expense
-    >>> line.description = 'Test 2'
-    >>> line.quantity = 1
-    >>> line.unit_price = Decimal(40)
-    >>> tax = Tax(1)
-    >>> line.taxes.append(tax)
-    >>> line.aeat340_operation_key = 'C'
-    >>> line.aeat340_book_key = utype
-    >>> line.amount == Decimal(40)
-    True
     >>> invoice.save()
     >>> Invoice.post([invoice.id], config.context)
-    >>> (rec1, rec2) = Record.find([('invoice', '=', invoice.id)])
+    >>> rec1, = Record.find([('invoice', '=', invoice.id)])
     >>> rec1.party_name == 'Party'
     True
     >>> rec1.party_nif == '00000000T'
     True
     >>> rec1.month == today.month
     True
-    >>> rec1.book_key == 'U'
+    >>> rec1.book_key == 'R'
     True
     >>> rec1.operation_key == 'C'
     True
-    >>> rec1.base == Decimal(165)
+    >>> rec1.base == Decimal(125)
     True
-    >>> rec1.tax_rate == Decimal(10)
+    >>> rec1.tax_rate == Decimal(21)
     True
-    >>> rec1.tax == Decimal(16.5)
+    >>> rec1.tax == Decimal('26.25')
     True
-    >>> rec1.total == Decimal(181.5)
-    True
-    >>> rec2.book_key == 'R'
-    True
-    >>> rec2.operation_key == 'C'
-    True
-    >>> rec2.base == Decimal(165)
-    True
-    >>> rec2.tax_rate == Decimal(10)
-    True
-    >>> rec2.tax == Decimal(16.5)
-    True
-    >>> rec2.total == Decimal(181.5)
+    >>> rec1.total == Decimal('151.25')
     True
 
 Generate 340 Report::
@@ -348,17 +252,13 @@ Generate 340 Report::
     >>> report.save()
     >>> Report.calculate([report.id], config.context)
     >>> report.reload()
-    >>> report.taxable_total == Decimal(810)
+    >>> report.taxable_total == Decimal('325.0')
     True
-    >>> report.sharetax_total == Decimal(81)
+    >>> report.sharetax_total == Decimal('68.25')
     True
-    >>> report.total == Decimal(891)
+    >>> report.total == Decimal('393.25')
     True
     >>> len(report.issued_lines) == 1
     True
     >>> len(report.received_lines) == 1
-    True
-    >>> len(report.investment_lines) == 1
-    True
-    >>> len(report.intracommunity_lines) == 1
     True

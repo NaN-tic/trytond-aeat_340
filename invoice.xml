@@ -39,6 +39,12 @@
             <field name="inherit" ref="account.tax_view_form"/>
             <field name="name">tax_form</field>
         </record>
+        <record model="ir.ui.view" id="aeat_340_template_tax_form_view">
+            <field name="model">account.tax.template</field>
+            <field name="type">form</field>
+            <field name="inherit" ref="account.tax_template_view_form"/>
+            <field name="name">template_tax_form</field>
+        </record>
 
         <record model="ir.ui.view" id="aeat_340_recalculate_start_view">
             <field name="model">aeat.340.recalculate.records.start</field>

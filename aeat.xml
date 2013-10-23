@@ -230,6 +230,55 @@
             <field name="perm_delete" eval="True"/>
         </record>
 
+        <record model="ir.rule.group" id="rule_group_aeat340">
+            <field name="model" search="[('model', '=', 'aeat.340.report')]"/>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_aeat_340_1">
+            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="rule_group" ref="rule_group_aeat340"/>
+        </record>
+
+        <record model="ir.rule.group" id="rule_group_aeat340_issued">
+            <field name="model"
+                search="[('model', '=', 'aeat.340.report.issued')]"/>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_aeat_340_issued_1">
+            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="rule_group" ref="rule_group_aeat340_issued"/>
+        </record>
+
+        <record model="ir.rule.group" id="rule_group_aeat340_received">
+            <field name="model"
+                search="[('model', '=', 'aeat.340.report.received')]"/>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_aeat_340_received_1">
+            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="rule_group" ref="rule_group_aeat340_received"/>
+        </record>
+
+        <record model="ir.rule.group" id="rule_group_aeat340_investment">
+            <field name="model"
+                search="[('model', '=', 'aeat.340.report.investment')]"/>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_aeat_340_investment_1">
+            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="rule_group" ref="rule_group_aeat340_investment"/>
+        </record>
+
+        <record model="ir.rule.group" id="rule_group_aeat340_intracommunity">
+            <field name="model"
+                search="[('model', '=', 'aeat.340.report.intracommunity')]"/>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_aeat_340_intracommunity_1">
+            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="rule_group" ref="rule_group_aeat340_intracommunity"/>
+        </record>
+
         <!-- Menus -->
         <menuitem action="act_aeat_340_report" id="menu_aeat_340_report"
             parent="account.menu_reporting" sequence="340"
