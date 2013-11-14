@@ -5,7 +5,7 @@ import re
 import os
 import ConfigParser
 
-MODULE = 'aeat340'
+MODULE = 'aeat_340'
 PREFIX = 'trytonspain'
 MODULE2PREFIX = {}
 
