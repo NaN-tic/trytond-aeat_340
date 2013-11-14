@@ -5,8 +5,8 @@ import re
 import os
 import ConfigParser
 
-MODULE = aeat340
-PREFIX = 'nantic'
+MODULE = 'aeat340'
+PREFIX = 'trytonspain'
 MODULE2PREFIX = {}
 
 
@@ -38,11 +38,11 @@ tests_require = ['proteus >= %s.%s, < %s.%s' %
 
 setup(name='%s_%s' % (PREFIX, MODULE),
     version=info.get('version', '0.0.1'),
-    description='',
+    description='Tryton module AEAT 340 PyME',
     long_description=read('README'),
     author='NaN·tic',
     url='http://www.nan-tic.com/',
-    download_url="https://bitbucket.org/nantic/aeat_340",
+    download_url="https://bitbucket.org/nantic/trytond-%s" % MODULE,
     package_dir={'trytond.modules.%s' % MODULE: '.'},
     packages=[
         'trytond.modules.%s' % MODULE,
@@ -50,7 +50,7 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         ],
     package_data={
         'trytond.modules.%s' % MODULE: (info.get('xml', [])
-            + ['tryton.cfg', 'locale/*.po', 'tests/*.rst']),
+            + ['tryton.cfg', 'locale/*.po', 'view/*.xml', 'tests/*.rst']),
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
