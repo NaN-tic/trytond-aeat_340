@@ -163,19 +163,30 @@ class Tax:
         domain=[('id', 'in', Eval('aeat340_book_keys', []))],
         depends=['aeat340_book_keys'])
 
+STATES = {
+    'invisible': Eval('type') != 'line',
+    }
+DEPENDS = ['type']
+
 
 class InvoiceLine:
     __name__ = 'account.invoice.line'
     aeat340_available_keys = fields.Function(fields.One2Many('aeat.340.type',
         None, 'AEAT 340 Available Keys', on_change_with=['taxes', 'product'],
-        depends=['taxes', 'product']), 'on_change_with_aeat340_available_keys')
+            states=STATES, depends=DEPENDS + ['taxes', 'product']),
+        'on_change_with_aeat340_available_keys')
     aeat340_book_key = fields.Many2One('aeat.340.type',
         'AEAT 340 Book Key', on_change_with=['taxes', 'invoice_type',
             'aeat340_book_key', '_parent_invoice.type', 'product'],
-        depends=['aeat340_available_keys', 'taxes', 'invoice_type', 'product'],
+        states=STATES, depends=DEPENDS + ['aeat340_available_keys', 'taxes',
+            'invoice_type', 'product'],
         domain=[('id', 'in', Eval('aeat340_available_keys', []))],)
     aeat340_operation_key = fields.Selection(OPERATION_KEY,
-        'AEAT 340 Operation Key', required=True)
+        'AEAT 340 Operation Key', states={
+            'invisible': Eval('type') != 'line',
+            'required': Eval('type') == 'line',
+            },
+        depends=DEPENDS)
 
     def on_change_product(self):
         Taxes = Pool().get('account.tax')
@@ -228,6 +239,8 @@ class InvoiceLine:
         Invoice = Pool().get('account.invoice')
         Taxes = Pool().get('account.tax')
         for vals in vlist:
+            if vals.get('type', 'line') != 'line':
+                continue
             invoice_type = vals.get('invoice_type')
             if not invoice_type and vals.get('invoice'):
                 invoice = Invoice(vals.get('invoice'))
@@ -259,6 +272,8 @@ class Invoice:
             fiscalyear = invoice.move.period.fiscalyear
             party = invoice.party
             for line in invoice.lines:
+                if line.type != 'line':
+                    continue
                 if line.aeat340_operation_key and line.aeat340_book_key:
                         book_key = line.aeat340_book_key.book_key
                         operation_key = line.aeat340_operation_key
