@@ -13,17 +13,6 @@
             <field name="user" ref="res.user_trigger"/>
             <field name="group" ref="group_aeat_340_admin"/>
         </record>
-        <record model="res.group" id="group_aeat_340">
-            <field name="name">Aeat_340</field>
-        </record>
-        <record model="res.user-res.group" id="user_admin_group_aeat_340">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_aeat_340"/>
-        </record>
-        <record model="res.user-res.group" id="user_trigger_group_aeat_340">
-            <field name="user" ref="res.user_trigger"/>
-            <field name="group" ref="group_aeat_340"/>
-        </record>
 
         <record model="ir.ui.view" id="aeat_340_report_form_view">
             <field name="model">aeat.340.report</field>
