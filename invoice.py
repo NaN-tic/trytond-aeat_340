@@ -133,7 +133,7 @@ class TemplateTax:
         res = super(TemplateTax, self)._get_tax_value(tax)
 
         res['aeat340_book_keys'] = []
-        if tax and len(tax.aeat_340_book_keys) > 0:
+        if tax and len(tax.aeat340_book_keys) > 0:
             res['aeat340_book_keys'].append(['unlink_all'])
         if len(self.aeat340_book_keys) > 0:
             ids = [c.id for c in self.aeat340_book_keys]
