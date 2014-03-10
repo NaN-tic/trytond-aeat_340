@@ -267,7 +267,7 @@ class Invoice:
         Record = Pool().get('aeat.340.record')
         to_create = {}
         for invoice in invoices:
-            if not invoice.move:
+            if not invoice.move or invoice.state == 'cancel':
                 continue
             fiscalyear = invoice.move.period.fiscalyear
             party = invoice.party
@@ -312,6 +312,15 @@ class Invoice:
     def post(cls, invoices):
         super(Invoice, cls).post(invoices)
         cls.create_aeat340_records(invoices)
+
+    @classmethod
+    def cancel(cls, invoices):
+        pool = Pool()
+        Record = pool.get('aeat.340.record')
+        super(Invoice, cls).cancel(invoices)
+        with Transaction().set_user(0, set_context=True):
+            Record.delete(Record.search([('invoice', 'in',
+                            [i.id for i in invoices])]))
 
 
 class Recalculate340RecordStart(ModelView):
