@@ -146,6 +146,8 @@ class TemplateTax:
                     res[field] = getattr(self, field).id
                 else:
                     res[field] = None
+        if not res['aeat340_book_keys']:
+            del res['aeat340_book_keys']
         return res
 
 
