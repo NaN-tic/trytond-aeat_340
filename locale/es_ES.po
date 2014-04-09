@@ -4,75 +4,75 @@ msgstr "Content-Type: text/plain; charset=utf-8\n"
 
 msgctxt "error:aeat.340.report.intracommunity:"
 msgid "Invalid Book Key \"%(key)s\" for record \"%(record)s\"."
-msgstr "La clau tipus de llibre \"%(key)s\" no es vàlida pel registre \"%(record)s\"."
+msgstr "Tipo de libro \"%(key)s invalido para el registro \"%s(record)s\""
 
 msgctxt "error:aeat.340.report.intracommunity:"
 msgid "Line \"%s\" cannot be deleted because its report is not in draft state."
 msgstr ""
-"La línia \"%s\" no es pot eliminar perquè el seu informe no està en estat "
-"esborrany."
+"No se puede borrar la línea \"%s\" porqué su informe no està en estado "
+"borrador."
 
 msgctxt "error:aeat.340.report.intracommunity:"
 msgid "Line \"%s\" cannot be modified because its report is not in draft state."
 msgstr ""
-"La línia \"%s\" no es pot eliminar perquè el seu informe no està en estat "
-"esborrany."
+"No se puede modificar la línea \"%s\" porqué su informe no està en estado "
+"borrador."
 
 msgctxt "error:aeat.340.report.investment:"
 msgid "Invalid Book Key \"%(key)s\" for record \"%(record)s\"."
-msgstr "La clau tipus de llibre \"%(key)s\" no es vàlida pel registre \"%(record)s\"."
+msgstr "Tipo de libro \"%(key)s invalido para el registro \"%s(record)s\""
 
 msgctxt "error:aeat.340.report.investment:"
 msgid "Line \"%s\" cannot be deleted because its report is not in draft state."
 msgstr ""
-"La línia \"%s\" no es pot eliminar perquè el seu informe no està en estat "
-"esborrany."
+"No se puede borrar la línea \"%s\" porqué su informe no està en estado "
+"borrador."
 
 msgctxt "error:aeat.340.report.investment:"
 msgid "Line \"%s\" cannot be modified because its report is not in draft state."
 msgstr ""
-"La línia \"%s\" no es pot eliminar perquè el seu informe no està en estat "
-"esborrany."
+"No se puede modificar la línea \"%s\" porqué su informe no està en estado "
+"borrador."
 
 msgctxt "error:aeat.340.report.issued:"
 msgid "Invalid Book Key \"%(key)s\" for record \"%(record)s\"."
-msgstr "La clau tipus de llibre \"%(key)s\" no es vàlida pel registre \"%(record)s\"."
+msgstr "Tipo de libro \"%(key)s invalido para el registro \"%s(record)s\""
 
 msgctxt "error:aeat.340.report.issued:"
 msgid "Line \"%s\" cannot be deleted because its report is not in draft state."
 msgstr ""
-"La línia \"%s\" no es pot eliminar perquè el seu informe no està en estat "
-"esborrany."
+"No se puede borrar la línea \"%s\" porqué su informe no està en estado "
+"borrador."
 
 msgctxt "error:aeat.340.report.issued:"
 msgid "Line \"%s\" cannot be modified because its report is not in draft state."
 msgstr ""
-"La línia \"%s\" no es pot eliminar perquè el seu informe no està en estat "
-"esborrany."
+"No se puede modificar la línea \"%s\" porqué su informe no està en estado "
+"borrador."
 
 msgctxt "error:aeat.340.report.received:"
 msgid "Invalid Book Key \"%(key)s\" for record \"%(record)s\"."
-msgstr "La clau tipus de llibre \"%(key)s\" no es vàlida pel registre \"%(record)s\"."
+msgstr "Tipo de libro \"%(key)s invalido para el registro \"%s(record)s\""
 
 msgctxt "error:aeat.340.report.received:"
 msgid "Line \"%s\" cannot be deleted because its report is not in draft state."
 msgstr ""
-"La línia \"%s\" no es pot eliminar perquè el seu informe no està en estat "
-"esborrany."
+"No se puede borrar la línea \"%s\" porqué su informe no està en estado "
+"borrador."
 
 msgctxt "error:aeat.340.report.received:"
 msgid "Line \"%s\" cannot be modified because its report is not in draft state."
 msgstr ""
-"La línia \"%s\" no es pot eliminar perquè el seu informe no està en estat "
-"esborrany."
+"No se puede modificar la línea \"%s\" porqué su informe no està en estado "
+"borrador."
 
 msgctxt "error:aeat.340.report:"
 msgid "Currency in AEAT 340 report \"%s\" must be Euro."
-msgstr "La moneda del informe AEAT 340 \"%s\" ha de ser Euro."
+msgstr "La moneda del informe AEAT 340 \"%s\" debe ser Euro."
 
 msgctxt "error:aeat.340.type:"
 msgid "Book key must be unique."
-msgstr "La clau tipus de llibre ha de ser única"
+msgstr "El tipo de libro debe ser único."
 
 msgctxt "error:aeat.340.type:"
 msgid "unique_book_key"
@@ -80,51 +80,63 @@ msgstr "unique_book_key"
 
 msgctxt "field:account.invoice.line,aeat340_available_keys:"
 msgid "AEAT 340 Available Keys"
-msgstr "Claus disponbiles AEAT 340"
+msgstr "Claves disponibles AEAT 340"
 
 msgctxt "field:account.invoice.line,aeat340_book_key:"
 msgid "AEAT 340 Book Key"
-msgstr "Tipus de llibre AEAT 340"
+msgstr "Tipo de libro AEAT 340"
 
 msgctxt "field:account.invoice.line,aeat340_operation_key:"
 msgid "AEAT 340 Operation Key"
-msgstr "Clau d'operació AEAT 340"
+msgstr "Clave Operación AEAT 340"
 
 msgctxt "field:account.tax,aeat340_book_keys:"
 msgid "Available Book Keys"
-msgstr "Claus tipus de llibre disponible"
+msgstr "Tipos de libro disponibles"
 
 msgctxt "field:account.tax,aeat340_default_in_book_key:"
 msgid "Default In Book Key"
-msgstr "Tipus de llibre per defecte (Factures de compra)"
+msgstr "Tipo de libro por defecto (Compras)"
 
 msgctxt "field:account.tax,aeat340_default_out_book_key:"
 msgid "Default Out Book Key"
-msgstr "Tipus de llibre per defecte (Factures de venda)"
+msgstr "Tipo de libro por defecto (Ventas)"
+
+msgctxt "field:account.tax.template,aeat340_book_keys:"
+msgid "Available Book Keys"
+msgstr "Tipos de libro disponibles"
+
+msgctxt "field:account.tax.template,aeat340_default_in_book_key:"
+msgid "Default In Book Key"
+msgstr "Tipo de libro por defecto (Compras)"
+
+msgctxt "field:account.tax.template,aeat340_default_out_book_key:"
+msgid "Default Out Book Key"
+msgstr "Tipo de libro por defecto (Ventas)"
 
 msgctxt "field:aeat.340.reasign.records.end,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.reasign.records.start,aeat_340_type:"
 msgid "Book Key"
-msgstr "Clau tipus de llibre"
+msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.reasign.records.start,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.reasign.records.start,operation_key:"
 msgid "Operation Key"
-msgstr "Clau operació"
+msgstr "Clave operación"
 
 msgctxt "field:aeat.340.recalculate.records.end,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.recalculate.records.start,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.record,base:"
 msgid "Base"
@@ -132,7 +144,7 @@ msgstr "Base"
 
 msgctxt "field:aeat.340.record,book_key:"
 msgid "Book Key"
-msgstr "Clau tipus de llibre"
+msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.record,company:"
 msgid "Company"
@@ -140,27 +152,27 @@ msgstr "Empresa"
 
 msgctxt "field:aeat.340.record,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.record,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.record,fiscalyear:"
 msgid "Fiscal Year"
-msgstr "Exercici fiscal"
+msgstr "Ejercicio fiscal"
 
 msgctxt "field:aeat.340.record,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.record,intracommunity:"
 msgid "Intracommunity"
-msgstr "Intracomunitari"
+msgstr "Intracomunitario"
 
 msgctxt "field:aeat.340.record,investment:"
 msgid "Investment"
-msgstr "Inversió"
+msgstr "Inversión"
 
 msgctxt "field:aeat.340.record,invoice:"
 msgid "Invoice"
@@ -168,15 +180,15 @@ msgstr "Factura"
 
 msgctxt "field:aeat.340.record,invoice_number:"
 msgid "Invoice Number"
-msgstr "Número de factura"
+msgstr "Número factura"
 
 msgctxt "field:aeat.340.record,issue_date:"
 msgid "Issue Date"
-msgstr "Data d'emisió"
+msgstr "Fecha emisión"
 
 msgctxt "field:aeat.340.record,issued:"
 msgid "Issued"
-msgstr "Emeses"
+msgstr "Emitidas"
 
 msgctxt "field:aeat.340.record,month:"
 msgid "Month"
@@ -184,47 +196,47 @@ msgstr "Mes"
 
 msgctxt "field:aeat.340.record,operation_date:"
 msgid "Operation Date"
-msgstr "Data operació"
+msgstr "Fecha operación"
 
 msgctxt "field:aeat.340.record,operation_key:"
 msgid "Operation Key"
-msgstr "Clau operació"
+msgstr "Clave operación"
 
 msgctxt "field:aeat.340.record,party_country:"
 msgid "Party Country"
-msgstr "País del tercer"
+msgstr "Pais Tercero"
 
 msgctxt "field:aeat.340.record,party_identifier:"
 msgid "Party Identifier"
-msgstr "Identificació del tercer"
+msgstr "Identificador Tercero"
 
 msgctxt "field:aeat.340.record,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipus d'identificació del tercer"
+msgstr "Tipo identificador Tercero"
 
 msgctxt "field:aeat.340.record,party_name:"
 msgid "Party Name"
-msgstr "Nom del tercer"
+msgstr "Nombre Tercero"
 
 msgctxt "field:aeat.340.record,party_nif:"
 msgid "Party CIF/NIF"
-msgstr "NIF/CIF del tercer"
+msgstr "CIF/NIF Tercero"
 
 msgctxt "field:aeat.340.record,rec_name:"
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgctxt "field:aeat.340.record,received:"
 msgid "Received"
-msgstr "Rebut"
+msgstr "Recibidas"
 
 msgctxt "field:aeat.340.record,tax:"
 msgid "Tax"
-msgstr "Impost"
+msgstr "Impuestos"
 
 msgctxt "field:aeat.340.record,tax_rate:"
 msgid "Tax Rate"
-msgstr "% Impost"
+msgstr "Cuota impuesto"
 
 msgctxt "field:aeat.340.record,total:"
 msgid "Total"
@@ -232,15 +244,15 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.record,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.record,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:aeat.340.report,calculation_date:"
 msgid "Calculation Date"
-msgstr "Data cálcul"
+msgstr "Fecha cálculo"
 
 msgctxt "field:aeat.340.report,company:"
 msgid "Company"
@@ -252,19 +264,19 @@ msgstr "CIF/NIF"
 
 msgctxt "field:aeat.340.report,contact_name:"
 msgid "Name And Surname Contact"
-msgstr "Nom i cognom del contacte"
+msgstr "Nombre y apellidos de contacto"
 
 msgctxt "field:aeat.340.report,contact_phone:"
 msgid "Phone"
-msgstr "Telèfon"
+msgstr "Teléfono"
 
 msgctxt "field:aeat.340.report,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report,currency:"
 msgid "Currency"
@@ -272,71 +284,71 @@ msgstr "Moneda"
 
 msgctxt "field:aeat.340.report,file_:"
 msgid "File"
-msgstr "Fitxer"
+msgstr "Archivo"
 
 msgctxt "field:aeat.340.report,fiscalyear:"
 msgid "Fiscal Year"
-msgstr "Exercici fiscal"
+msgstr "Ejercicio fiscal"
 
 msgctxt "field:aeat.340.report,fiscalyear_code:"
 msgid "Fiscal Year Code"
-msgstr "Codi exercici fiscal"
+msgstr "Código Ejercicio Fiscal"
 
 msgctxt "field:aeat.340.report,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report,intracommunity_lines:"
 msgid "Intracommunity Operations"
-msgstr "Operacions intracomunitaries"
+msgstr "Operaciones intracomunitarias"
 
 msgctxt "field:aeat.340.report,investment_lines:"
 msgid "Investement Operations"
-msgstr "Operacions d'inversió"
+msgstr "Operaciones de inversión"
 
 msgctxt "field:aeat.340.report,issued_lines:"
 msgid "Issued"
-msgstr "Emeses"
+msgstr "Emitidas"
 
 msgctxt "field:aeat.340.report,period:"
 msgid "Period"
-msgstr "Període"
+msgstr "Período"
 
 msgctxt "field:aeat.340.report,previous_number:"
 msgid "Previous Declaration Number"
-msgstr "Número declaració previa"
+msgstr "Número declaración previa"
 
 msgctxt "field:aeat.340.report,rec_name:"
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgctxt "field:aeat.340.report,received_lines:"
 msgid "Received"
-msgstr "Rebut"
+msgstr "Recibidas"
 
 msgctxt "field:aeat.340.report,record_count:"
 msgid "Record Count"
-msgstr "Nombre de registres"
+msgstr "Número de registros"
 
 msgctxt "field:aeat.340.report,representative_vat:"
 msgid "L.R. VAT number"
-msgstr "NIF Representant legal"
+msgstr "NIF/CIF Representante legal"
 
 msgctxt "field:aeat.340.report,sharetax_total:"
 msgid "Share Tax Total"
-msgstr "Total impostos"
+msgstr "Total impuestos compartidos"
 
 msgctxt "field:aeat.340.report,state:"
 msgid "State"
-msgstr "Estat"
+msgstr "Estado"
 
 msgctxt "field:aeat.340.report,support_type:"
 msgid "Support Type"
-msgstr "Tipus de suport"
+msgstr "Tipo de soporte"
 
 msgctxt "field:aeat.340.report,taxable_total:"
 msgid "Taxable Total"
-msgstr "Total Base Imponible"
+msgstr "Total impuestos"
 
 msgctxt "field:aeat.340.report,total:"
 msgid "Total"
@@ -344,15 +356,15 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report,type:"
 msgid "Statement Type"
-msgstr "Tipus de declaració"
+msgstr "Tipo declaración"
 
 msgctxt "field:aeat.340.report,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.report,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:aeat.340.report.intracommunity,base:"
 msgid "Base"
@@ -360,107 +372,111 @@ msgstr "Base"
 
 msgctxt "field:aeat.340.report.intracommunity,book_key:"
 msgid "Book Key"
-msgstr "Clau tipus de llibre"
+msgstr "Tipo de libro"
+
+msgctxt "field:aeat.340.report.intracommunity,company:"
+msgid "Company"
+msgstr "Empresa"
 
 msgctxt "field:aeat.340.report.intracommunity,cost:"
 msgid "Cost"
-msgstr "Cost"
+msgstr "Coste"
 
 msgctxt "field:aeat.340.report.intracommunity,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report.intracommunity,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report.intracommunity,declaring_key:"
 msgid "Declared Key"
-msgstr "Clau declarada"
+msgstr "Clave declarada"
 
 msgctxt "field:aeat.340.report.intracommunity,goods_description:"
 msgid "Goods Description"
-msgstr "Descripcions dels béns"
+msgstr "Descripción del bien"
 
 msgctxt "field:aeat.340.report.intracommunity,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.intracommunity,intracommunity_country:"
 msgid "Intracommunity Country"
-msgstr "País intracomunitari"
+msgstr "Pais intracomunitario"
 
 msgctxt "field:aeat.340.report.intracommunity,intracommunity_operation_type:"
 msgid "Intracommunity Operation Type"
-msgstr "Tipus d'operació intercomunitaria"
+msgstr "Tipo de operación intracomunitaria"
 
 msgctxt "field:aeat.340.report.intracommunity,invoice_number:"
 msgid "Invoice Number"
-msgstr "Número de factura"
+msgstr "Número factura"
 
 msgctxt "field:aeat.340.report.intracommunity,issue_date:"
 msgid "Issue Date"
-msgstr "Data d'emisió"
+msgstr "Fecha emisión"
 
 msgctxt "field:aeat.340.report.intracommunity,operation_date:"
 msgid "Operation Date"
-msgstr "Data operació"
+msgstr "Fecha operación"
 
 msgctxt "field:aeat.340.report.intracommunity,operation_key:"
 msgid "Operation Key"
-msgstr "Clau operació"
+msgstr "Clave operación"
 
 msgctxt "field:aeat.340.report.intracommunity,operation_term:"
 msgid "Operation Term"
-msgstr "Data operació"
+msgstr "Plazo operación"
 
 msgctxt "field:aeat.340.report.intracommunity,other_documentation:"
 msgid "Other Documentation"
-msgstr "Documentació adicional"
+msgstr "Otra documentación"
 
 msgctxt "field:aeat.340.report.intracommunity,party_city:"
 msgid "Party City"
-msgstr "Ciutat del tercer"
+msgstr "Ciudad Tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_country:"
 msgid "Party Country"
-msgstr "País del tercer"
+msgstr "Pais Tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_identifier:"
 msgid "Party Identifier"
-msgstr "Identificació del tercer"
+msgstr "Identificador Tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipus d'identificació del tercer"
+msgstr "Tipo identificador Tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_name:"
 msgid "Party Name"
-msgstr "Nom del tercer"
+msgstr "Nombre Tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_nif:"
 msgid "Party CIF/NIF"
-msgstr "NIF/CIF del tercer"
+msgstr "CIF/NIF Tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_street:"
 msgid "Party Street"
-msgstr "Carrer del tercer"
+msgstr "Calle Tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_zip:"
 msgid "Party Zip"
-msgstr "Codi postal del tercer"
+msgstr "Codigo postal Tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,rec_name:"
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgctxt "field:aeat.340.report.intracommunity,record_number:"
 msgid "Record Number"
-msgstr "Número de registre"
+msgstr "Número de registro"
 
 msgctxt "field:aeat.340.report.intracommunity,records:"
 msgid "AEAT 340 Records"
-msgstr "Registres AEAT 340"
+msgstr "Registros AEAT 340"
 
 msgctxt "field:aeat.340.report.intracommunity,report:"
 msgid "Report"
@@ -468,15 +484,15 @@ msgstr "Informe"
 
 msgctxt "field:aeat.340.report.intracommunity,representative_nif:"
 msgid "Representative NIF"
-msgstr "NIF del representant"
+msgstr "NIF Representante"
 
 msgctxt "field:aeat.340.report.intracommunity,tax:"
 msgid "Tax"
-msgstr "Impost"
+msgstr "Impuestos"
 
 msgctxt "field:aeat.340.report.intracommunity,tax_rate:"
 msgid "Tax Rate"
-msgstr "% Impost"
+msgstr "Cuota impuesto"
 
 msgctxt "field:aeat.340.report.intracommunity,total:"
 msgid "Total"
@@ -484,11 +500,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.intracommunity,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.report.intracommunity,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:aeat.340.report.investment,base:"
 msgid "Base"
@@ -496,63 +512,67 @@ msgstr "Base"
 
 msgctxt "field:aeat.340.report.investment,book_key:"
 msgid "Book Key"
-msgstr "Clau tipus de llibre"
+msgstr "Tipo de libro"
+
+msgctxt "field:aeat.340.report.investment,company:"
+msgid "Company"
+msgstr "Empresa"
 
 msgctxt "field:aeat.340.report.investment,cost:"
 msgid "Cost"
-msgstr "Cost"
+msgstr "Coste"
 
 msgctxt "field:aeat.340.report.investment,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report.investment,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report.investment,good_identifier:"
 msgid "Good Identifier"
-msgstr "Identificador del bé"
+msgstr "Identificación del bien"
 
 msgctxt "field:aeat.340.report.investment,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.investment,invoice_number:"
 msgid "Invoice Number"
-msgstr "Número de factura"
+msgstr "Número factura"
 
 msgctxt "field:aeat.340.report.investment,issue_date:"
 msgid "Issue Date"
-msgstr "Data d'emisió"
+msgstr "Fecha emisión"
 
 msgctxt "field:aeat.340.report.investment,operation_date:"
 msgid "Operation Date"
-msgstr "Data operació"
+msgstr "Fecha operación"
 
 msgctxt "field:aeat.340.report.investment,operation_key:"
 msgid "Operation Key"
-msgstr "Clau operació"
+msgstr "Clave operación"
 
 msgctxt "field:aeat.340.report.investment,party_country:"
 msgid "Party Country"
-msgstr "País del tercer"
+msgstr "Pais Tercero"
 
 msgctxt "field:aeat.340.report.investment,party_identifier:"
 msgid "Party Identifier"
-msgstr "Identificació del tercer"
+msgstr "Identificador Tercero"
 
 msgctxt "field:aeat.340.report.investment,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipus d'identificació del tercer"
+msgstr "Tipo identificador Tercero"
 
 msgctxt "field:aeat.340.report.investment,party_name:"
 msgid "Party Name"
-msgstr "Nom del tercer"
+msgstr "Nombre Tercero"
 
 msgctxt "field:aeat.340.report.investment,party_nif:"
 msgid "Party CIF/NIF"
-msgstr "NIF/CIF del tercer"
+msgstr "CIF/NIF Tercero"
 
 msgctxt "field:aeat.340.report.investment,pro_rata:"
 msgid "Pro Rata"
@@ -560,15 +580,15 @@ msgstr "Pro Rata"
 
 msgctxt "field:aeat.340.report.investment,rec_name:"
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgctxt "field:aeat.340.report.investment,record_number:"
 msgid "Record Number"
-msgstr "Número de registre"
+msgstr "Número de registro"
 
 msgctxt "field:aeat.340.report.investment,records:"
 msgid "AEAT 340 Records"
-msgstr "Registres AEAT 340"
+msgstr "Registros AEAT 340"
 
 msgctxt "field:aeat.340.report.investment,report:"
 msgid "Report"
@@ -576,19 +596,19 @@ msgstr "Informe"
 
 msgctxt "field:aeat.340.report.investment,representative_nif:"
 msgid "Representative NIF"
-msgstr "NIF del representant"
+msgstr "NIF Representante"
 
 msgctxt "field:aeat.340.report.investment,submission_number:"
 msgid "Submission Number"
-msgstr "Número de submisió"
+msgstr "Número petición"
 
 msgctxt "field:aeat.340.report.investment,tax:"
 msgid "Tax"
-msgstr "Impost"
+msgstr "Impuestos"
 
 msgctxt "field:aeat.340.report.investment,tax_rate:"
 msgid "Tax Rate"
-msgstr "% Impost"
+msgstr "Cuota impuesto"
 
 msgctxt "field:aeat.340.report.investment,total:"
 msgid "Total"
@@ -596,23 +616,23 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.investment,transmissions:"
 msgid "Transmissions"
-msgstr "Transmisions"
+msgstr "Transmisiones"
 
 msgctxt "field:aeat.340.report.investment,usage_start_date:"
 msgid "Usage Start Date"
-msgstr "Data d'inici d'ús."
+msgstr "Fecha inicio uso"
 
 msgctxt "field:aeat.340.report.investment,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.report.investment,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:aeat.340.report.investment,yearly_regularitzation:"
 msgid "Yearly Regularization"
-msgstr "Regularització anual"
+msgstr "Año regularización"
 
 msgctxt "field:aeat.340.report.issued,base:"
 msgid "Base"
@@ -620,15 +640,19 @@ msgstr "Base"
 
 msgctxt "field:aeat.340.report.issued,book_key:"
 msgid "Book Key"
-msgstr "Clau tipus de llibre"
+msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.report.issued,cadaster_number:"
 msgid "Cadaster Number"
-msgstr "Número de cadastre"
+msgstr "Número cadastro"
 
 msgctxt "field:aeat.340.report.issued,cash_amount:"
 msgid "Cash Amount"
-msgstr "Import en efectiu"
+msgstr "Importe en efectivo"
+
+msgctxt "field:aeat.340.report.issued,company:"
+msgid "Company"
+msgstr "Empresa"
 
 msgctxt "field:aeat.340.report.issued,corrective_invoice_number:"
 msgid "Corrective Invoice Number"
@@ -636,103 +660,103 @@ msgstr "Número de factura rectificativa"
 
 msgctxt "field:aeat.340.report.issued,cost:"
 msgid "Cost"
-msgstr "Cost"
+msgstr "Coste"
 
 msgctxt "field:aeat.340.report.issued,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report.issued,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report.issued,equivalence_tax:"
 msgid "Equivalence Tax"
-msgstr "Recarrec d'equivalència"
+msgstr "Recargo equivalencia"
 
 msgctxt "field:aeat.340.report.issued,equivalence_tax_rate:"
 msgid "Equivalence Tax Rate"
-msgstr "% Recarrec d'equivalència"
+msgstr "Cuota recargo equivalencia"
 
 msgctxt "field:aeat.340.report.issued,first_invoice_number:"
 msgid "First Invoice Number"
-msgstr "Primer número de factura"
+msgstr "Primer numero de factura"
 
 msgctxt "field:aeat.340.report.issued,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.issued,invoice_count:"
 msgid "Invoice Count"
-msgstr "Nombre de factures"
+msgstr "Número de facturas"
 
 msgctxt "field:aeat.340.report.issued,invoice_fiscalyear:"
 msgid "Fiscal Year"
-msgstr "Exercici fiscal"
+msgstr "Ejercicio fiscal"
 
 msgctxt "field:aeat.340.report.issued,invoice_number:"
 msgid "Invoice Number"
-msgstr "Número de factura"
+msgstr "Número factura"
 
 msgctxt "field:aeat.340.report.issued,issue_date:"
 msgid "Issue Date"
-msgstr "Data d'emisió"
+msgstr "Fecha emisión"
 
 msgctxt "field:aeat.340.report.issued,last_invoice_number:"
 msgid "Last Invoice Number"
-msgstr "Últim número de factura"
+msgstr "Último número de factura"
 
 msgctxt "field:aeat.340.report.issued,operation_date:"
 msgid "Operation Date"
-msgstr "Data operació"
+msgstr "Fecha operación"
 
 msgctxt "field:aeat.340.report.issued,operation_key:"
 msgid "Operation Key"
-msgstr "Clau operació"
+msgstr "Clave operación"
 
 msgctxt "field:aeat.340.report.issued,party_country:"
 msgid "Party Country"
-msgstr "País del tercer"
+msgstr "Pais Tercero"
 
 msgctxt "field:aeat.340.report.issued,party_identifier:"
 msgid "Party Identifier"
-msgstr "Identificació del tercer"
+msgstr "Identificador Tercero"
 
 msgctxt "field:aeat.340.report.issued,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipus d'identificació del tercer"
+msgstr "Tipo identificador Tercero"
 
 msgctxt "field:aeat.340.report.issued,party_name:"
 msgid "Party Name"
-msgstr "Nom del tercer"
+msgstr "Nombre Tercero"
 
 msgctxt "field:aeat.340.report.issued,party_nif:"
 msgid "Party CIF/NIF"
-msgstr "NIF/CIF del tercer"
+msgstr "CIF/NIF Tercero"
 
 msgctxt "field:aeat.340.report.issued,property_state:"
 msgid "Property State"
-msgstr "Estat de la propietat"
+msgstr "Estado propiedad"
 
 msgctxt "field:aeat.340.report.issued,property_transfer_amount:"
 msgid "Property Transfer Amount"
-msgstr "Import transmes de la propietat"
+msgstr "Importe transferencia propiedad"
 
 msgctxt "field:aeat.340.report.issued,rec_name:"
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgctxt "field:aeat.340.report.issued,record_count:"
 msgid "Record Count"
-msgstr "Nombre de registres"
+msgstr "Número de registros"
 
 msgctxt "field:aeat.340.report.issued,record_number:"
 msgid "Record Number"
-msgstr "Número de registre"
+msgstr "Número de registro"
 
 msgctxt "field:aeat.340.report.issued,records:"
 msgid "AEAT 340 Records"
-msgstr "Registres AEAT 340"
+msgstr "Registros AEAT 340"
 
 msgctxt "field:aeat.340.report.issued,report:"
 msgid "Report"
@@ -740,15 +764,15 @@ msgstr "Informe"
 
 msgctxt "field:aeat.340.report.issued,representative_nif:"
 msgid "Representative NIF"
-msgstr "NIF del representant"
+msgstr "NIF Representante"
 
 msgctxt "field:aeat.340.report.issued,tax:"
 msgid "Tax"
-msgstr "Impost"
+msgstr "Impuestos"
 
 msgctxt "field:aeat.340.report.issued,tax_rate:"
 msgid "Tax Rate"
-msgstr "% Impost"
+msgstr "Cuota impuesto"
 
 msgctxt "field:aeat.340.report.issued,total:"
 msgid "Total"
@@ -756,11 +780,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.issued,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.report.issued,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:aeat.340.report.received,base:"
 msgid "Base"
@@ -768,91 +792,95 @@ msgstr "Base"
 
 msgctxt "field:aeat.340.report.received,book_key:"
 msgid "Book Key"
-msgstr "Clau tipus de llibre"
+msgstr "Tipo de libro"
+
+msgctxt "field:aeat.340.report.received,company:"
+msgid "Company"
+msgstr "Empresa"
 
 msgctxt "field:aeat.340.report.received,cost:"
 msgid "Cost"
-msgstr "Cost"
+msgstr "Coste"
 
 msgctxt "field:aeat.340.report.received,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report.received,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report.received,deducible_amount:"
 msgid "Deducible Amount"
-msgstr "Import deduïble"
+msgstr "Importe deducible"
 
 msgctxt "field:aeat.340.report.received,first_invoice_number:"
 msgid "First Invoice Number"
-msgstr "Primer número de factura"
+msgstr "Primer numero de factura"
 
 msgctxt "field:aeat.340.report.received,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.received,invoice_count:"
 msgid "Invoice Count"
-msgstr "Nombre de factures"
+msgstr "Número de facturas"
 
 msgctxt "field:aeat.340.report.received,invoice_number:"
 msgid "Invoice Number"
-msgstr "Número de factura"
+msgstr "Número factura"
 
 msgctxt "field:aeat.340.report.received,issue_date:"
 msgid "Issue Date"
-msgstr "Data d'emisió"
+msgstr "Fecha emisión"
 
 msgctxt "field:aeat.340.report.received,last_invoice_number:"
 msgid "Last Invoice Number"
-msgstr "Últim número de factura"
+msgstr "Último número de factura"
 
 msgctxt "field:aeat.340.report.received,operation_date:"
 msgid "Operation Date"
-msgstr "Data operació"
+msgstr "Fecha operación"
 
 msgctxt "field:aeat.340.report.received,operation_key:"
 msgid "Operation Key"
-msgstr "Clau operació"
+msgstr "Clave operación"
 
 msgctxt "field:aeat.340.report.received,party_country:"
 msgid "Party Country"
-msgstr "País del tercer"
+msgstr "Pais Tercero"
 
 msgctxt "field:aeat.340.report.received,party_identifier:"
 msgid "Party Identifier"
-msgstr "Identificació del tercer"
+msgstr "Identificador Tercero"
 
 msgctxt "field:aeat.340.report.received,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipus d'identificació del tercer"
+msgstr "Tipo identificador Tercero"
 
 msgctxt "field:aeat.340.report.received,party_name:"
 msgid "Party Name"
-msgstr "Nom del tercer"
+msgstr "Nombre Tercero"
 
 msgctxt "field:aeat.340.report.received,party_nif:"
 msgid "Party CIF/NIF"
-msgstr "NIF/CIF del tercer"
+msgstr "CIF/NIF Tercero"
 
 msgctxt "field:aeat.340.report.received,rec_name:"
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgctxt "field:aeat.340.report.received,record_count:"
 msgid "Record Count"
-msgstr "Nombre de registres"
+msgstr "Número de registros"
 
 msgctxt "field:aeat.340.report.received,record_number:"
 msgid "Record Number"
-msgstr "Número de registre"
+msgstr "Número de registro"
 
 msgctxt "field:aeat.340.report.received,records:"
 msgid "AEAT 340 Records"
-msgstr "Registres AEAT 340"
+msgstr "Registros AEAT 340"
 
 msgctxt "field:aeat.340.report.received,report:"
 msgid "Report"
@@ -860,15 +888,15 @@ msgstr "Informe"
 
 msgctxt "field:aeat.340.report.received,representative_nif:"
 msgid "Representative NIF"
-msgstr "NIF del representant"
+msgstr "NIF Representante"
 
 msgctxt "field:aeat.340.report.received,tax:"
 msgid "Tax"
-msgstr "Impost"
+msgstr "Impuestos"
 
 msgctxt "field:aeat.340.report.received,tax_rate:"
 msgid "Tax Rate"
-msgstr "% Impost"
+msgstr "Cuota impuesto"
 
 msgctxt "field:aeat.340.report.received,total:"
 msgid "Total"
@@ -876,95 +904,127 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.received,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.report.received,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:aeat.340.type,book_key:"
 msgid "Book key"
-msgstr "Clau tipus de llibre"
+msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.type,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.type,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.type,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.type,rec_name:"
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgctxt "field:aeat.340.type,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.type,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
 
 msgctxt "field:aeat.340.type-account.tax,aeat_340_type:"
 msgid "Book Key"
-msgstr "Clau tipus de llibre"
+msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.type-account.tax,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.type-account.tax,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.type-account.tax,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.type-account.tax,rec_name:"
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 msgctxt "field:aeat.340.type-account.tax,tax:"
 msgid "Tax"
-msgstr "Impost"
+msgstr "Impuestos"
 
 msgctxt "field:aeat.340.type-account.tax,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.type-account.tax,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuario modificación"
+
+msgctxt "field:aeat.340.type-account.tax.template,aeat_340_type:"
+msgid "Book Key"
+msgstr "Tipo de libro"
+
+msgctxt "field:aeat.340.type-account.tax.template,create_date:"
+msgid "Create Date"
+msgstr "Fecha de creación"
+
+msgctxt "field:aeat.340.type-account.tax.template,create_uid:"
+msgid "Create User"
+msgstr "Usuario de creación"
+
+msgctxt "field:aeat.340.type-account.tax.template,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:aeat.340.type-account.tax.template,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:aeat.340.type-account.tax.template,tax:"
+msgid "Template Tax"
+msgstr "Plantilla impuestos"
+
+msgctxt "field:aeat.340.type-account.tax.template,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:aeat.340.type-account.tax.template,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
 
 msgctxt "help:aeat.340.report,representative_vat:"
 msgid "Legal Representative VAT number."
-msgstr "NIF Representant legal"
+msgstr "NIF/CIF Representante legal"
 
 msgctxt "model:aeat.340.reasign.records.end,name:"
 msgid "Reasign AEAT 340 Records End"
-msgstr "Final reasigna Registres AEAT 340"
+msgstr "Inicio reasignar registros AEAT 340"
 
 msgctxt "model:aeat.340.reasign.records.start,name:"
 msgid "Reasign AEAT 340 Records Start"
-msgstr "Inici reasigna Registres AEAT 340"
+msgstr "Fin reasignar registros AEAT 340"
 
 msgctxt "model:aeat.340.recalculate.records.end,name:"
 msgid "Recalculate AEAT 340 Records End"
-msgstr "Final recalcula registres AEAT 340"
+msgstr "Fin reclaular registros AEAT 340"
 
 msgctxt "model:aeat.340.recalculate.records.start,name:"
 msgid "Recalculate AEAT 340 Records Start"
-msgstr "Inici recalcula registres AEAT 340"
+msgstr "Inicio reclaular registros AEAT 340"
 
 msgctxt "model:aeat.340.record,name:"
 msgid "AEAT 340 Record"
-msgstr "Registre AEAT 340"
+msgstr "Registro AEAT 340"
 
 msgctxt "model:aeat.340.report,name:"
 msgid "AEAT 340 Report"
@@ -972,39 +1032,43 @@ msgstr "Informe AEAT 340"
 
 msgctxt "model:aeat.340.report.intracommunity,name:"
 msgid "AEAT 340 Intracommunity"
-msgstr "Intracomunitari  AEAT 340"
+msgstr "Intracomunitario AEAT 340"
 
 msgctxt "model:aeat.340.report.investment,name:"
 msgid "AEAT 340 Investment"
-msgstr "Inversions AEAT 340"
+msgstr "Inversión AEAT 340"
 
 msgctxt "model:aeat.340.report.issued,name:"
 msgid "AEAT 340 Issued"
-msgstr "Emeses AEAT 340"
+msgstr "Emitidas AEAT 340"
 
 msgctxt "model:aeat.340.report.received,name:"
 msgid "AEAT 340 Received"
-msgstr "Rebudes AEAT 340"
+msgstr "Recibidas AEAT 340"
 
 msgctxt "model:aeat.340.type,name:"
 msgid "AEAT 340 Type"
-msgstr "Tipus AEAT 340"
+msgstr "Tipo AEAT 340"
 
 msgctxt "model:aeat.340.type-account.tax,name:"
 msgid "AEAT 340 Type-Tax Relation"
-msgstr "Relació Impostos-Tipus AEAT 340"
+msgstr "Relación Impuesto-Tipo AEAT 340"
+
+msgctxt "model:aeat.340.type-account.tax.template,name:"
+msgid "AEAT 340 Type-Template Tax Relation"
+msgstr "Relación Plantilla Impuesto-Tipo AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_reasign"
 msgid "Reasign AEAT 340 Records"
-msgstr "Reasigna registres AEAT 340"
+msgstr "Reasignar registros AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_recalculate"
 msgid "Recalculate AEAT 340 Records"
-msgstr "Recalcula registres AEAT 340"
+msgstr "Reclaular registros AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_record"
 msgid "AEAT 340 Record "
-msgstr "Registre AEAT 340"
+msgstr "Registro AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_report"
 msgid "AEAT 340 Report"
@@ -1012,55 +1076,23 @@ msgstr "Informe AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_report_intracommunity"
 msgid "AEAT 340 Report Intracommunity"
-msgstr "Intracomunitari informe AEAT 340"
+msgstr "Intracomunitario informe AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_report_investment"
 msgid "AEAT 340 Report Investment"
-msgstr "Inversió informe AEAT 340"
+msgstr "Inversión informe AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_report_issued"
 msgid "AEAT 340 Report Issued"
-msgstr "Emeses informe AEAT 340"
+msgstr "Emitidas informe AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_report_received"
 msgid "AEAT 340 Report Received"
-msgstr "Rebudes informe AEAT 340"
-
-msgctxt "model:ir.action.act_window,name:act_aeat_340_record"
-msgid "AEAT 340 Record "
-msgstr "Registre AEAT 340"
-
-msgctxt "model:ir.action.act_window,name:act_aeat_340_report"
-msgid "AEAT 340 Report"
-msgstr "Informe AEAT 340"
-
-msgctxt "model:ir.action.act_window,name:act_aeat_340_report_intracommunity"
-msgid "AEAT 340 Report Intracommunity"
-msgstr "Intracomunitari informe AEAT 340"
-
-msgctxt "model:ir.action.act_window,name:act_aeat_340_report_investment"
-msgid "AEAT 340 Report Investment"
-msgstr "Inversió informe AEAT 340"
-
-msgctxt "model:ir.action.act_window,name:act_aeat_340_report_issued"
-msgid "AEAT 340 Report Issued"
-msgstr "Emeses informe AEAT 340"
-
-msgctxt "model:ir.action.act_window,name:act_aeat_340_report_received"
-msgid "AEAT 340 Report Received"
-msgstr "Rebudes informe AEAT 340"
-
-msgctxt "model:ir.action.wizard,name:act_aeat_340_reasign"
-msgid "Reasign AEAT 340 Records"
-msgstr "Reasigna registres AEAT 340"
-
-msgctxt "model:ir.action.wizard,name:act_aeat_340_recalculate"
-msgid "Recalculate AEAT 340 Records"
-msgstr "Recalcula registres AEAT 340"
+msgstr "Recibidas informe AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_record"
 msgid "AEAT 340 Record"
-msgstr "Registre AEAT 340"
+msgstr "Registro AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report"
 msgid "AEAT 340 Report"
@@ -1068,59 +1100,55 @@ msgstr "Informe AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_intracommunity"
 msgid "AEAT 340 Intracommunity"
-msgstr "Intracomunitari  AEAT 340"
+msgstr "Intracomunitario AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_investment"
 msgid "AEAT 340 Investment"
-msgstr "Inversions AEAT 340"
+msgstr "Inversión AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_issued"
 msgid "AEAT 340 Issued"
-msgstr "Emeses AEAT 340"
+msgstr "Emitidas AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_received"
 msgid "AEAT 340 Received"
-msgstr "Rebudes AEAT 340"
-
-msgctxt "model:res.group,name:group_aeat_340"
-msgid "Aeat_340"
-msgstr "AEAT 340"
+msgstr "Recibidas AEAT 340"
 
 msgctxt "model:res.group,name:group_aeat_340_admin"
 msgid "AEAT 340 Administration"
-msgstr "Administració AEAT 340"
+msgstr "Administración AEAT 340"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "A - Invoice's Summary"
-msgstr "A - Resum de factures"
+msgstr "A - Resumen de facturas"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "B - Ticket's Summary"
-msgstr "B - Resum de tiquets"
+msgstr "B - Resumen de tiquets"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "C - Invoice with several taxes"
-msgstr "C - Factures amb varis impostos"
+msgstr "C - Facturas con varios impuestos"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "D - Credit Note"
-msgstr "D - Abonament"
+msgstr "D - Factura rectificativa "
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisiciones agencias de viaje"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
-msgstr "G - Régim especial entitats amb IVA o IGIC"
+msgstr "G - Régimen especial entidades en IVA o IGIC"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "H - Gold inversion special arrangment"
-msgstr "H - Régim especial inversió amb or"
+msgstr "H - Régimen especial de inversión en Oro"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "I - Passive subject inversion"
-msgstr "I - Inversió del subjecte passiu"
+msgstr "I - Inversión del sujeto pasivo"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "J - Tickets"
@@ -1128,79 +1156,79 @@ msgstr "J - Tiquets"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "K - Rectification of registry mistakes"
-msgstr "K - Rectificació d'errors de registre"
+msgstr "K - Rectificicación de errores registrales"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "L - Acquisitions to retailers of IGIC"
-msgstr "L - Adquisicions a minoristes de IGIC"
+msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatje"
+msgstr "N - Servicios a agencias de viaje"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "None of the Above"
-msgstr "Cap de les anteriors"
+msgstr "Ninguno de los anteriores"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "R - Operations of lease of bussiness place"
-msgstr "R - Operacions de lloger del local de negoci"
+msgstr "R - Operaciones de arrendamiento de local de negocio."
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "S - Grants, aids and subsidies"
-msgstr "S - Subvencions, auxilis i ajudes"
+msgstr "S - Subvenciones, auxilios o ayudas satisfechas o recibidas"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "T - Intelectual properties charges"
-msgstr "T - Càrrecs per propietat intelectual"
+msgstr "T - Cobros deribados de la propiedad intelectual"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "U - Insurance Operations"
-msgstr "U - Operacions d'assegurances"
+msgstr "U - Operación de seguros"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "V - Travel angencies buys"
-msgstr "V - Compres a agències de viatjes"
+msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operacions subjectes a impostos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "X - Agricultural or farming compensations"
-msgstr "X - Compensacions agrícoles, ramaderes o pesqueres"
+msgstr "X - Compensaciones agrícolas, ganaderas y/o pesqueras"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "A - Invoice's Summary"
-msgstr "A - Resum de factures"
+msgstr "A - Resumen de facturas"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "B - Ticket's Summary"
-msgstr "B - Resum de tiquets"
+msgstr "B - Resumen de tiquets"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "C - Invoice with several taxes"
-msgstr "C - Factures amb varis impostos"
+msgstr "C - Facturas con varios impuestos"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "D - Credit Note"
-msgstr "D - Abonament"
+msgstr "D - Factura rectificativa "
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisiciones agencias de viaje"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
-msgstr "G - Régim especial entitats amb IVA o IGIC"
+msgstr "G - Régimen especial entidades en IVA o IGIC"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "H - Gold inversion special arrangment"
-msgstr "H - Régim especial inversió amb or"
+msgstr "H - Régimen especial de inversión en Oro"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "I - Passive subject inversion"
-msgstr "I - Inversió del subjecte passiu"
+msgstr "I - Inversión del sujeto pasivo"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "J - Tickets"
@@ -1208,107 +1236,107 @@ msgstr "J - Tiquets"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "K - Rectification of registry mistakes"
-msgstr "K - Rectificació d'errors de registre"
+msgstr "K - Rectificicación de errores registrales"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "L - Acquisitions to retailers of IGIC"
-msgstr "L - Adquisicions a minoristes de IGIC"
+msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatje"
+msgstr "N - Servicios a agencias de viaje"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "None of the Above"
-msgstr "Cap de les anteriors"
+msgstr "Ninguno de los anteriores"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "R - Operations of lease of bussiness place"
-msgstr "R - Operacions de lloger del local de negoci"
+msgstr "R - Operaciones de arrendamiento de local de negocio."
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "S - Grants, aids and subsidies"
-msgstr "S - Subvencions, auxilis i ajudes"
+msgstr "S - Subvenciones, auxilios o ayudas satisfechas o recibidas"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "T - Intelectual properties charges"
-msgstr "T - Càrrecs per propietat intelectual"
+msgstr "T - Cobros deribados de la propiedad intelectual"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "U - Insurance Operations"
-msgstr "U - Operacions d'assegurances"
+msgstr "U - Operación de seguros"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "V - Travel angencies buys"
-msgstr "V - Compres a agències de viatjes"
+msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operacions subjectes a impostos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "X - Agricultural or farming compensations"
-msgstr "X - Compensacions agrícoles, ramaderes o pesqueres"
+msgstr "X - Compensaciones agrícolas, ganaderas y/o pesqueras"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Béns d'inversió IGIC"
+msgstr "Bienes inversión IGIC"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Factures emeses IGIC"
+msgstr "Facturas Emitidas IGIC"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Factures rebudes IGIC"
+msgstr "Facturas Recibidas IGIC"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "Investment Goods"
-msgstr "Béns d'inversió"
+msgstr "Bienes de inversión"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "Issued Invoices"
-msgstr "Factures emeses"
+msgstr "Facturas emitidas"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "Particular Intracommunity Operations"
-msgstr "Determinades operacions intercomunitaries"
+msgstr "Operaciones intracomunitarias particulares"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "Received Invoices"
-msgstr "Factures rebudes"
+msgstr "Facturas recibidas"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "A - Invoice's Summary"
-msgstr "A - Resum de factures"
+msgstr "A - Resumen de facturas"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "B - Ticket's Summary"
-msgstr "B - Resum de tiquets"
+msgstr "B - Resumen de tiquets"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "C - Invoice with several taxes"
-msgstr "C - Factures amb varis impostos"
+msgstr "C - Facturas con varios impuestos"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "D - Credit Note"
-msgstr "D - Abonament"
+msgstr "D - Factura rectificativa "
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisiciones agencias de viaje"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
-msgstr "G - Régim especial entitats amb IVA o IGIC"
+msgstr "G - Régimen especial entidades en IVA o IGIC"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "H - Gold inversion special arrangment"
-msgstr "H - Régim especial inversió amb or"
+msgstr "H - Régimen especial de inversión en Oro"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "I - Passive subject inversion"
-msgstr "I - Inversió del subjecte passiu"
+msgstr "I - Inversión del sujeto pasivo"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "J - Tickets"
@@ -1316,51 +1344,51 @@ msgstr "J - Tiquets"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "K - Rectification of registry mistakes"
-msgstr "K - Rectificació d'errors de registre"
+msgstr "K - Rectificicación de errores registrales"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "L - Acquisitions to retailers of IGIC"
-msgstr "L - Adquisicions a minoristes de IGIC"
+msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatje"
+msgstr "N - Servicios a agencias de viaje"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "None of the Above"
-msgstr "Cap de les anteriors"
+msgstr "Ninguno de los anteriores"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "R - Operations of lease of bussiness place"
-msgstr "R - Operacions de lloger del local de negoci"
+msgstr "R - Operaciones de arrendamiento de local de negocio."
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "S - Grants, aids and subsidies"
-msgstr "S - Subvencions, auxilis i ajudes"
+msgstr "S - Subvenciones, auxilios o ayudas satisfechas o recibidas"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "T - Intelectual properties charges"
-msgstr "T - Càrrecs per propietat intelectual"
+msgstr "T - Cobros deribados de la propiedad intelectual"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "U - Insurance Operations"
-msgstr "U - Operacions d'assegurances"
+msgstr "U - Operación de seguros"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "V - Travel angencies buys"
-msgstr "V - Compres a agències de viatjes"
+msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operacions subjectes a impostos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "X - Agricultural or farming compensations"
-msgstr "X - Compensacions agrícoles, ramaderes o pesqueres"
+msgstr "X - Compensaciones agrícolas, ganaderas y/o pesqueras"
 
 msgctxt "selection:aeat.340.record,party_identifier_type:"
 msgid "Certificate of fiscal resident"
-msgstr "Certificat del resident fiscal"
+msgstr "Certificado de residencia fiscal"
 
 msgctxt "selection:aeat.340.record,party_identifier_type:"
 msgid "NIF"
@@ -1368,19 +1396,19 @@ msgstr "NIF"
 
 msgctxt "selection:aeat.340.record,party_identifier_type:"
 msgid "NIF (Intracommunitary Operator)"
-msgstr "NIF (Operador intracomunitary)"
+msgstr "NIF (Operador intracomunitario)"
 
 msgctxt "selection:aeat.340.record,party_identifier_type:"
 msgid "Official Document Emmited by the Country of Residence"
-msgstr "Document oficial emès pel país de residència"
+msgstr "Documento oficial emitido por el país de residencia"
 
 msgctxt "selection:aeat.340.record,party_identifier_type:"
 msgid "Other proving document"
-msgstr "Altre document vàlid"
+msgstr "Otro documento probatorio"
 
 msgctxt "selection:aeat.340.record,party_identifier_type:"
 msgid "Passport"
-msgstr "Passaport"
+msgstr "Passaporte"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "April"
@@ -1388,47 +1416,47 @@ msgstr "Abril"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "August"
-msgstr "Agost"
+msgstr "Agosto"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "December"
-msgstr "Desembre"
+msgstr "Diciembre"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "February"
-msgstr "Febrer"
+msgstr "Febrero"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "First quarter"
-msgstr "Primer trimestre"
+msgstr "Primer Trimestre"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "Fourth quarter"
-msgstr "Quart trimestre"
+msgstr "Cuarto Trimestre"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "January"
-msgstr "Gener"
+msgstr "Enero"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "July"
-msgstr "Juliol"
+msgstr "Julio"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "June"
-msgstr "Juny"
+msgstr "Junio"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "March"
-msgstr "Març"
+msgstr "Marzo"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "May"
-msgstr "Maig"
+msgstr "Mayo"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "November"
-msgstr "Novembre"
+msgstr "Noviembre"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "October"
@@ -1436,11 +1464,11 @@ msgstr "Octubre"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "Second quarter"
-msgstr "Segon trimestre"
+msgstr "Segundo trimestre"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "September"
-msgstr "Setembre"
+msgstr "Septiembre"
 
 msgctxt "selection:aeat.340.report,period:"
 msgid "Third quarter"
@@ -1448,19 +1476,19 @@ msgstr "Tercer trimestre"
 
 msgctxt "selection:aeat.340.report,state:"
 msgid "Calculated"
-msgstr "Calculat"
+msgstr "Calculado"
 
 msgctxt "selection:aeat.340.report,state:"
 msgid "Cancelled"
-msgstr "Cancel·lat"
+msgstr "Cancelado"
 
 msgctxt "selection:aeat.340.report,state:"
 msgid "Done"
-msgstr "Realitzat"
+msgstr "Realizado"
 
 msgctxt "selection:aeat.340.report,state:"
 msgid "Draft"
-msgstr "Esborrany"
+msgstr "Borrador"
 
 msgctxt "selection:aeat.340.report,support_type:"
 msgid "DVD"
@@ -1468,7 +1496,7 @@ msgstr "DVD"
 
 msgctxt "selection:aeat.340.report,support_type:"
 msgid "Telematics"
-msgstr "Telemàtic"
+msgstr "Telematico"
 
 msgctxt "selection:aeat.340.report,type:"
 msgid "Complementary"
@@ -1480,67 +1508,67 @@ msgstr "Normal"
 
 msgctxt "selection:aeat.340.report,type:"
 msgid "Substitutive"
-msgstr "Substitutiva"
+msgstr "Sustitutiva"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Béns d'inversió IGIC"
+msgstr "Bienes inversión IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Factures emeses IGIC"
+msgstr "Facturas Emitidas IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Factures rebudes IGIC"
+msgstr "Facturas Recibidas IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "Investment Goods"
-msgstr "Béns d'inversió"
+msgstr "Bienes de inversión"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "Issued Invoices"
-msgstr "Factures emeses"
+msgstr "Facturas emitidas"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "Particular Intracommunity Operations"
-msgstr "Determinades operacions intercomunitaries"
+msgstr "Operaciones intracomunitarias particulares"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "Received Invoices"
-msgstr "Factures rebudes"
+msgstr "Facturas recibidas"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "A - Invoice's Summary"
-msgstr "A - Resum de factures"
+msgstr "A - Resumen de facturas"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "B - Ticket's Summary"
-msgstr "B - Resum de tiquets"
+msgstr "B - Resumen de tiquets"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "C - Invoice with several taxes"
-msgstr "C - Factures amb varis impostos"
+msgstr "C - Facturas con varios impuestos"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "D - Credit Note"
-msgstr "D - Abonament"
+msgstr "D - Factura rectificativa "
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisiciones agencias de viaje"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
-msgstr "G - Régim especial entitats amb IVA o IGIC"
+msgstr "G - Régimen especial entidades en IVA o IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "H - Gold inversion special arrangment"
-msgstr "H - Régim especial inversió amb or"
+msgstr "H - Régimen especial de inversión en Oro"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "I - Passive subject inversion"
-msgstr "I - Inversió del subjecte passiu"
+msgstr "I - Inversión del sujeto pasivo"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "J - Tickets"
@@ -1548,51 +1576,51 @@ msgstr "J - Tiquets"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "K - Rectification of registry mistakes"
-msgstr "K - Rectificació d'errors de registre"
+msgstr "K - Rectificicación de errores registrales"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "L - Acquisitions to retailers of IGIC"
-msgstr "L - Adquisicions a minoristes de IGIC"
+msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatje"
+msgstr "N - Servicios a agencias de viaje"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "None of the Above"
-msgstr "Cap de les anteriors"
+msgstr "Ninguno de los anteriores"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "R - Operations of lease of bussiness place"
-msgstr "R - Operacions de lloger del local de negoci"
+msgstr "R - Operaciones de arrendamiento de local de negocio."
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "S - Grants, aids and subsidies"
-msgstr "S - Subvencions, auxilis i ajudes"
+msgstr "S - Subvenciones, auxilios o ayudas satisfechas o recibidas"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "T - Intelectual properties charges"
-msgstr "T - Càrrecs per propietat intelectual"
+msgstr "T - Cobros deribados de la propiedad intelectual"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "U - Insurance Operations"
-msgstr "U - Operacions d'assegurances"
+msgstr "U - Operación de seguros"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "V - Travel angencies buys"
-msgstr "V - Compres a agències de viatjes"
+msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operacions subjectes a impostos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "X - Agricultural or farming compensations"
-msgstr "X - Compensacions agrícoles, ramaderes o pesqueres"
+msgstr "X - Compensaciones agrícolas, ganaderas y/o pesqueras"
 
 msgctxt "selection:aeat.340.report.intracommunity,party_identifier_type:"
 msgid "Certificate of fiscal resident"
-msgstr "Certificat del resident fiscal"
+msgstr "Certificado de residencia fiscal"
 
 msgctxt "selection:aeat.340.report.intracommunity,party_identifier_type:"
 msgid "NIF"
@@ -1600,79 +1628,79 @@ msgstr "NIF"
 
 msgctxt "selection:aeat.340.report.intracommunity,party_identifier_type:"
 msgid "NIF (Intracommunitary Operator)"
-msgstr "NIF (Operador intracomunitary)"
+msgstr "NIF (Operador intracomunitario)"
 
 msgctxt "selection:aeat.340.report.intracommunity,party_identifier_type:"
 msgid "Official Document Emmited by the Country of Residence"
-msgstr "Document oficial emès pel país de residència"
+msgstr "Documento oficial emitido por el país de residencia"
 
 msgctxt "selection:aeat.340.report.intracommunity,party_identifier_type:"
 msgid "Other proving document"
-msgstr "Altre document vàlid"
+msgstr "Otro documento probatorio"
 
 msgctxt "selection:aeat.340.report.intracommunity,party_identifier_type:"
 msgid "Passport"
-msgstr "Passaport"
+msgstr "Passaporte"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Béns d'inversió IGIC"
+msgstr "Bienes inversión IGIC"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Factures emeses IGIC"
+msgstr "Facturas Emitidas IGIC"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Factures rebudes IGIC"
+msgstr "Facturas Recibidas IGIC"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "Investment Goods"
-msgstr "Béns d'inversió"
+msgstr "Bienes de inversión"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "Issued Invoices"
-msgstr "Factures emeses"
+msgstr "Facturas emitidas"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "Particular Intracommunity Operations"
-msgstr "Determinades operacions intercomunitaries"
+msgstr "Operaciones intracomunitarias particulares"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "Received Invoices"
-msgstr "Factures rebudes"
+msgstr "Facturas recibidas"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "A - Invoice's Summary"
-msgstr "A - Resum de factures"
+msgstr "A - Resumen de facturas"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "B - Ticket's Summary"
-msgstr "B - Resum de tiquets"
+msgstr "B - Resumen de tiquets"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "C - Invoice with several taxes"
-msgstr "C - Factures amb varis impostos"
+msgstr "C - Facturas con varios impuestos"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "D - Credit Note"
-msgstr "D - Abonament"
+msgstr "D - Factura rectificativa "
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisiciones agencias de viaje"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
-msgstr "G - Régim especial entitats amb IVA o IGIC"
+msgstr "G - Régimen especial entidades en IVA o IGIC"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "H - Gold inversion special arrangment"
-msgstr "H - Régim especial inversió amb or"
+msgstr "H - Régimen especial de inversión en Oro"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "I - Passive subject inversion"
-msgstr "I - Inversió del subjecte passiu"
+msgstr "I - Inversión del sujeto pasivo"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "J - Tickets"
@@ -1680,51 +1708,51 @@ msgstr "J - Tiquets"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "K - Rectification of registry mistakes"
-msgstr "K - Rectificació d'errors de registre"
+msgstr "K - Rectificicación de errores registrales"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "L - Acquisitions to retailers of IGIC"
-msgstr "L - Adquisicions a minoristes de IGIC"
+msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatje"
+msgstr "N - Servicios a agencias de viaje"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "None of the Above"
-msgstr "Cap de les anteriors"
+msgstr "Ninguno de los anteriores"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "R - Operations of lease of bussiness place"
-msgstr "R - Operacions de lloger del local de negoci"
+msgstr "R - Operaciones de arrendamiento de local de negocio."
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "S - Grants, aids and subsidies"
-msgstr "S - Subvencions, auxilis i ajudes"
+msgstr "S - Subvenciones, auxilios o ayudas satisfechas o recibidas"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "T - Intelectual properties charges"
-msgstr "T - Càrrecs per propietat intelectual"
+msgstr "T - Cobros deribados de la propiedad intelectual"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "U - Insurance Operations"
-msgstr "U - Operacions d'assegurances"
+msgstr "U - Operación de seguros"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "V - Travel angencies buys"
-msgstr "V - Compres a agències de viatjes"
+msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operacions subjectes a impostos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "X - Agricultural or farming compensations"
-msgstr "X - Compensacions agrícoles, ramaderes o pesqueres"
+msgstr "X - Compensaciones agrícolas, ganaderas y/o pesqueras"
 
 msgctxt "selection:aeat.340.report.investment,party_identifier_type:"
 msgid "Certificate of fiscal resident"
-msgstr "Certificat del resident fiscal"
+msgstr "Certificado de residencia fiscal"
 
 msgctxt "selection:aeat.340.report.investment,party_identifier_type:"
 msgid "NIF"
@@ -1732,79 +1760,79 @@ msgstr "NIF"
 
 msgctxt "selection:aeat.340.report.investment,party_identifier_type:"
 msgid "NIF (Intracommunitary Operator)"
-msgstr "NIF (Operador intracomunitary)"
+msgstr "NIF (Operador intracomunitario)"
 
 msgctxt "selection:aeat.340.report.investment,party_identifier_type:"
 msgid "Official Document Emmited by the Country of Residence"
-msgstr "Document oficial emès pel país de residència"
+msgstr "Documento oficial emitido por el país de residencia"
 
 msgctxt "selection:aeat.340.report.investment,party_identifier_type:"
 msgid "Other proving document"
-msgstr "Altre document vàlid"
+msgstr "Otro documento probatorio"
 
 msgctxt "selection:aeat.340.report.investment,party_identifier_type:"
 msgid "Passport"
-msgstr "Passaport"
+msgstr "Passaporte"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Béns d'inversió IGIC"
+msgstr "Bienes inversión IGIC"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Factures emeses IGIC"
+msgstr "Facturas Emitidas IGIC"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Factures rebudes IGIC"
+msgstr "Facturas Recibidas IGIC"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "Investment Goods"
-msgstr "Béns d'inversió"
+msgstr "Bienes de inversión"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "Issued Invoices"
-msgstr "Factures emeses"
+msgstr "Facturas emitidas"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "Particular Intracommunity Operations"
-msgstr "Determinades operacions intercomunitaries"
+msgstr "Operaciones intracomunitarias particulares"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "Received Invoices"
-msgstr "Factures rebudes"
+msgstr "Facturas recibidas"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "A - Invoice's Summary"
-msgstr "A - Resum de factures"
+msgstr "A - Resumen de facturas"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "B - Ticket's Summary"
-msgstr "B - Resum de tiquets"
+msgstr "B - Resumen de tiquets"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "C - Invoice with several taxes"
-msgstr "C - Factures amb varis impostos"
+msgstr "C - Facturas con varios impuestos"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "D - Credit Note"
-msgstr "D - Abonament"
+msgstr "D - Factura rectificativa "
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisiciones agencias de viaje"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
-msgstr "G - Régim especial entitats amb IVA o IGIC"
+msgstr "G - Régimen especial entidades en IVA o IGIC"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "H - Gold inversion special arrangment"
-msgstr "H - Régim especial inversió amb or"
+msgstr "H - Régimen especial de inversión en Oro"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "I - Passive subject inversion"
-msgstr "I - Inversió del subjecte passiu"
+msgstr "I - Inversión del sujeto pasivo"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "J - Tickets"
@@ -1812,51 +1840,51 @@ msgstr "J - Tiquets"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "K - Rectification of registry mistakes"
-msgstr "K - Rectificació d'errors de registre"
+msgstr "K - Rectificicación de errores registrales"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "L - Acquisitions to retailers of IGIC"
-msgstr "L - Adquisicions a minoristes de IGIC"
+msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatje"
+msgstr "N - Servicios a agencias de viaje"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "None of the Above"
-msgstr "Cap de les anteriors"
+msgstr "Ninguno de los anteriores"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "R - Operations of lease of bussiness place"
-msgstr "R - Operacions de lloger del local de negoci"
+msgstr "R - Operaciones de arrendamiento de local de negocio."
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "S - Grants, aids and subsidies"
-msgstr "S - Subvencions, auxilis i ajudes"
+msgstr "S - Subvenciones, auxilios o ayudas satisfechas o recibidas"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "T - Intelectual properties charges"
-msgstr "T - Càrrecs per propietat intelectual"
+msgstr "T - Cobros deribados de la propiedad intelectual"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "U - Insurance Operations"
-msgstr "U - Operacions d'assegurances"
+msgstr "U - Operación de seguros"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "V - Travel angencies buys"
-msgstr "V - Compres a agències de viatjes"
+msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operacions subjectes a impostos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "X - Agricultural or farming compensations"
-msgstr "X - Compensacions agrícoles, ramaderes o pesqueres"
+msgstr "X - Compensaciones agrícolas, ganaderas y/o pesqueras"
 
 msgctxt "selection:aeat.340.report.issued,party_identifier_type:"
 msgid "Certificate of fiscal resident"
-msgstr "Certificat del resident fiscal"
+msgstr "Certificado de residencia fiscal"
 
 msgctxt "selection:aeat.340.report.issued,party_identifier_type:"
 msgid "NIF"
@@ -1864,79 +1892,79 @@ msgstr "NIF"
 
 msgctxt "selection:aeat.340.report.issued,party_identifier_type:"
 msgid "NIF (Intracommunitary Operator)"
-msgstr "NIF (Operador intracomunitary)"
+msgstr "NIF (Operador intracomunitario)"
 
 msgctxt "selection:aeat.340.report.issued,party_identifier_type:"
 msgid "Official Document Emmited by the Country of Residence"
-msgstr "Document oficial emès pel país de residència"
+msgstr "Documento oficial emitido por el país de residencia"
 
 msgctxt "selection:aeat.340.report.issued,party_identifier_type:"
 msgid "Other proving document"
-msgstr "Altre document vàlid"
+msgstr "Otro documento probatorio"
 
 msgctxt "selection:aeat.340.report.issued,party_identifier_type:"
 msgid "Passport"
-msgstr "Passaport"
+msgstr "Passaporte"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Béns d'inversió IGIC"
+msgstr "Bienes inversión IGIC"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Factures emeses IGIC"
+msgstr "Facturas Emitidas IGIC"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Factures rebudes IGIC"
+msgstr "Facturas Recibidas IGIC"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "Investment Goods"
-msgstr "Béns d'inversió"
+msgstr "Bienes de inversión"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "Issued Invoices"
-msgstr "Factures emeses"
+msgstr "Facturas emitidas"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "Particular Intracommunity Operations"
-msgstr "Determinades operacions intercomunitaries"
+msgstr "Operaciones intracomunitarias particulares"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "Received Invoices"
-msgstr "Factures rebudes"
+msgstr "Facturas recibidas"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "A - Invoice's Summary"
-msgstr "A - Resum de factures"
+msgstr "A - Resumen de facturas"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "B - Ticket's Summary"
-msgstr "B - Resum de tiquets"
+msgstr "B - Resumen de tiquets"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "C - Invoice with several taxes"
-msgstr "C - Factures amb varis impostos"
+msgstr "C - Facturas con varios impuestos"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "D - Credit Note"
-msgstr "D - Abonament"
+msgstr "D - Factura rectificativa "
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisiciones agencias de viaje"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
-msgstr "G - Régim especial entitats amb IVA o IGIC"
+msgstr "G - Régimen especial entidades en IVA o IGIC"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "H - Gold inversion special arrangment"
-msgstr "H - Régim especial inversió amb or"
+msgstr "H - Régimen especial de inversión en Oro"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "I - Passive subject inversion"
-msgstr "I - Inversió del subjecte passiu"
+msgstr "I - Inversión del sujeto pasivo"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "J - Tickets"
@@ -1944,51 +1972,51 @@ msgstr "J - Tiquets"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "K - Rectification of registry mistakes"
-msgstr "K - Rectificació d'errors de registre"
+msgstr "K - Rectificicación de errores registrales"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "L - Acquisitions to retailers of IGIC"
-msgstr "L - Adquisicions a minoristes de IGIC"
+msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatje"
+msgstr "N - Servicios a agencias de viaje"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "None of the Above"
-msgstr "Cap de les anteriors"
+msgstr "Ninguno de los anteriores"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "R - Operations of lease of bussiness place"
-msgstr "R - Operacions de lloger del local de negoci"
+msgstr "R - Operaciones de arrendamiento de local de negocio."
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "S - Grants, aids and subsidies"
-msgstr "S - Subvencions, auxilis i ajudes"
+msgstr "S - Subvenciones, auxilios o ayudas satisfechas o recibidas"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "T - Intelectual properties charges"
-msgstr "T - Càrrecs per propietat intelectual"
+msgstr "T - Cobros deribados de la propiedad intelectual"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "U - Insurance Operations"
-msgstr "U - Operacions d'assegurances"
+msgstr "U - Operación de seguros"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "V - Travel angencies buys"
-msgstr "V - Compres a agències de viatjes"
+msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operacions subjectes a impostos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "X - Agricultural or farming compensations"
-msgstr "X - Compensacions agrícoles, ramaderes o pesqueres"
+msgstr "X - Compensaciones agrícolas, ganaderas y/o pesqueras"
 
 msgctxt "selection:aeat.340.report.received,party_identifier_type:"
 msgid "Certificate of fiscal resident"
-msgstr "Certificat del resident fiscal"
+msgstr "Certificado de residencia fiscal"
 
 msgctxt "selection:aeat.340.report.received,party_identifier_type:"
 msgid "NIF"
@@ -1996,68 +2024,68 @@ msgstr "NIF"
 
 msgctxt "selection:aeat.340.report.received,party_identifier_type:"
 msgid "NIF (Intracommunitary Operator)"
-msgstr "NIF (Operador intracomunitary)"
+msgstr "NIF (Operador intracomunitario)"
 
 msgctxt "selection:aeat.340.report.received,party_identifier_type:"
 msgid "Official Document Emmited by the Country of Residence"
-msgstr "Document oficial emès pel país de residència"
+msgstr "Documento oficial emitido por el país de residencia"
 
 msgctxt "selection:aeat.340.report.received,party_identifier_type:"
 msgid "Other proving document"
-msgstr "Altre document vàlid"
+msgstr "Otro documento probatorio"
 
 msgctxt "selection:aeat.340.report.received,party_identifier_type:"
 msgid "Passport"
-msgstr "Passaport"
+msgstr "Passaporte"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Béns d'inversió IGIC"
+msgstr "Bienes inversión IGIC"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Factures emeses IGIC"
+msgstr "Facturas Emitidas IGIC"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Factures rebudes IGIC"
+msgstr "Facturas Recibidas IGIC"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "Investment Goods"
-msgstr "Béns d'inversió"
+msgstr "Bienes de inversión"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "Issued Invoices"
-msgstr "Factures emeses"
+msgstr "Facturas emitidas"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "Particular Intracommunity Operations"
-msgstr "Determinades operacions intercomunitaries"
+msgstr "Operaciones intracomunitarias particulares"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "Received Invoices"
-msgstr "Factures rebudes"
+msgstr "Facturas recibidas"
 
 msgctxt "wizard_button:aeat.340.reasign.records,done,end:"
 msgid "Ok"
-msgstr "D'acord"
+msgstr "Aceptar"
 
 msgctxt "wizard_button:aeat.340.reasign.records,start,end:"
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr "Cancelar"
 
 msgctxt "wizard_button:aeat.340.reasign.records,start,reasign:"
 msgid "Reasign"
-msgstr "Reasigna"
+msgstr "Reasignar"
 
 msgctxt "wizard_button:aeat.340.recalculate.records,done,end:"
 msgid "Ok"
-msgstr "D'acord"
+msgstr "Aceptar"
 
 msgctxt "wizard_button:aeat.340.recalculate.records,start,calculate:"
 msgid "Calculate"
-msgstr "Calcula"
+msgstr "Calcular"
 
 msgctxt "wizard_button:aeat.340.recalculate.records,start,end:"
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr "Cancelar"

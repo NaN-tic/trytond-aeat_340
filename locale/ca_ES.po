@@ -1082,10 +1082,6 @@ msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_received"
 msgid "AEAT 340 Received"
 msgstr "Rebudes AEAT 340"
 
-msgctxt "model:res.group,name:group_aeat_340"
-msgid "Aeat_340"
-msgstr "AEAT 340"
-
 msgctxt "model:res.group,name:group_aeat_340_admin"
 msgid "AEAT 340 Administration"
 msgstr "Administració AEAT 340"
