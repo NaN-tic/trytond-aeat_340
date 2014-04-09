@@ -131,7 +131,8 @@ class Report(Workflow, ModelSQL, ModelView):
             ('11', 'November'),
             ('12', 'December'),
             ], 'Period', sort=False, required=True)
-    issued_lines = fields.One2Many('aeat.340.report.issued', 'report', 'Issued')
+    issued_lines = fields.One2Many('aeat.340.report.issued', 'report',
+        'Issued')
     received_lines = fields.One2Many('aeat.340.report.received', 'report',
         'Received')
     investment_lines = fields.One2Many('aeat.340.report.investment', 'report',
@@ -142,7 +143,8 @@ class Report(Workflow, ModelSQL, ModelView):
             digits=(16, 2),), 'get_totals')
     sharetax_total = fields.Function(fields.Numeric('Share Tax Total',
             digits=(16, 2),), 'get_totals')
-    record_count = fields.Function(fields.Integer('Record Count'), 'get_totals')
+    record_count = fields.Function(fields.Integer('Record Count'),
+        'get_totals')
     total = fields.Function(fields.Numeric('Total', digits=(16, 2)),
         'get_totals')
     file_ = fields.Binary('File', states={
@@ -153,22 +155,26 @@ class Report(Workflow, ModelSQL, ModelView):
     def __setup__(cls):
         super(cls, Report).__setup__()
         cls._error_messages.update({
-                'invalid_currency': ('Currency in AEAT 340 report "%s" must be '
-                    'Euro.')
+                'invalid_currency': ('Currency in AEAT 340 report "%s" must be'
+                    ' Euro.')
                 })
         cls._buttons.update({
                 'draft': {
                     'invisible': ~Eval('state').in_(['calculated',
                             'cancelled']),
+                    'icon': 'tryton-go-previous',
                     },
                 'calculate': {
                     'invisible': ~Eval('state').in_(['draft']),
+                    'icon': 'tryton-go-next',
                     },
                 'process': {
                     'invisible': ~Eval('state').in_(['calculated']),
+                    'icon': 'tryton-ok',
                     },
                 'cancel': {
                     'invisible': Eval('state').in_(['cancelled']),
+                    'icon': 'tryton-cancel',
                     },
                 })
         cls._transitions |= set((
@@ -286,10 +292,12 @@ class Report(Workflow, ModelSQL, ModelView):
             multiplier = 1
             period = report.period
             if 'T' in period:
-                period = period[0]
+                period = int(period[0]) - 1
                 multiplier = 3
+                start_month = period * multiplier + 1
+            else:
+                start_month = int(period) * multiplier
 
-            start_month = int(period) * multiplier
             end_month = start_month + multiplier
 
             to_create = {}
@@ -406,8 +414,8 @@ class LineMixin(object):
     party_identifier = fields.Char('Party Identifier', size=20)
     book_key = fields.Selection(BOOK_KEY, 'Book Key',
         sort=False, required=True)
-    operation_key = fields.Selection(OPERATION_KEY, 'Operation Key', sort=False,
-        required=True)
+    operation_key = fields.Selection(OPERATION_KEY, 'Operation Key',
+        sort=False, required=True)
     issue_date = fields.Date('Issue Date', required=True)
     operation_date = fields.Date('Operation Date', required=True)
     tax_rate = fields.Numeric('Tax Rate', digits=(16, 2), required=True)

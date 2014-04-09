@@ -102,9 +102,21 @@ msgctxt "field:account.tax,aeat340_default_out_book_key:"
 msgid "Default Out Book Key"
 msgstr "Tipus de llibre per defecte (Factures de venda)"
 
+msgctxt "field:account.tax.template,aeat340_book_keys:"
+msgid "Available Book Keys"
+msgstr "Claus tipus de llibre disponible"
+
+msgctxt "field:account.tax.template,aeat340_default_in_book_key:"
+msgid "Default In Book Key"
+msgstr "Tipus de llibre per defecte (Factures de compra)"
+
+msgctxt "field:account.tax.template,aeat340_default_out_book_key:"
+msgid "Default Out Book Key"
+msgstr "Tipus de llibre per defecte (Factures de venda)"
+
 msgctxt "field:aeat.340.reasign.records.end,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.reasign.records.start,aeat_340_type:"
 msgid "Book Key"
@@ -112,7 +124,7 @@ msgstr "Clau tipus de llibre"
 
 msgctxt "field:aeat.340.reasign.records.start,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.reasign.records.start,operation_key:"
 msgid "Operation Key"
@@ -120,11 +132,11 @@ msgstr "Clau operació"
 
 msgctxt "field:aeat.340.recalculate.records.end,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.recalculate.records.start,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.record,base:"
 msgid "Base"
@@ -152,7 +164,7 @@ msgstr "Exercici fiscal"
 
 msgctxt "field:aeat.340.record,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.record,intracommunity:"
 msgid "Intracommunity"
@@ -284,7 +296,7 @@ msgstr "Codi exercici fiscal"
 
 msgctxt "field:aeat.340.report,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report,intracommunity_lines:"
 msgid "Intracommunity Operations"
@@ -362,6 +374,10 @@ msgctxt "field:aeat.340.report.intracommunity,book_key:"
 msgid "Book Key"
 msgstr "Clau tipus de llibre"
 
+msgctxt "field:aeat.340.report.intracommunity,company:"
+msgid "Company"
+msgstr "Empresa"
+
 msgctxt "field:aeat.340.report.intracommunity,cost:"
 msgid "Cost"
 msgstr "Cost"
@@ -384,7 +400,7 @@ msgstr "Descripcions dels béns"
 
 msgctxt "field:aeat.340.report.intracommunity,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.intracommunity,intracommunity_country:"
 msgid "Intracommunity Country"
@@ -498,6 +514,10 @@ msgctxt "field:aeat.340.report.investment,book_key:"
 msgid "Book Key"
 msgstr "Clau tipus de llibre"
 
+msgctxt "field:aeat.340.report.investment,company:"
+msgid "Company"
+msgstr "Empresa"
+
 msgctxt "field:aeat.340.report.investment,cost:"
 msgid "Cost"
 msgstr "Cost"
@@ -516,7 +536,7 @@ msgstr "Identificador del bé"
 
 msgctxt "field:aeat.340.report.investment,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.investment,invoice_number:"
 msgid "Invoice Number"
@@ -630,6 +650,10 @@ msgctxt "field:aeat.340.report.issued,cash_amount:"
 msgid "Cash Amount"
 msgstr "Import en efectiu"
 
+msgctxt "field:aeat.340.report.issued,company:"
+msgid "Company"
+msgstr "Empresa"
+
 msgctxt "field:aeat.340.report.issued,corrective_invoice_number:"
 msgid "Corrective Invoice Number"
 msgstr "Número de factura rectificativa"
@@ -660,7 +684,7 @@ msgstr "Primer número de factura"
 
 msgctxt "field:aeat.340.report.issued,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.issued,invoice_count:"
 msgid "Invoice Count"
@@ -770,6 +794,10 @@ msgctxt "field:aeat.340.report.received,book_key:"
 msgid "Book Key"
 msgstr "Clau tipus de llibre"
 
+msgctxt "field:aeat.340.report.received,company:"
+msgid "Company"
+msgstr "Empresa"
+
 msgctxt "field:aeat.340.report.received,cost:"
 msgid "Cost"
 msgstr "Cost"
@@ -792,7 +820,7 @@ msgstr "Primer número de factura"
 
 msgctxt "field:aeat.340.report.received,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.received,invoice_count:"
 msgid "Invoice Count"
@@ -896,7 +924,7 @@ msgstr "Usuari creació"
 
 msgctxt "field:aeat.340.type,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.type,rec_name:"
 msgid "Name"
@@ -924,7 +952,7 @@ msgstr "Usuari creació"
 
 msgctxt "field:aeat.340.type-account.tax,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.type-account.tax,rec_name:"
 msgid "Name"
@@ -939,6 +967,38 @@ msgid "Write Date"
 msgstr "Data modificació"
 
 msgctxt "field:aeat.340.type-account.tax,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:aeat.340.type-account.tax.template,aeat_340_type:"
+msgid "Book Key"
+msgstr "Clau tipus de llibre"
+
+msgctxt "field:aeat.340.type-account.tax.template,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:aeat.340.type-account.tax.template,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:aeat.340.type-account.tax.template,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:aeat.340.type-account.tax.template,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:aeat.340.type-account.tax.template,tax:"
+msgid "Template Tax"
+msgstr "Plantilla d'impost"
+
+msgctxt "field:aeat.340.type-account.tax.template,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:aeat.340.type-account.tax.template,write_uid:"
 msgid "Write User"
 msgstr "Usuari modificació"
 
@@ -993,6 +1053,10 @@ msgstr "Tipus AEAT 340"
 msgctxt "model:aeat.340.type-account.tax,name:"
 msgid "AEAT 340 Type-Tax Relation"
 msgstr "Relació Impostos-Tipus AEAT 340"
+
+msgctxt "model:aeat.340.type-account.tax.template,name:"
+msgid "AEAT 340 Type-Template Tax Relation"
+msgstr "Relació Plantilla Impostos-Tipus AEAT 340"
 
 msgctxt "model:ir.action,name:act_aeat_340_reasign"
 msgid "Reasign AEAT 340 Records"
@@ -2033,6 +2097,171 @@ msgstr "Determinades operacions intercomunitaries"
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "Received Invoices"
 msgstr "Factures rebudes"
+
+msgctxt "view:account.tax.template:"
+msgid "AEAT 340"
+msgstr "AEAT 340"
+
+msgctxt "view:account.tax:"
+msgid "AEAT 340"
+msgstr "AEAT 340"
+
+msgctxt "view:aeat.340.reasign.records.end:"
+msgid "AEAT 340 Data Reassigment Done"
+msgstr "Fi reassignació informació AEAT 340"
+
+msgctxt "view:aeat.340.reasign.records.end:"
+msgid "The AEAT 340 records have been reasigned."
+msgstr "Els registres AEAT 340 s'han reassignat."
+
+msgctxt "view:aeat.340.reasign.records.start:"
+msgid "AEAT 340 Data Reasignation"
+msgstr "Reassignació informació AEAT 340"
+
+msgctxt "view:aeat.340.reasign.records.start:"
+msgid "Lines won't be modified if values left blank"
+msgstr "No es modificaran les línies si es deixa en blanc"
+
+msgctxt "view:aeat.340.reasign.records.start:"
+msgid "Select Key's to reasign invoices:"
+msgstr "Seleccioneu les claus per reassignar les factures:"
+
+msgctxt "view:aeat.340.recalculate.records.end:"
+msgid "AEAT 340 Data Recalculation Done"
+msgstr "Fi recàlcul informació AEAT 340"
+
+msgctxt "view:aeat.340.recalculate.records.end:"
+msgid "The AEAT 340 records have been recalculated."
+msgstr "Els registres AEAT 340 s'han recalculat."
+
+msgctxt "view:aeat.340.recalculate.records.start:"
+msgid "AEAT 340 Data Recalculation"
+msgstr "Recàlcul informació AEAT 340"
+
+msgctxt "view:aeat.340.recalculate.records.start:"
+msgid "Note that this operation may take a few minutes."
+msgstr "Tingueu en compte que aquesta operació pot trigar uns minuts."
+
+msgctxt "view:aeat.340.recalculate.records.start:"
+msgid "The AEAT 340 Data for selected invoices will be recalculated."
+msgstr ""
+"Es recalcularà la informació del AEAT 340 per les factures seleccionades."
+
+msgctxt "view:aeat.340.record:"
+msgid "AEAT 340 Record"
+msgstr "Registre AEAT 340"
+
+msgctxt "view:aeat.340.report.intracommunity:"
+msgid "AEAT 340 Intracommunity Operation"
+msgstr "Operació intracomunitaria  AEAT 340"
+
+msgctxt "view:aeat.340.report.intracommunity:"
+msgid "AEAT 340 Intracomunity Line"
+msgstr "Intracomunitari  AEAT 340"
+
+msgctxt "view:aeat.340.report.intracommunity:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report.intracommunity:"
+msgid "Records"
+msgstr "Registres"
+
+msgctxt "view:aeat.340.report.investment:"
+msgid "AEAT 340 Investment Line"
+msgstr "Inversions AEAT 340"
+
+msgctxt "view:aeat.340.report.investment:"
+msgid "AEAT 340 Investment Operation"
+msgstr "Operació inversio AEAT 340"
+
+msgctxt "view:aeat.340.report.investment:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report.investment:"
+msgid "Records"
+msgstr "Registres"
+
+msgctxt "view:aeat.340.report.issued:"
+msgid "AEAT 340 Issued"
+msgstr "Emeses AEAT 340"
+
+msgctxt "view:aeat.340.report.issued:"
+msgid "AEAT 340 Issued Line"
+msgstr "Emeses AEAT 340"
+
+msgctxt "view:aeat.340.report.issued:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report.issued:"
+msgid "Records"
+msgstr "Registres"
+
+msgctxt "view:aeat.340.report.received:"
+msgid "AEAT 340 Received"
+msgstr "Rebudes AEAT 340"
+
+msgctxt "view:aeat.340.report.received:"
+msgid "AEAT 340 Recieved Line"
+msgstr "Rebudes AEAT 340"
+
+msgctxt "view:aeat.340.report.received:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report.received:"
+msgid "Records"
+msgstr "Registres"
+
+msgctxt "view:aeat.340.report:"
+msgid "AEAT 340 Report"
+msgstr "Informe AEAT 340"
+
+msgctxt "view:aeat.340.report:"
+msgid "Calculate"
+msgstr "Calcula"
+
+msgctxt "view:aeat.340.report:"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgctxt "view:aeat.340.report:"
+msgid "Draft"
+msgstr "Esborrany"
+
+msgctxt "view:aeat.340.report:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report:"
+msgid "Intracommunity"
+msgstr "Intracomunitari"
+
+msgctxt "view:aeat.340.report:"
+msgid "Investment"
+msgstr "Inversió"
+
+msgctxt "view:aeat.340.report:"
+msgid "Issued"
+msgstr "Emeses"
+
+msgctxt "view:aeat.340.report:"
+msgid "Process"
+msgstr "Processa"
+
+msgctxt "view:aeat.340.report:"
+msgid "Received"
+msgstr "Rebut"
+
+msgctxt "view:aeat.340.report:"
+msgid "Totals"
+msgstr "Totals"
+
+msgctxt "view:aeat.340.type:"
+msgid "AEAT 340 Type"
+msgstr "Tipus AEAT 340"
 
 msgctxt "wizard_button:aeat.340.reasign.records,done,end:"
 msgid "Ok"

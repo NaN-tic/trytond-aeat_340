@@ -82,9 +82,10 @@ class Record(ModelSQL, ModelView):
     party_identifier_type = fields.Selection(PARTY_IDENTIFIER_TYPE,
         'Party Identifier Type', required=True)
     party_identifier = fields.Char('Party Identifier', size=20)
-    book_key = fields.Selection(BOOK_KEY, 'Book Key', sort=False, required=True)
-    operation_key = fields.Selection(OPERATION_KEY, 'Operation Key', sort=False,
+    book_key = fields.Selection(BOOK_KEY, 'Book Key', sort=False,
         required=True)
+    operation_key = fields.Selection(OPERATION_KEY, 'Operation Key',
+        sort=False, required=True)
     issue_date = fields.Function(fields.Date('Issue Date', required=True),
         'get_issue_date')
     operation_date = fields.Function(fields.Date('Operation Date',
@@ -103,7 +104,7 @@ class Record(ModelSQL, ModelView):
     investment = fields.Many2One('aeat.340.report.investment', 'Investment',
         readonly=True)
     intracommunity = fields.Many2One('aeat.340.report.intracommunity',
-        'Intracommunity', readonly=True)
+        'Intracommunity')
 
     def get_issue_date(self, name=None):
         return self.invoice.invoice_date

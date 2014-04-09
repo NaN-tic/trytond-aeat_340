@@ -2066,6 +2066,171 @@ msgctxt "selection:aeat.340.type,book_key:"
 msgid "Received Invoices"
 msgstr "Facturas recibidas"
 
+msgctxt "view:account.tax.template:"
+msgid "AEAT 340"
+msgstr "AEAT 340"
+
+msgctxt "view:account.tax:"
+msgid "AEAT 340"
+msgstr "AEAT 340"
+
+msgctxt "view:aeat.340.reasign.records.end:"
+msgid "AEAT 340 Data Reassigment Done"
+msgstr "Fin ressignación información AEAT 340"
+
+msgctxt "view:aeat.340.reasign.records.end:"
+msgid "The AEAT 340 records have been reasigned."
+msgstr "Se han reasignado los registros AEAT 340."
+
+msgctxt "view:aeat.340.reasign.records.start:"
+msgid "AEAT 340 Data Reasignation"
+msgstr "Ressignación información AEAT 340"
+
+msgctxt "view:aeat.340.reasign.records.start:"
+msgid "Lines won't be modified if values left blank"
+msgstr "Las líneas no se modificaran si los valores se dejan en blanco"
+
+msgctxt "view:aeat.340.reasign.records.start:"
+msgid "Select Key's to reasign invoices:"
+msgstr "Seleccione claves para reasignar las facturas"
+
+msgctxt "view:aeat.340.recalculate.records.end:"
+msgid "AEAT 340 Data Recalculation Done"
+msgstr "Fin reclaculo información AEAT 340"
+
+msgctxt "view:aeat.340.recalculate.records.end:"
+msgid "The AEAT 340 records have been recalculated."
+msgstr "Se han recalculado los registros AEAT 340."
+
+msgctxt "view:aeat.340.recalculate.records.start:"
+msgid "AEAT 340 Data Recalculation"
+msgstr "Reclaculo información AEAT 340"
+
+msgctxt "view:aeat.340.recalculate.records.start:"
+msgid "Note that this operation may take a few minutes."
+msgstr "Tenga en cuenta que esta operación puede tardar unos minutos."
+
+msgctxt "view:aeat.340.recalculate.records.start:"
+msgid "The AEAT 340 Data for selected invoices will be recalculated."
+msgstr ""
+"Se recalcularán los registros AEAT340 para las facturas seleccionadas."
+
+msgctxt "view:aeat.340.record:"
+msgid "AEAT 340 Record"
+msgstr "Registro AEAT 340"
+
+msgctxt "view:aeat.340.report.intracommunity:"
+msgid "AEAT 340 Intracommunity Operation"
+msgstr "Intracomunitario AEAT 340"
+
+msgctxt "view:aeat.340.report.intracommunity:"
+msgid "AEAT 340 Intracomunity Line"
+msgstr "Intracomunitario AEAT 340"
+
+msgctxt "view:aeat.340.report.intracommunity:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report.intracommunity:"
+msgid "Records"
+msgstr "Registros"
+
+msgctxt "view:aeat.340.report.investment:"
+msgid "AEAT 340 Investment Line"
+msgstr "Inversión AEAT 340 "
+
+msgctxt "view:aeat.340.report.investment:"
+msgid "AEAT 340 Investment Operation"
+msgstr "Operación Inversión AEAT 340 "
+
+msgctxt "view:aeat.340.report.investment:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report.investment:"
+msgid "Records"
+msgstr "Registros"
+
+msgctxt "view:aeat.340.report.issued:"
+msgid "AEAT 340 Issued"
+msgstr "Emitidas AEAT 340"
+
+msgctxt "view:aeat.340.report.issued:"
+msgid "AEAT 340 Issued Line"
+msgstr "Emitidas AEAT 340"
+
+msgctxt "view:aeat.340.report.issued:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report.issued:"
+msgid "Records"
+msgstr "Registros"
+
+msgctxt "view:aeat.340.report.received:"
+msgid "AEAT 340 Received"
+msgstr "Recibidas AEAT 340"
+
+msgctxt "view:aeat.340.report.received:"
+msgid "AEAT 340 Recieved Line"
+msgstr "Recibida AEAT 340"
+
+msgctxt "view:aeat.340.report.received:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report.received:"
+msgid "Records"
+msgstr "Registros"
+
+msgctxt "view:aeat.340.report:"
+msgid "AEAT 340 Report"
+msgstr "Informe AEAT 340"
+
+msgctxt "view:aeat.340.report:"
+msgid "Calculate"
+msgstr "Calcular"
+
+msgctxt "view:aeat.340.report:"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt "view:aeat.340.report:"
+msgid "Draft"
+msgstr "Borrador"
+
+msgctxt "view:aeat.340.report:"
+msgid "General"
+msgstr "General"
+
+msgctxt "view:aeat.340.report:"
+msgid "Intracommunity"
+msgstr "Intracomunitario"
+
+msgctxt "view:aeat.340.report:"
+msgid "Investment"
+msgstr "Inversión"
+
+msgctxt "view:aeat.340.report:"
+msgid "Issued"
+msgstr "Emitidas"
+
+msgctxt "view:aeat.340.report:"
+msgid "Process"
+msgstr "Procesar"
+
+msgctxt "view:aeat.340.report:"
+msgid "Received"
+msgstr "Recibidas"
+
+msgctxt "view:aeat.340.report:"
+msgid "Totals"
+msgstr "Totales"
+
+msgctxt "view:aeat.340.type:"
+msgid "AEAT 340 Type"
+msgstr "Tipo AEAT 340"
+
 msgctxt "wizard_button:aeat.340.reasign.records,done,end:"
 msgid "Ok"
 msgstr "Aceptar"
