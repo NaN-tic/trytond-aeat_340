@@ -175,12 +175,11 @@ DEPENDS = ['type']
 class InvoiceLine:
     __name__ = 'account.invoice.line'
     aeat340_available_keys = fields.Function(fields.One2Many('aeat.340.type',
-        None, 'AEAT 340 Available Keys', on_change_with=['taxes', 'product'],
+        None, 'AEAT 340 Available Keys',
             states=STATES, depends=DEPENDS + ['taxes', 'product']),
         'on_change_with_aeat340_available_keys')
     aeat340_book_key = fields.Many2One('aeat.340.type',
-        'AEAT 340 Book Key', on_change_with=['taxes', 'invoice_type',
-            'aeat340_book_key', '_parent_invoice.type', 'product'],
+        'AEAT 340 Book Key',
         states=STATES, depends=DEPENDS + ['aeat340_available_keys', 'taxes',
             'invoice_type', 'product'],
         domain=[('id', 'in', Eval('aeat340_available_keys', []))],)
@@ -205,12 +204,15 @@ class InvoiceLine:
         res['aeat340_operation_key'] = value
         return res
 
+    @fields.depends('taxes', 'product')
     def on_change_with_aeat340_available_keys(self, name=None):
         keys = []
         for tax in self.taxes:
             keys.extend([k.id for k in tax.aeat340_book_keys])
         return list(set(keys))
 
+    @fields.depends('taxes', 'invoice_type', 'aeat340_book_key',
+        '_parent_invoice.type', 'product')
     def on_change_with_aeat340_book_key(self):
         if self.aeat340_book_key:
             return self.aeat340_book_key.id

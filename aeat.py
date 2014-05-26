@@ -85,8 +85,7 @@ class Report(Workflow, ModelSQL, ModelView):
         states={
             'readonly': Eval('state') == 'done',
             }, depends=['state'])
-    fiscalyear_code = fields.Integer('Fiscal Year Code',
-        on_change_with=['fiscalyear'], required=True)
+    fiscalyear_code = fields.Integer('Fiscal Year Code', required=True)
     company_vat = fields.Char('VAT', size=9, states={
             'required': Eval('state') == 'calculated',
             'readonly': Eval('state') == 'done',
@@ -216,6 +215,7 @@ class Report(Workflow, ModelSQL, ModelView):
     def get_currency(self, name):
         return self.company.currency.id
 
+    @fields.depends('fiscalyear')
     def on_change_with_fiscalyear_code(self):
         code = self.fiscalyear.code if self.fiscalyear else None
         if code:
@@ -426,7 +426,7 @@ class LineMixin(object):
         states={
             'required': Eval('operation_key') == 'G',
             'invisible': Eval('operation_key') != 'G',
-            }, on_change_with=['operation_key', 'cost'])
+            })
     invoice_number = fields.Char('Invoice Number', size=40)
     record_number = fields.Char('Record Number', size=18)
 
@@ -475,6 +475,7 @@ class LineMixin(object):
                     cls.raise_user_error('delete_state_invalid', line.rec_name)
         super(LineMixin, cls).delete(lines)
 
+    @fields.depends('operation_key', 'cost')
     def on_change_with_cost(self):
         if self.operation_key == 'G':
             return None
@@ -504,10 +505,8 @@ class Issued(LineMixin, ModelSQL, ModelView):
     equivalence_tax_rate = fields.Numeric('Equivalence Tax Rate',
         digits=(16, 2))
     equivalence_tax = fields.Numeric('Equivalence Tax', digits=(16, 2))
-    property_state = fields.Char('Property State', size=1,
-        on_change_with=['operation_key', 'property_state'])
-    cadaster_number = fields.Char('Cadaster Number', size=25,
-        on_change_with=['operation_key', 'cadaster_number'])
+    property_state = fields.Char('Property State', size=1)
+    cadaster_number = fields.Char('Cadaster Number', size=25)
     cash_amount = fields.Numeric('Cash Amount', digits=(16, 2))
     invoice_fiscalyear = fields.Integer('Fiscal Year')
     property_transfer_amount = fields.Numeric('Property Transfer Amount',
@@ -517,11 +516,13 @@ class Issued(LineMixin, ModelSQL, ModelView):
 
     _possible_keys = ['E', 'F']
 
+    @fields.depends('operation_key', 'property_state')
     def on_change_with_property_state(self):
         if self.operation_key == 'R':
             return None
         return self.property_state
 
+    @fields.depends('operation_key', 'cadaster_number')
     def on_change_with_cadaster_number(self):
         if self.operation_key == 'R':
             return None
