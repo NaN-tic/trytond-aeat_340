@@ -10,6 +10,7 @@ if os.path.isdir(DIR):
     sys.path.insert(0, os.path.dirname(DIR))
 
 import unittest
+import doctest
 import trytond.tests.test_tryton
 from trytond.tests.test_tryton import test_view, test_depends
 from trytond.backend.sqlite.database import Database as SQLiteDatabase
@@ -35,10 +36,28 @@ class Aeat340TestCase(unittest.TestCase):
         '''
         test_depends()
 
+
+def doctest_dropdb(test):
+    database = SQLiteDatabase().connect()
+    cursor = database.cursor(autocommit=True)
+    try:
+        database.drop(cursor, ':memory:')
+        cursor.commit()
+    finally:
+        cursor.close()
+
+
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
             Aeat340TestCase))
+    suite.addTests(doctest.DocFileSuite('scenario_aeat340.rst',
+            setUp=doctest_dropdb, tearDown=doctest_dropdb, encoding='utf-8',
+            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE))
+    suite.addTests(doctest.DocFileSuite(
+            'scenario_aeat340_alternate_currency.rst',
+            setUp=doctest_dropdb, tearDown=doctest_dropdb, encoding='utf-8',
+            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE))
     return suite
 
 if __name__ == '__main__':

@@ -267,7 +267,9 @@ class Invoice:
 
     @classmethod
     def create_aeat340_records(cls, invoices):
-        Record = Pool().get('aeat.340.record')
+        pool = Pool()
+        Currency = pool.get('currency.currency')
+        Record = pool.get('aeat.340.record')
         to_create = {}
         for invoice in invoices:
             if not invoice.move or invoice.state == 'cancel':
@@ -281,13 +283,23 @@ class Invoice:
                         book_key = line.aeat340_book_key.book_key
                         operation_key = line.aeat340_operation_key
                         for tax in line.invoice_taxes:
-#TODO: Validar que l'impost tingui claus disponibles (per evitar 3 linies)
                             key = "%d-%d-%s-%s" % (invoice.id, tax.id,
                                 operation_key, book_key)
-                            total = (tax.amount + tax.base)
+                            tax_base = tax.base
+                            tax_amount = tax.amount
+                            if invoice.currency != invoice.company.currency:
+                                with Transaction().set_context(
+                                        date=invoice.currency_date):
+                                    tax_base = Currency.compute(
+                                        invoice.currency, tax_base,
+                                        invoice.company.currency)
+                                    tax_amount = Currency.compute(
+                                        invoice.currency, tax_amount,
+                                        invoice.company.currency)
+                            total = tax_amount + tax_base
                             if key in to_create:
-                                to_create[key]['base'] += tax.base
-                                to_create[key]['tax'] += tax.amount
+                                to_create[key]['base'] += tax_base
+                                to_create[key]['tax'] += tax_amount
                                 to_create[key]['total'] += total
                             else:
                                 to_create[key] = {
@@ -298,8 +310,8 @@ class Invoice:
                                         'party_nif': party.vat_code,
                                         'party_country': party.vat_country,
                                         'party_identifier_type': '1',
-                                        'base': tax.base,
-                                        'tax': tax.amount,
+                                        'base': tax_base,
+                                        'tax': tax_amount,
                                         'tax_rate': tax.tax.rate * 100,
                                         'total': total,
                                         'operation_key': operation_key,
