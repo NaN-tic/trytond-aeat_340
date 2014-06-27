@@ -138,7 +138,7 @@ class TemplateTax:
             res['aeat340_book_keys'].append(['unlink_all'])
         if len(self.aeat340_book_keys) > 0:
             ids = [c.id for c in self.aeat340_book_keys]
-            res['aeat340_book_keys'].append(['set', ids])
+            res['aeat340_book_keys'].append(['add', ids])
         for direction in ('in', 'out'):
             field = "aeat340_default_%s_book_key" % (direction)
             if not tax or getattr(tax, field) != getattr(self, field):
@@ -253,7 +253,7 @@ class InvoiceLine:
             if not vals.get('aeat340_book_key') and vals.get('taxes'):
                 taxes_ids = []
                 for key, value in vals.get('taxes'):
-                    if key in ['add', 'set']:
+                    if key == 'add':
                         taxes_ids.extend(value)
 
                 vals['aeat340_book_key'] = cls.get_aeat340_book_key(
