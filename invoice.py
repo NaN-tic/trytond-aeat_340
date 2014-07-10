@@ -211,7 +211,7 @@ class InvoiceLine:
             keys.extend([k.id for k in tax.aeat340_book_keys])
         return list(set(keys))
 
-    @fields.depends('taxes', 'invoice_type', 'aeat340_book_key',
+    @fields.depends('taxes', 'invoice_type', 'aeat340_book_key', 'invoice',
         '_parent_invoice.type', 'product')
     def on_change_with_aeat340_book_key(self):
         if self.aeat340_book_key:
@@ -221,7 +221,7 @@ class InvoiceLine:
             type_ = self.invoice.type
         elif self.invoice_type:
             type_ = self.invoice_type
-        if not type_:
+        else:
             return
 
         return self.get_aeat340_book_key(type_, self.taxes)
