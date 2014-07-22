@@ -338,7 +338,7 @@ class Report(Workflow, ModelSQL, ModelView):
                         'issue_date': record.issue_date,
                         'operation_date': record.operation_date,
                         'report': report.id,
-                        'records': [('add', [(-1, record.id)])],
+                        'records': [('add', [record.id])],
                     }
         with transaction.set_user(0):
             Issued.create(issued_to_create.values())
