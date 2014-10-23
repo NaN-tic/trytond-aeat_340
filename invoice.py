@@ -133,22 +133,37 @@ class TemplateTax:
     def _get_tax_value(self, tax=None):
         res = super(TemplateTax, self)._get_tax_value(tax)
 
-        res['aeat340_book_keys'] = []
+        old_ids = set()
+        new_ids = set()
         if tax and len(tax.aeat340_book_keys) > 0:
-            res['aeat340_book_keys'].append(['unlink_all'])
+            old_ids = set([c.id for c in tax.aeat340_book_keys])
         if len(self.aeat340_book_keys) > 0:
-            ids = [c.id for c in self.aeat340_book_keys]
-            res['aeat340_book_keys'].append(['add', ids])
-        for direction in ('in', 'out'):
-            field = "aeat340_default_%s_book_key" % (direction)
-            if not tax or getattr(tax, field) != getattr(self, field):
-                value = getattr(self, field)
-                if value:
-                    res[field] = getattr(self, field).id
-                else:
-                    res[field] = None
-        if not res['aeat340_book_keys']:
-            del res['aeat340_book_keys']
+            new_ids = set([c.id for c in self.aeat340_book_keys])
+            for direction in ('in', 'out'):
+                field = "aeat340_default_%s_book_key" % (direction)
+                if not tax or getattr(tax, field) != getattr(self, field):
+                    value = getattr(self, field)
+                    if value and value.id in new_ids:
+                        res[field] = value.id
+                    else:
+                        res[field] = None
+        else:
+            if tax and tax.aeat340_default_in_book_key:
+                res['aeat340_default_in_book_key'] = None
+            if tax and tax.aeat340_default_out_book_key:
+                res['aeat340_default_out_book_key'] = None
+
+        if old_ids or new_ids:
+            key = 'aeat340_book_keys'
+            res[key] = []
+            to_remove = old_ids - new_ids
+            if to_remove:
+                res[key].append(['remove', list(to_remove)])
+            to_add = new_ids - old_ids
+            if to_add:
+                res[key].append(['add', list(to_add)])
+            if not res[key]:
+                del res[key]
         return res
 
 
