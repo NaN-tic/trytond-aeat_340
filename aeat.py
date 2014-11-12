@@ -325,7 +325,7 @@ class Report(Workflow, ModelSQL, ModelView):
                 else:
                     to_create[key] = {
                         'base': record.base,
-                        'party_name': record.party_name,
+                        'party_name': record.party_name[:40],
                         'party_nif': record.party_nif,
                         'party_country': record.party_country,
                         'party_identifier_type': record.party_identifier_type,
