@@ -312,7 +312,7 @@ class Invoice:
                                         'fiscalyear': fiscalyear,
                                         'month': invoice.invoice_date.month,
                                         'party_name': party.rec_name,
-                                        'party_nif': party.vat_code,
+                                        'party_nif': party.vat_number,
                                         'party_country': party.vat_country,
                                         'party_identifier_type': '1',
                                         'base': tax.base,
@@ -327,6 +327,15 @@ class Invoice:
             Record.delete(Record.search([('invoice', 'in',
                             [i.id for i in invoices])]))
             Record.create(to_create.values())
+
+    @classmethod
+    def draft(cls, invoices):
+        pool = Pool()
+        Record = pool.get('aeat.340.record')
+        super(Invoice, cls).draft(invoices)
+        with Transaction().set_user(0, set_context=True):
+            Record.delete(Record.search([('invoice', 'in',
+                            [i.id for i in invoices])]))
 
     @classmethod
     def post(cls, invoices):
