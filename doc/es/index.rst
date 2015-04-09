@@ -16,3 +16,6 @@ el artículo 66 del RIVA que tienen un tratamiento especial.
 Facturas rectificativas.
 Facturas resumen de tiques.
 Permite imprimir el libro de IVA, basado en la misma legislación.
+
+El informe 340 sólo se debe indicar el NIF/CIF sólo para destinatarios/emisores españoles.
+Sólo se incluyen en el informe NIF/CIF de terceros que el código del país del CIF/NIF sea 'ES' (España).
