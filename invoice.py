@@ -3,6 +3,7 @@ from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
+from sql import Literal
 from sql.operators import In
 from .aeat import BOOK_KEY, OPERATION_KEY, PARTY_IDENTIFIER_TYPE
 
@@ -60,6 +61,18 @@ class TypeTemplateTax(ModelSQL):
         ondelete='CASCADE', select=True, required=True)
     tax = fields.Many2One('account.tax.template', 'Template Tax',
         ondelete='CASCADE', select=True, required=True)
+
+    @classmethod
+    def __register__(cls, module_name):
+        ModelData = Pool().get('ir.model.data')
+        cursor = Transaction().cursor
+        sql_table = ModelData.__table__()
+        # Meld aeat_340_es into aeat_340
+        cursor.execute(*sql_table.update(
+                columns=[sql_table.module],
+                values=[module_name],
+                where=sql_table.module == Literal('aeat_340_es')))
+        super(TypeTemplateTax, cls).__register__(module_name)
 
 
 class Record(ModelSQL, ModelView):
