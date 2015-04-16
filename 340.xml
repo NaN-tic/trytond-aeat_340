@@ -1773,18 +1773,18 @@ this repository contains the full copyright notices and license terms. -->
         <record model="account.tax.template" id="account_es_pyme.iva_pymes_IC_compras_21_ser_2">
             <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
         </record>
-        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_suplido_compras_R">
-            <field name="tax" ref="account_es_pyme.suplido_compras"/>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_suplido_pymes_compras_R">
+            <field name="tax" ref="account_es_pyme.suplido_pymes_compras"/>
             <field name="aeat_340_type" ref="aeat_340_key_R"/>
         </record>
-        <record model="account.tax.template" id="account_es_pyme.suplido_compras">
+        <record model="account.tax.template" id="account_es_pyme.suplido_pymes_compras">
             <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
         </record>
-        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_suplido_ventas_E">
-            <field name="tax" ref="account_es_pyme.suplido_ventas"/>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_suplido_pymes_ventas_E">
+            <field name="tax" ref="account_es_pyme.suplido_pymes_ventas"/>
             <field name="aeat_340_type" ref="aeat_340_key_E"/>
         </record>
-        <record model="account.tax.template" id="account_es_pyme.suplido_ventas">
+        <record model="account.tax.template" id="account_es_pyme.suplido_pymes_ventas">
             <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
         </record>
     </data>
