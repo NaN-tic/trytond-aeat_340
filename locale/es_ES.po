@@ -1192,7 +1192,7 @@ msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta y Melilla"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "X - Agricultural or farming compensations"
@@ -1272,7 +1272,7 @@ msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta y Melilla"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "X - Agricultural or farming compensations"
@@ -1380,7 +1380,7 @@ msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta y Melilla"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "X - Agricultural or farming compensations"
@@ -1612,7 +1612,7 @@ msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta y Melilla"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "X - Agricultural or farming compensations"
@@ -1744,7 +1744,7 @@ msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta y Melilla"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "X - Agricultural or farming compensations"
@@ -1876,7 +1876,7 @@ msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta y Melilla"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "X - Agricultural or farming compensations"
@@ -2008,7 +2008,7 @@ msgstr "V - Compras de Agencias de viajes"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "W - Operations subject to taxes of Ceuta and Melilla"
-msgstr "W - Operaciones sujetas a impuestos de Ceuta i Melilla"
+msgstr "W - Operaciones sujetas a impuestos de Ceuta y Melilla"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "X - Agricultural or farming compensations"
