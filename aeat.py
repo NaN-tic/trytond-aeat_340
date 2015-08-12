@@ -396,7 +396,7 @@ class Report(Workflow, ModelSQL, ModelView):
             records.append(record)
         data = retrofix.record.write(records)
         data = data.encode('iso-8859-1')
-        self.file_ = buffer(data)
+        self.file_ = bytes(data)
         self.save()
 
 
