@@ -224,7 +224,9 @@
             <field name="global_p" eval="True"/>
         </record>
         <record model="ir.rule" id="rule_aeat_340_1">
-            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="domain"
+                eval="[('company', '=', Eval('user', {}).get('company', None))]"
+                pyson="1"/>
             <field name="rule_group" ref="rule_group_aeat340"/>
         </record>
 
@@ -234,7 +236,9 @@
             <field name="global_p" eval="True"/>
         </record>
         <record model="ir.rule" id="rule_aeat_340_issued_1">
-            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="domain"
+                eval="[('company', '=', Eval('user', {}).get('company', None))]"
+                pyson="1"/>
             <field name="rule_group" ref="rule_group_aeat340_issued"/>
         </record>
 
@@ -244,7 +248,9 @@
             <field name="global_p" eval="True"/>
         </record>
         <record model="ir.rule" id="rule_aeat_340_received_1">
-            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="domain"
+                eval="[('company', '=', Eval('user', {}).get('company', None))]"
+                pyson="1"/>
             <field name="rule_group" ref="rule_group_aeat340_received"/>
         </record>
 
@@ -254,7 +260,9 @@
             <field name="global_p" eval="True"/>
         </record>
         <record model="ir.rule" id="rule_aeat_340_investment_1">
-            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="domain"
+                eval="[('company', '=', Eval('user', {}).get('company', None))]"
+                pyson="1"/>
             <field name="rule_group" ref="rule_group_aeat340_investment"/>
         </record>
 
@@ -264,7 +272,9 @@
             <field name="global_p" eval="True"/>
         </record>
         <record model="ir.rule" id="rule_aeat_340_intracommunity_1">
-            <field name="domain">[('company', '=', user.company.id if user.company else None)]</field>
+            <field name="domain"
+                eval="[('company', '=', Eval('user', {}).get('company', None))]"
+                pyson="1"/>
             <field name="rule_group" ref="rule_group_aeat340_intracommunity"/>
         </record>
 
