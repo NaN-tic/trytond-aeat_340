@@ -236,6 +236,8 @@ class InvoiceLine:
         elif self.invoice_type:
             type_ = self.invoice_type
 
+        self.aeat340_book_key = None
+        self.aeat340_operation_key = None
         if type_ and self.taxes:
             self.aeat340_book_key = self.get_aeat340_book_key(
                         type_, Taxes.browse(self.taxes))
