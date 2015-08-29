@@ -226,19 +226,20 @@ class InvoiceLine:
             },
         depends=DEPENDS)
 
+    @fields.depends('invoice', 'taxes')
     def on_change_product(self):
         Taxes = Pool().get('account.tax')
-        res = super(InvoiceLine, self).on_change_product()
+
+        super(InvoiceLine, self).on_change_product()
         if self.invoice and self.invoice.type:
             type_ = self.invoice.type
         elif self.invoice_type:
             type_ = self.invoice_type
-        if 'taxes' in res:
-            res['aeat340_book_key'] = self.get_aeat340_book_key(
-                        type_, Taxes.browse(res['taxes']))
-        value = self.get_aeat340_operation_key(type_)
-        res['aeat340_operation_key'] = value
-        return res
+
+        if type_ and self.taxes:
+            self.aeat340_book_key = self.get_aeat340_book_key(
+                        type_, Taxes.browse(self.taxes))
+            self.aeat340_operation_key = self.get_aeat340_operation_key(type_)
 
     @fields.depends('taxes', 'product')
     def on_change_with_aeat340_available_keys(self, name=None):
