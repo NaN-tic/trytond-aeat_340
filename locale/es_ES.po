@@ -116,7 +116,7 @@ msgstr "Tipo de libro por defecto (Ventas)"
 
 msgctxt "field:aeat.340.reasign.records.end,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.reasign.records.start,aeat_340_type:"
 msgid "Book Key"
@@ -124,7 +124,7 @@ msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.reasign.records.start,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.reasign.records.start,operation_key:"
 msgid "Operation Key"
@@ -132,11 +132,11 @@ msgstr "Clave operación"
 
 msgctxt "field:aeat.340.recalculate.records.end,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.recalculate.records.start,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.record,base:"
 msgid "Base"
@@ -152,11 +152,11 @@ msgstr "Empresa"
 
 msgctxt "field:aeat.340.record,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.record,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.record,fiscalyear:"
 msgid "Fiscal Year"
@@ -164,7 +164,7 @@ msgstr "Ejercicio fiscal"
 
 msgctxt "field:aeat.340.record,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.record,intracommunity:"
 msgid "Intracommunity"
@@ -272,11 +272,11 @@ msgstr "Teléfono"
 
 msgctxt "field:aeat.340.report,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.report,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.report,currency:"
 msgid "Currency"
@@ -285,6 +285,10 @@ msgstr "Moneda"
 msgctxt "field:aeat.340.report,file_:"
 msgid "File"
 msgstr "Archivo"
+
+msgctxt "field:aeat.340.report,filename:"
+msgid "File Name"
+msgstr "Nombre fichero"
 
 msgctxt "field:aeat.340.report,fiscalyear:"
 msgid "Fiscal Year"
@@ -296,7 +300,7 @@ msgstr "Código Ejercicio Fiscal"
 
 msgctxt "field:aeat.340.report,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.report,intracommunity_lines:"
 msgid "Intracommunity Operations"
@@ -384,11 +388,11 @@ msgstr "Coste"
 
 msgctxt "field:aeat.340.report.intracommunity,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.report.intracommunity,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.report.intracommunity,declaring_key:"
 msgid "Declared Key"
@@ -400,7 +404,7 @@ msgstr "Descripción del bien"
 
 msgctxt "field:aeat.340.report.intracommunity,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.report.intracommunity,intracommunity_country:"
 msgid "Intracommunity Country"
@@ -524,11 +528,11 @@ msgstr "Coste"
 
 msgctxt "field:aeat.340.report.investment,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.report.investment,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.report.investment,good_identifier:"
 msgid "Good Identifier"
@@ -536,7 +540,7 @@ msgstr "Identificación del bien"
 
 msgctxt "field:aeat.340.report.investment,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.report.investment,invoice_number:"
 msgid "Invoice Number"
@@ -664,11 +668,11 @@ msgstr "Coste"
 
 msgctxt "field:aeat.340.report.issued,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.report.issued,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.report.issued,equivalence_tax:"
 msgid "Equivalence Tax"
@@ -684,7 +688,7 @@ msgstr "Primer numero de factura"
 
 msgctxt "field:aeat.340.report.issued,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.report.issued,invoice_count:"
 msgid "Invoice Count"
@@ -804,11 +808,11 @@ msgstr "Coste"
 
 msgctxt "field:aeat.340.report.received,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.report.received,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.report.received,deducible_amount:"
 msgid "Deducible Amount"
@@ -820,7 +824,7 @@ msgstr "Primer numero de factura"
 
 msgctxt "field:aeat.340.report.received,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.report.received,invoice_count:"
 msgid "Invoice Count"
@@ -916,15 +920,15 @@ msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.type,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.type,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.type,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.type,rec_name:"
 msgid "Name"
@@ -944,15 +948,15 @@ msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.type-account.tax,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.type-account.tax,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.type-account.tax,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.type-account.tax,rec_name:"
 msgid "Name"
@@ -976,15 +980,15 @@ msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.type-account.tax.template,create_date:"
 msgid "Create Date"
-msgstr "Fecha de creación"
+msgstr "Fecha creación"
 
 msgctxt "field:aeat.340.type-account.tax.template,create_uid:"
 msgid "Create User"
-msgstr "Usuario de creación"
+msgstr "Usuario creación"
 
 msgctxt "field:aeat.340.type-account.tax.template,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:aeat.340.type-account.tax.template,rec_name:"
 msgid "Name"
