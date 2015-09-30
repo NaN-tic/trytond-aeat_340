@@ -1,4 +1,4 @@
-from trytond.model import ModelSQL, ModelView, fields
+from trytond.model import ModelSQL, ModelView, fields, Unique
 from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
@@ -30,13 +30,11 @@ class Type(ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(Type, cls).__setup__()
+        t = cls.__table__()
         cls._sql_constraints += [
-            ('book_key_uniq', 'unique (book_key)',
-                'unique_book_key')
+            ('aeat303_field_uniq', Unique(t, t.book_key),
+                'Book key must be unique.')
             ]
-        cls._error_messages.update({
-                'unique_book_key': 'Book key must be unique.',
-                })
 
 
 class TypeTax(ModelSQL):
