@@ -334,7 +334,7 @@ class Invoice:
                                         'fiscalyear': fiscalyear,
                                         'month': invoice.invoice_date.month,
                                         'party_name': party.rec_name[:40],
-                                        'party_nif': party.vat_number[:9] if party.vat_country == 'ES' else '',
+                                        'party_nif': party.vat_code[2:11] if party.vat_code.startswith('ES') else '',
                                         'party_country': party.vat_country,
                                         'party_identifier_type': '1',
                                         'base': tax.base,
