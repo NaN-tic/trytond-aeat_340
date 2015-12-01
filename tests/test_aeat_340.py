@@ -1,28 +1,18 @@
-#!/usr/bin/env python
+# This file is part of the aeat_340 module for Tryton.
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 import unittest
 import trytond.tests.test_tryton
-from trytond.tests.test_tryton import test_view, test_depends
+from trytond.tests.test_tryton import ModuleTestCase
 
 
-class Aeat340TestCase(unittest.TestCase):
-    'Test AEAT 340 module'
-
-    def setUp(self):
-        trytond.tests.test_tryton.install_module('aeat_340')
-
-    def test0005views(self):
-        'Test views'
-        test_view('aeat_340')
-
-    def test0006depends(self):
-        'Test depends'
-        test_depends()
+class Aeat340TestCase(ModuleTestCase):
+    'Test Aeat 340 module'
+    module = 'aeat_340'
 
 
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-            Aeat340TestCase))
+        Aeat340TestCase))
     return suite
