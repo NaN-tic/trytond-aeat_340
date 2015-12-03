@@ -1,13 +1,15 @@
-import retrofix
-from retrofix import aeat340
+# The COPYRIGHT file at the top level of this repository contains the full
+# copyright notices and license terms.
 import itertools
 import datetime
+import retrofix
+from retrofix import aeat340
+from decimal import Decimal
 
 from trytond.model import ModelSQL, ModelView, fields, Workflow
 from trytond.pyson import Eval
 from trytond.pool import Pool
 from trytond.transaction import Transaction
-from decimal import Decimal
 
 __all__ = ['Report', 'Issued', 'Received', 'Investment', 'Intracommunity']
 
@@ -304,10 +306,11 @@ class Report(Workflow, ModelSQL, ModelView):
             end_month = start_month + multiplier
 
             to_create = {}
-            for record in Data.search([('fiscalyear', '=', fiscalyear.id),
-                ('month', '>=', start_month),
-                ('month', '<', end_month)
-            ]):
+            for record in Data.search([
+                    ('fiscalyear', '=', fiscalyear.id),
+                    ('month', '>=', start_month),
+                    ('month', '<', end_month)
+                    ]):
 
                 key = '%s-%s-%s-%s-%s' % (report.id, record.invoice.id,
                     record.book_key, record.operation_key, record.tax_rate)
@@ -377,28 +380,30 @@ class Report(Workflow, ModelSQL, ModelView):
         record = retrofix.Record(aeat340.PRESENTER_HEADER_RECORD)
         record.fiscalyear = str(self.fiscalyear_code)
         record.nif = self.company_vat
-        #record.presenter_name =
+        # record.presenter_name =
         record.support_type = self.support_type
         record.contact_phone = self.contact_phone
         record.contact_name = self.contact_name
-        #record.declaration_number =
-        #record.complementary =
-        #record.replacement =
+        # record.declaration_number =
+        # record.complementary =
+        # record.replacement =
         record.previous_declaration_number = self.previous_number
         record.period = self.period
         record.record_count = self.record_count
         record.total_base = self.taxable_total
         record.total_tax = self.sharetax_total
         record.total = self.total
-        #record.representative_nif =
+        # record.representative_nif =
         records.append(record)
         for line in self.lines:
             record = line.get_record()
             record.fiscalyear = str(self.fiscalyear_code)
             record.nif = self.company_vat
             records.append(record)
+
         data = retrofix.record.write(records)
-        data = data.encode('iso-8859-1')
+        if isinstance(data, unicode):
+            data = data.encode('iso-8859-1')
         self.file_ = bytes(data)
         self.save()
 
