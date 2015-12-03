@@ -115,6 +115,8 @@ class Record(ModelSQL, ModelView):
     total = fields.Numeric('Total', digits=(16, 2), required=True)
     invoice_number = fields.Function(fields.Char('Invoice Number', size=40),
         'get_invoice_number')
+    ticket_count = fields.Function(fields.Integer('Ticket Count'),
+        'get_ticket_count')
     invoice = fields.Many2One('account.invoice', 'Invoice', readonly=True)
     issued = fields.Many2One('aeat.340.report.issued', 'Issued',
         readonly=True)
@@ -125,14 +127,31 @@ class Record(ModelSQL, ModelView):
     intracommunity = fields.Many2One('aeat.340.report.intracommunity',
         'Intracommunity')
 
-    def get_issue_date(self, name=None):
+    def get_issue_date(self, name):
         return self.invoice.invoice_date
 
-    def get_operation_date(self, name=None):
+    def get_operation_date(self, name):
         return self.invoice.invoice_date
 
-    def get_invoice_number(self, name=None):
-        return self.invoice.rec_name
+    def get_invoice_number(self, name):
+        return self.invoice.number
+
+    def get_ticket_count(self, name):
+        try:
+            SaleLine = Pool().get('sale.line')
+        except KeyError:
+            SaleLine = None
+        if self.operation_key == 'B':
+            if SaleLine != None:
+                sales = set()
+                for inv_line in self.invoice.lines:
+                    if (inv_line.aeat340_book_key.book_key != self.book_key
+                            or inv_line.aeat340_operation_key
+                            != self.operation_key):
+                        continue
+                    if isinstance(inv_line.origin, SaleLine):
+                        sales.add(inv_line.origin.sale.id)
+                return len(sales)
 
 
 class TemplateTax:
