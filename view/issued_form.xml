@@ -39,8 +39,8 @@
             <label name="record_number"/>
             <field name="record_number"/>
             <!-- Issued -->
-            <label name="invoice_count"/>
-            <field name="invoice_count"/>
+            <label name="issued_invoice_count"/>
+            <field name="issued_invoice_count"/>
             <label name="record_count"/>
             <field name="record_count"/>
             <label name="first_invoice_number"/>
