@@ -346,10 +346,14 @@ class Report(Workflow, ModelSQL, ModelView):
                         'records': [('add', [record.id])],
                     }
         with transaction.set_user(0):
-            Issued.create(issued_to_create.values())
-            Received.create(received_to_create.values())
-            Investment.create(investment_to_create.values())
-            Intracomunity.create(intracomunity_to_create.values())
+            Issued.create(sorted(issued_to_create.values(),
+                    key=lambda x: x['issue_date']))
+            Received.create(sorted(received_to_create.values(),
+                    key=lambda x: x['issue_date']))
+            Investment.create(sorted(investment_to_create.values(),
+                    key=lambda x: x['issue_date']))
+            Intracomunity.create(sorted(intracomunity_to_create.values(),
+                    key=lambda x: x['issue_date']))
 
         cls.write(reports, {
                 'calculation_date': datetime.datetime.now(),
