@@ -1,10 +1,15 @@
-from trytond.model import ModelSQL, ModelView, fields, Unique
+# The COPYRIGHT file at the top level of this repository contains the full
+# copyright notices and license terms.
+from decimal import Decimal
+from sql import Literal
+from sql.operators import In
+
+from trytond.model import ModelSQL, ModelView, Unique, fields
 from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
-from sql import Literal
-from sql.operators import In
+
 from .aeat import BOOK_KEY, OPERATION_KEY, PARTY_IDENTIFIER_TYPE
 
 __all__ = ['Type', 'TypeTax', 'TypeTemplateTax', 'Record', 'TemplateTax',
@@ -117,6 +122,9 @@ class Record(ModelSQL, ModelView):
         'get_invoice_number')
     ticket_count = fields.Function(fields.Integer('Ticket Count'),
         'get_ticket_count')
+    equivalence_tax_rate = fields.Numeric('Equivalence Tax Rate',
+        digits=(16, 2))
+    equivalence_tax = fields.Numeric('Equivalence Tax', digits=(16, 2))
     invoice = fields.Many2One('account.invoice', 'Invoice', readonly=True)
     issued = fields.Many2One('aeat.340.report.issued', 'Issued',
         readonly=True)
@@ -265,6 +273,8 @@ class InvoiceLine:
         keys = []
         for tax in self.taxes:
             keys.extend([k.id for k in tax.aeat340_book_keys])
+            for child_tax in tax.childs:
+                keys.extend([k.id for k in child_tax.aeat340_book_keys])
         return list(set(keys))
 
     @fields.depends('taxes', 'invoice_type', 'aeat340_book_key', 'invoice',
@@ -325,7 +335,24 @@ class Invoice:
 
     @classmethod
     def create_aeat340_records(cls, invoices):
-        Record = Pool().get('aeat.340.record')
+        pool = Pool()
+        Configuration = pool.get('account.configuration')
+        Record = pool.get('aeat.340.record')
+        Tax = pool.get('account.tax')
+
+        config = Configuration(1)
+
+        def compute_tax_amount(line, tax):
+            context = line.invoice.get_tax_context()
+            with Transaction().set_context(**context):
+                taxes = Tax.compute([tax], line.unit_price, line.quantity)
+                tax_amount = 0
+                for tax in taxes:
+                    key, val = line.invoice._compute_tax(tax,
+                        line.invoice.type)
+                    tax_amount += val['amount']
+            return tax_amount
+
         to_create = {}
         for invoice in invoices:
             if not invoice.move or invoice.state == 'cancel':
@@ -335,35 +362,92 @@ class Invoice:
             for line in invoice.lines:
                 if line.type != 'line':
                     continue
-                if line.aeat340_operation_key and line.aeat340_book_key:
-                        book_key = line.aeat340_book_key.book_key
-                        operation_key = line.aeat340_operation_key
-                        for tax in line.invoice_taxes:
-#TODO: Validar que l'impost tingui claus disponibles (per evitar 3 linies)
-                            key = "%d-%d-%s-%s" % (invoice.id, tax.id,
-                                operation_key, book_key)
-                            total = (tax.amount + tax.base)
-                            if key in to_create:
-                                to_create[key]['base'] += tax.base
-                                to_create[key]['tax'] += tax.amount
-                                to_create[key]['total'] += total
-                            else:
-                                to_create[key] = {
-                                        'company': invoice.company.id,
-                                        'fiscalyear': fiscalyear,
-                                        'month': invoice.invoice_date.month,
-                                        'party_name': party.rec_name[:40],
-                                        'party_nif': party.vat_code[2:11] if party.vat_code.startswith('ES') else '',
-                                        'party_country': party.vat_country,
-                                        'party_identifier_type': '1',
-                                        'base': tax.base,
-                                        'tax': tax.amount,
-                                        'tax_rate': tax.tax.rate * 100,
-                                        'total': total,
-                                        'operation_key': operation_key,
-                                        'book_key': book_key,
-                                        'invoice': invoice.id,
-                                }
+                if not line.aeat340_operation_key or not line.aeat340_book_key:
+                    continue
+                book_key = line.aeat340_book_key.book_key
+                operation_key = line.aeat340_operation_key
+                base = total = line.amount
+                for tax in line.taxes:
+                    if not tax.childs:
+                        assert not tax.recargo_equivalencia, (
+                            "Unexpected recargo_equivalencia flag on "
+                            "non-child tax")
+                        if line.aeat340_book_key not in tax.aeat340_book_keys:
+                            continue
+                        tax_rate = tax.rate * 100
+                        tax_amount = compute_tax_amount(line, tax)
+                        equivalence_tax_amount = equivalence_tax_rate = None
+                        total += tax_amount
+                    else:
+                        tax_rate = equivalence_tax_rate = None
+                        tax_amount = equivalence_tax_amount = Decimal(0)
+                        for child_tax in tax.childs:
+                            child_tax_amount = compute_tax_amount(line,
+                                child_tax)
+                            total += child_tax_amount
+                            if child_tax.recargo_equivalencia:
+                                equivalence_tax_rate = child_tax.rate * 100
+                                equivalence_tax_amount += child_tax_amount
+                            elif (line.aeat340_book_key
+                                    in child_tax.aeat340_book_keys):
+                                tax_rate = child_tax.rate * 100
+                                tax_amount += child_tax_amount
+                        if not tax_rate:
+                            continue
+
+                    if config.tax_rounding == 'line':
+                        base = invoice.currency.round(base)
+                        tax_amount = invoice.currency.round(tax_amount)
+                        total = invoice.currency.round(total)
+                        if equivalence_tax_rate:
+                            equivalence_tax_amount = invoice.currency.round(
+                                equivalence_tax_amount)
+
+                    key = "%d-%d-%s-%s" % (invoice.id, tax.id,
+                        operation_key, book_key)
+                    if key in to_create:
+                        to_create[key]['base'] += base
+                        to_create[key]['tax'] += tax_amount
+                        to_create[key]['total'] += total
+                        if equivalence_tax_rate:
+                            to_create[key]['equivalence_tax'] += (
+                                equivalence_tax_amount)
+                    else:
+                        to_create[key] = {
+                            'company': invoice.company.id,
+                            'fiscalyear': fiscalyear,
+                            'month': invoice.invoice_date.month,
+                            'party_name': party.rec_name[:40],
+                            'party_nif': (party.vat_number[:9]
+                                if party.vat_country == 'ES' else ''),
+                            'party_country': party.vat_country,
+                            'party_identifier_type': '1',
+                            'base': base,
+                            'tax': tax_amount,
+                            'equivalence_tax': (equivalence_tax_amount
+                                if equivalence_tax_rate else None),
+                            'tax_rate': tax_rate,
+                            'equivalence_tax_rate': equivalence_tax_rate,
+                            'total': total,
+                            'operation_key': operation_key,
+                            'book_key': book_key,
+                            'invoice': invoice.id,
+                            }
+            if config.tax_rounding == 'document':
+                for key in to_create:
+                    if not key.startswith('%d-' % invoice.id):
+                        continue
+                    to_create[key]['base'] = invoice.currency.round(
+                        to_create[key]['base'])
+                    to_create[key]['tax_amount'] = invoice.currency.round(
+                        to_create[key]['tax_amount'])
+                    to_create[key]['total'] = invoice.currency.round(
+                        to_create[key]['total'])
+                    if to_create[key]['equivalence_tax_rate']:
+                        to_create[key]['equivalence_tax_rate'] = (
+                            invoice.currency.round(
+                                to_create[key]['equivalence_tax_rate']))
+
         with Transaction().set_user(0, set_context=True):
             Record.delete(Record.search([('invoice', 'in',
                             [i.id for i in invoices])]))
