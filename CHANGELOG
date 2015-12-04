@@ -1,3 +1,4 @@
+Version 3.4.1 - 2015-12-04
 * Fill corrective_invoice_number field if credit note invoce has the original
   invoice as origin
 * Change sign of amounts for credit note invoices
