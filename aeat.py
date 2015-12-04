@@ -322,13 +322,19 @@ class Report(Workflow, ModelSQL, ModelView):
                     to_create = investment_to_create
                 else:
                     to_create = intracomunity_to_create
+
+                if 'credit_note' in record.invoice.type:
+                    sign = -1
+                else:
+                    sign = 1
+
                 if key in to_create:
-                    to_create[key]['base'] += record.base
-                    to_create[key]['tax'] += record.tax
+                    to_create[key]['base'] += record.base * sign
+                    to_create[key]['tax'] += record.tax * sign
                     if record.equivalence_tax:
                         to_create[key]['equivalence_tax'] += (
-                            record.equivalence_tax)
-                    to_create[key]['total'] += record.total
+                            record.equivalence_tax * sign)
+                    to_create[key]['total'] += record.total * sign
                     if record.operation_key == 'B' and record.ticket_count:
                         to_create[key]['issued_invoice_count'] += (
                             record.ticket_count)
@@ -345,12 +351,12 @@ class Report(Workflow, ModelSQL, ModelView):
                         'party_country': record.party_country,
                         'party_identifier_type': record.party_identifier_type,
                         # TODO: set party_identifier?
-                        'base': record.base,
-                        'tax': record.tax,
+                        'base': record.base * sign,
+                        'tax': record.tax * sign,
                         'tax_rate': record.tax_rate,
                         'equivalence_tax': record.equivalence_tax,
                         'equivalence_tax_rate': record.equivalence_tax_rate,
-                        'total': record.total,
+                        'total': record.total * sign,
                         # TODO: set cost?
                         'operation_key': record.operation_key,
                         'book_key': record.book_key,
