@@ -1,3 +1,4 @@
+* Fix record amount computation and fill equivalence tax fields
 * Set AEAT 340 fields to account_es and account_es_pyme tax templates
 * Set values to invoice_number, record_number, issued_invoice_count and
   record_count and add suport for operation key B
