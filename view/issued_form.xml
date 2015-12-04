@@ -26,10 +26,14 @@
             <field name="operation_date"/>
             <label name="tax_rate"/>
             <field name="tax_rate"/>
-            <label name="base"/>
-            <field name="base"/>
             <label name="tax"/>
             <field name="tax"/>
+            <label name="equivalence_tax_rate"/>
+            <field name="equivalence_tax_rate"/>
+            <label name="equivalence_tax"/>
+            <field name="equivalence_tax"/>
+            <label name="base"/>
+            <field name="base"/>
             <label name="total"/>
             <field name="total"/>
             <label name="cost"/>
@@ -49,10 +53,6 @@
             <field name="last_invoice_number"/>
             <label name="corrective_invoice_number"/>
             <field name="corrective_invoice_number"/>
-            <label name="equivalence_tax_rate"/>
-            <field name="equivalence_tax_rate"/>
-            <label name="equivalence_tax"/>
-            <field name="equivalence_tax"/>
             <label name="property_state"/>
             <field name="property_state"/>
             <label name="cadaster_number"/>

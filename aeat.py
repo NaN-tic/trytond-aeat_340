@@ -325,6 +325,9 @@ class Report(Workflow, ModelSQL, ModelView):
                 if key in to_create:
                     to_create[key]['base'] += record.base
                     to_create[key]['tax'] += record.tax
+                    if record.equivalence_tax:
+                        to_create[key]['equivalence_tax'] += (
+                            record.equivalence_tax)
                     to_create[key]['total'] += record.total
                     if record.operation_key == 'B' and record.ticket_count:
                         to_create[key]['issued_invoice_count'] += (
@@ -345,6 +348,8 @@ class Report(Workflow, ModelSQL, ModelView):
                         'base': record.base,
                         'tax': record.tax,
                         'tax_rate': record.tax_rate,
+                        'equivalence_tax': record.equivalence_tax,
+                        'equivalence_tax_rate': record.equivalence_tax_rate,
                         'total': record.total,
                         # TODO: set cost?
                         'operation_key': record.operation_key,
