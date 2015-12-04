@@ -16,6 +16,7 @@ def register():
         TypeTax,
         TypeTemplateTax,
         Record,
+        AEAT340RecordInvoiceLine,
         TemplateTax,
         Tax,
         Invoice,
