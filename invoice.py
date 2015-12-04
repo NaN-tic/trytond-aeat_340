@@ -12,9 +12,11 @@ from trytond.transaction import Transaction
 
 from .aeat import BOOK_KEY, OPERATION_KEY, PARTY_IDENTIFIER_TYPE
 
-__all__ = ['Type', 'TypeTax', 'TypeTemplateTax', 'Record', 'TemplateTax',
-    'Tax', 'Invoice', 'InvoiceLine', 'Recalculate340RecordStart',
-    'Recalculate340RecordEnd', 'Recalculate340Record', 'Reasign340RecordStart',
+__all__ = ['Type', 'TypeTax', 'TypeTemplateTax',
+    'Record', 'AEAT340RecordInvoiceLine',
+    'TemplateTax', 'Tax', 'Invoice', 'InvoiceLine',
+    'Recalculate340RecordStart', 'Recalculate340RecordEnd',
+    'Recalculate340Record', 'Reasign340RecordStart',
     'Reasign340RecordEnd', 'Reasign340Record']
 
 __metaclass__ = PoolMeta
@@ -128,6 +130,8 @@ class Record(ModelSQL, ModelView):
         digits=(16, 2))
     equivalence_tax = fields.Numeric('Equivalence Tax', digits=(16, 2))
     invoice = fields.Many2One('account.invoice', 'Invoice', readonly=True)
+    invoice_lines = fields.Many2Many('aeat.340.record-account.invoice.line',
+        'aeat340_record', 'invoice_line', 'Invoice Lines')
     issued = fields.Many2One('aeat.340.report.issued', 'Issued',
         readonly=True)
     received = fields.Many2One('aeat.340.report.received', 'Received',
@@ -154,14 +158,19 @@ class Record(ModelSQL, ModelView):
         if self.operation_key == 'B':
             if SaleLine != None:
                 sales = set()
-                for inv_line in self.invoice.lines:
-                    if (inv_line.aeat340_book_key.book_key != self.book_key
-                            or inv_line.aeat340_operation_key
-                            != self.operation_key):
-                        continue
+                for inv_line in self.invoice_lines:
                     if isinstance(inv_line.origin, SaleLine):
                         sales.add(inv_line.origin.sale.id)
                 return len(sales)
+
+
+class AEAT340RecordInvoiceLine(ModelSQL):
+    'AEAT 340 Record - Invoice Line'
+    __name__ = 'aeat.340.record-account.invoice.line'
+    aeat340_record = fields.Many2One('aeat.340.record', 'AEAT 340 Record',
+        ondelete='CASCADE', required=True, select=True)
+    invoice_line = fields.Many2One('account.invoice.line', 'Invoice Line',
+        ondelete='CASCADE', required=True, select=True)
 
 
 class TemplateTax:
@@ -411,6 +420,7 @@ class Invoice:
                         if equivalence_tax_rate:
                             to_create[key]['equivalence_tax'] += (
                                 equivalence_tax_amount)
+                        to_create[key]['invoice_lines'][0][1].append(line.id)
                     else:
                         to_create[key] = {
                             'company': invoice.company.id,
@@ -431,6 +441,7 @@ class Invoice:
                             'operation_key': operation_key,
                             'book_key': book_key,
                             'invoice': invoice.id,
+                            'invoice_lines': [('add', [line.id])],
                             }
             if config.tax_rounding == 'document':
                 for key in to_create:
