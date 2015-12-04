@@ -327,6 +327,8 @@ class Report(Workflow, ModelSQL, ModelView):
                     sign = -1
                 else:
                     sign = 1
+                if record.operation_key == 'D':
+                    assert 'credit_note' in record.invoice.type
 
                 if key in to_create:
                     to_create[key]['base'] += record.base * sign
@@ -382,6 +384,10 @@ class Report(Workflow, ModelSQL, ModelView):
                     elif record.operation_key == 'C':
                         # TODO: set number of records related to same invoice
                         pass
+                    elif (record.operation_key == 'D'
+                            and record.corrective_invoice_number):
+                        to_create[key]['corrective_invoice_number'] = (
+                            record.corrective_invoice_number[:40])
 
         with transaction.set_user(0):
             Issued.create(sorted(issued_to_create.values(),

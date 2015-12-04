@@ -163,6 +163,15 @@ class Record(ModelSQL, ModelView):
                         sales.add(inv_line.origin.sale.id)
                 return len(sales)
 
+    @property
+    def corrective_invoice_number(self):
+        pool = Pool()
+        InvoiceLine = pool.get('account.invoice.line')
+        if self.operation_key == 'D':
+            for inv_line in self.invoice_lines:
+                if isinstance(inv_line.origin, InvoiceLine):
+                    return inv_line.origin.invoice.number
+
 
 class AEAT340RecordInvoiceLine(ModelSQL):
     'AEAT 340 Record - Invoice Line'
