@@ -1,3 +1,5 @@
+* Fill corrective_invoice_number field if credit note invoce has the original
+  invoice as origin
 * Change sign of amounts for credit note invoices
 * Add relation between AEAT 340 record and invoice lines
 * Fix record amount computation and fill equivalence tax fields
