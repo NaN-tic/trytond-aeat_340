@@ -1,6 +1,13 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:aeat.340.reasign.records:"
+msgid ""
+"The AEAT 340 Book Key \"%s\" is not available for any of selected invoices."
+msgstr ""
+"El tipo de libro AEAT 340 \"%s\" no está disponible para ninguna de las "
+"facturas seleccionadas."
 
 msgctxt "error:aeat.340.report.intracommunity:"
 msgid "Invalid Book Key \"%(key)s\" for record \"%(record)s\"."
@@ -114,6 +121,10 @@ msgctxt "field:account.tax.template,aeat340_default_out_book_key:"
 msgid "Default Out Book Key"
 msgstr "Tipo de libro por defecto (Ventas)"
 
+msgctxt "field:account.tax.template,recargo_equivalencia:"
+msgid "Recargo Equivalencia"
+msgstr "Recargo equivalencia"
+
 msgctxt "field:aeat.340.reasign.records.end,id:"
 msgid "ID"
 msgstr "Identificador"
@@ -158,6 +169,14 @@ msgctxt "field:aeat.340.record,create_uid:"
 msgid "Create User"
 msgstr "Usuario de creación"
 
+msgctxt "field:aeat.340.record,equivalence_tax:"
+msgid "Equivalence Tax"
+msgstr "Recargo equivalencia"
+
+msgctxt "field:aeat.340.record,equivalence_tax_rate:"
+msgid "Equivalence Tax Rate"
+msgstr "% recargo equivalencia"
+
 msgctxt "field:aeat.340.record,fiscalyear:"
 msgid "Fiscal Year"
 msgstr "Ejercicio fiscal"
@@ -177,6 +196,10 @@ msgstr "Inversión"
 msgctxt "field:aeat.340.record,invoice:"
 msgid "Invoice"
 msgstr "Factura"
+
+msgctxt "field:aeat.340.record,invoice_lines:"
+msgid "Invoice Lines"
+msgstr "Líneas de factura"
 
 msgctxt "field:aeat.340.record,invoice_number:"
 msgid "Invoice Number"
@@ -238,6 +261,10 @@ msgctxt "field:aeat.340.record,tax_rate:"
 msgid "Tax Rate"
 msgstr "Cuota impuesto"
 
+msgctxt "field:aeat.340.record,ticket_count:"
+msgid "Ticket Count"
+msgstr "Número de tiquets"
+
 msgctxt "field:aeat.340.record,total:"
 msgid "Total"
 msgstr "Total"
@@ -247,6 +274,38 @@ msgid "Write Date"
 msgstr "Fecha modificación"
 
 msgctxt "field:aeat.340.record,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "field:aeat.340.record-account.invoice.line,aeat340_record:"
+msgid "AEAT 340 Record"
+msgstr "Registro AEAT 340"
+
+msgctxt "field:aeat.340.record-account.invoice.line,create_date:"
+msgid "Create Date"
+msgstr "Fecha creación"
+
+msgctxt "field:aeat.340.record-account.invoice.line,create_uid:"
+msgid "Create User"
+msgstr "Usuario creación"
+
+msgctxt "field:aeat.340.record-account.invoice.line,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:aeat.340.record-account.invoice.line,invoice_line:"
+msgid "Invoice Line"
+msgstr "Línea de factura"
+
+msgctxt "field:aeat.340.record-account.invoice.line,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:aeat.340.record-account.invoice.line,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:aeat.340.record-account.invoice.line,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
@@ -686,10 +745,6 @@ msgctxt "field:aeat.340.report.issued,id:"
 msgid "ID"
 msgstr "Identificador"
 
-msgctxt "field:aeat.340.report.issued,invoice_count:"
-msgid "Invoice Count"
-msgstr "Número de facturas"
-
 msgctxt "field:aeat.340.report.issued,invoice_fiscalyear:"
 msgid "Fiscal Year"
 msgstr "Ejercicio fiscal"
@@ -701,6 +756,10 @@ msgstr "Número factura"
 msgctxt "field:aeat.340.report.issued,issue_date:"
 msgid "Issue Date"
 msgstr "Fecha emisión"
+
+msgctxt "field:aeat.340.report.issued,issued_invoice_count:"
+msgid "Issued Invoice Count"
+msgstr "Número de facturas emitidas"
 
 msgctxt "field:aeat.340.report.issued,last_invoice_number:"
 msgid "Last Invoice Number"
@@ -1002,6 +1061,10 @@ msgctxt "field:aeat.340.type-account.tax.template,write_uid:"
 msgid "Write User"
 msgstr "Usuario modificación"
 
+msgctxt "help:account.tax.template,recargo_equivalencia:"
+msgid "Indicates if the tax is Recargo de Equivalencia"
+msgstr "Indica si el impuesto es Recargo de equivalencia"
+
 msgctxt "help:aeat.340.report,representative_vat:"
 msgid "Legal Representative VAT number."
 msgstr "NIF/CIF Representante legal"
@@ -1025,6 +1088,10 @@ msgstr "Inicio reclaular registros AEAT 340"
 msgctxt "model:aeat.340.record,name:"
 msgid "AEAT 340 Record"
 msgstr "Registro AEAT 340"
+
+msgctxt "model:aeat.340.record-account.invoice.line,name:"
+msgid "AEAT 340 Record - Invoice Line"
+msgstr "Registro AEAT 340 - Línea de factura"
 
 msgctxt "model:aeat.340.report,name:"
 msgid "AEAT 340 Report"
