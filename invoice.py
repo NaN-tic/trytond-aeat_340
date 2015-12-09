@@ -569,6 +569,15 @@ class Reasign340Record(Wizard):
             Button('Ok', 'end', 'tryton-ok', default=True),
             ])
 
+    @classmethod
+    def __setup__(cls):
+        super(Reasign340Record, cls).__setup__()
+        cls._error_messages.update({
+                'aeat340_book_key_not_available': (
+                    'The AEAT 340 Book Key "%s" is not available for any of '
+                    'selected invoices.'),
+                })
+
     def transition_reasign(self):
         Invoice = Pool().get('account.invoice')
         Line = Pool().get('account.invoice.line')
@@ -583,8 +592,11 @@ class Reasign340Record(Wizard):
                 for l in invoice.lines:
                     if value in l.aeat340_available_keys:
                         lines.append(l.id)
+            if not lines:
+                self.raise_user_error('aeat340_book_key_not_available',
+                    value.rec_name)
 
-            #Update to allow to modify key for posted invoices
+            # Update to allow to modify key for posted invoices
             cursor.execute(*line.update(columns=[line.aeat340_book_key],
                     values=[value.id], where=In(line.id, lines)))
         value = self.start.operation_key
@@ -594,7 +606,7 @@ class Reasign340Record(Wizard):
                 for l in invoice.lines:
                     lines.append(l.id)
 
-            #Update to allow to modify key for posted invoices
+            # Update to allow to modify key for posted invoices
             cursor.execute(*line.update(columns=[line.aeat340_operation_key],
                     values=[value], where=In(line.id, lines)))
 
