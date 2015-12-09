@@ -580,7 +580,8 @@ class Issued(LineMixin, ModelSQL, ModelView):
 
         # Migration from 3.4.0: renamed invoice_count to issued_invoice_count
         table = TableHandler(cursor, cls, module_name)
-        copy_issued_inv_count = not table.column_exist('issued_invoice_count')
+        copy_issued_inv_count = (table.column_exist('invoice_count')
+            and not table.column_exist('issued_invoice_count'))
 
         super(Issued, cls).__register__(module_name)
 
@@ -589,6 +590,7 @@ class Issued(LineMixin, ModelSQL, ModelView):
             cursor.execute(*sql_table.update(
                 columns=[sql_table.issued_invoice_count],
                 values=[sql_table.invoice_count]))
+            table.drop_column('invoice_count')
 
     @fields.depends('operation_key', 'property_state')
     def on_change_with_property_state(self):
