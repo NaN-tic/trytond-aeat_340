@@ -656,7 +656,7 @@ class Received(LineMixin, ModelSQL, ModelView):
         copy_issued_inv_count = (table.column_exist('invoice_count')
             and not table.column_exist('received_invoice_count'))
 
-        super(Issued, cls).__register__(module_name)
+        super(Received, cls).__register__(module_name)
 
         # Migration from 3.4.1: renamed invoice_count to received_invoice_count
         if copy_issued_inv_count:
