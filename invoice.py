@@ -155,13 +155,24 @@ class Record(ModelSQL, ModelView):
             SaleLine = Pool().get('sale.line')
         except KeyError:
             SaleLine = None
-        if self.operation_key == 'B':
+        try:
+            PurchaseLine = Pool().get('purchase.line')
+        except KeyError:
+            PurchaseLine = None
+        if self.operation_key == 'B' and record.book_key in ['E', 'F']:
             if SaleLine != None:
                 sales = set()
                 for inv_line in self.invoice_lines:
                     if isinstance(inv_line.origin, SaleLine):
                         sales.add(inv_line.origin.sale.id)
                 return len(sales)
+        if self.operation_key == 'B' and record.book_key in ['R', 'S']:
+            if PurchaseLine != None:
+                purchases = set()
+                for inv_line in self.invoice_lines:
+                    if isinstance(inv_line.origin, PurchaseLine):
+                        purchases.add(inv_line.origin.purchase.id)
+                return len(purchases)
 
     @property
     def corrective_invoice_number(self):

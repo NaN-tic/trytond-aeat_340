@@ -314,10 +314,13 @@ class Report(Workflow, ModelSQL, ModelView):
                 key = '%s-%s-%s-%s-%s' % (report.id, record.invoice.id,
                     record.book_key, record.operation_key, record.tax_rate)
 
+                issued = received = False
                 if record.book_key in ['E', 'F']:
                     to_create = issued_to_create
+                    issued = True
                 elif record.book_key in ['R', 'S']:
                     to_create = received_to_create
+                    received = True
                 elif record.book_key in ['I', 'J']:
                     to_create = investment_to_create
                 else:
@@ -333,13 +336,18 @@ class Report(Workflow, ModelSQL, ModelView):
                 if key in to_create:
                     to_create[key]['base'] += record.base * sign
                     to_create[key]['tax'] += record.tax * sign
-                    if record.equivalence_tax:
+                    if record.equivalence_tax and issued:
                         to_create[key]['equivalence_tax'] += (
                             record.equivalence_tax * sign)
                     to_create[key]['total'] += record.total * sign
-                    if record.operation_key == 'B' and record.ticket_count:
-                        to_create[key]['issued_invoice_count'] += (
-                            record.ticket_count)
+                    if (record.operation_key == 'B' and record.ticket_count
+                            and (issued or received)):
+                        if issued:
+                            to_create[key]['issued_invoice_count'] += (
+                                record.ticket_count)
+                        elif received:
+                            to_create[key]['received_invoice_count'] += (
+                                record.ticket_count)
                         to_create[key]['last_invoice_number'] += str(
                             int(to_create[key]['last_invoice_number'])
                             + record.ticket_count)
@@ -347,35 +355,46 @@ class Report(Workflow, ModelSQL, ModelView):
                 else:
                     to_create[key] = {
                         # TODO: set company?
-                        'party_name': record.party_name[:40],
+                        'report': report.id,
                         'party_nif': record.party_nif,
                         # TODO: set representative_nif?
+                        'party_name': record.party_name[:40],
                         'party_country': record.party_country,
                         'party_identifier_type': record.party_identifier_type,
                         # TODO: set party_identifier?
-                        'base': record.base * sign,
-                        'tax': record.tax * sign,
-                        'tax_rate': record.tax_rate,
-                        'equivalence_tax': record.equivalence_tax,
-                        'equivalence_tax_rate': record.equivalence_tax_rate,
-                        'total': record.total * sign,
-                        # TODO: set cost?
-                        'operation_key': record.operation_key,
                         'book_key': record.book_key,
+                        'operation_key': record.operation_key,
                         'issue_date': record.issue_date,
                         'operation_date': record.operation_date,
-                        'report': report.id,
+                        'tax_rate': record.tax_rate,
+                        'base': record.base * sign,
+                        'tax': record.tax * sign,
+                        'total': record.total * sign,
+                        # TODO: set cost?
                         'invoice_number': record.invoice_number[:40],
                         'record_number': (record.invoice.move.number
                             if record.invoice and record.invoice.move
                             else None),
-                        'issued_invoice_count': 1,
-                        'record_count': 1,
                         'records': [('add', [record.id])],
                         }
-                    if record.operation_key == 'B':
-                        to_create[key]['issued_invoice_count'] = (
-                            record.ticket_count or 1)
+                    if issued or received:
+                        to_create[key]['record_count'] = 1
+                        if issued:
+                            to_create[key].update({
+                                    'equivalence_tax': record.equivalence_tax,
+                                    'equivalence_tax_rate': (
+                                        record.equivalence_tax_rate),
+                                    'issued_invoice_count': 1,
+                                    })
+                        elif received:
+                            to_create[key]['received_invoice_count'] = 1
+                    if record.operation_key == 'B' and (issued or received):
+                        if issued:
+                            to_create[key]['issued_invoice_count'] = (
+                                record.ticket_count or 1)
+                        elif received:
+                            to_create[key]['received_invoice_count'] = (
+                                record.ticket_count or 1)
                         # Set first/last invoice number in this way is a
                         # simplification but it seems it's accepted
                         to_create[key]['first_invoice_number'] = '1'
@@ -385,7 +404,8 @@ class Report(Workflow, ModelSQL, ModelView):
                         # TODO: set number of records related to same invoice
                         pass
                     elif (record.operation_key == 'D'
-                            and record.corrective_invoice_number):
+                            and record.corrective_invoice_number
+                            and issued):
                         to_create[key]['corrective_invoice_number'] = (
                             record.corrective_invoice_number[:40])
 
@@ -614,7 +634,7 @@ class Received(LineMixin, ModelSQL, ModelView):
     AEAT 340 Received
     '''
     __name__ = 'aeat.340.report.received'
-    invoice_count = fields.Integer('Invoice Count')
+    received_invoice_count = fields.Integer('Received Invoice Count')
     record_count = fields.Integer('Record Count')
     first_invoice_number = fields.Char('First Invoice Number', size=40)
     last_invoice_number = fields.Char('Last Invoice Number', size=40)
@@ -623,6 +643,26 @@ class Received(LineMixin, ModelSQL, ModelView):
         'AEAT 340 Records', readonly=True)
 
     _possible_keys = ['R', 'S']
+
+    @classmethod
+    def __register__(cls, module_name):
+        TableHandler = backend.get('TableHandler')
+        cursor = Transaction().cursor
+        sql_table = cls.__table__()
+
+        # Migration from 3.4.1: renamed invoice_count to received_invoice_count
+        table = TableHandler(cursor, cls, module_name)
+        copy_issued_inv_count = (table.column_exist('invoice_count')
+            and not table.column_exist('received_invoice_count'))
+
+        super(Issued, cls).__register__(module_name)
+
+        # Migration from 3.4.1: renamed invoice_count to received_invoice_count
+        if copy_issued_inv_count:
+            cursor.execute(*sql_table.update(
+                columns=[sql_table.received_invoice_count],
+                values=[sql_table.invoice_count]))
+            table.drop_column('invoice_count')
 
     def get_record(self):
         record = retrofix.Record(aeat340.RECEIVED_RECORD)

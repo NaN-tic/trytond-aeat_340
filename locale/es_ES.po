@@ -881,9 +881,9 @@ msgctxt "field:aeat.340.report.received,id:"
 msgid "ID"
 msgstr "Identificador"
 
-msgctxt "field:aeat.340.report.received,invoice_count:"
-msgid "Invoice Count"
-msgstr "Número de facturas"
+msgctxt "field:aeat.340.report.received,received_invoice_count:"
+msgid "Received Invoice Count"
+msgstr "Número de facturas recibidas"
 
 msgctxt "field:aeat.340.report.received,invoice_number:"
 msgid "Invoice Number"
