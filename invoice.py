@@ -143,7 +143,7 @@ class Record(ModelSQL, ModelView):
         return self.invoice.invoice_date
 
     def get_operation_date(self, name):
-        return self.invoice.invoice_date
+        return self.invoice.accounting_date or self.invoice.invoice_date
 
     def get_invoice_number(self, name):
         return self.invoice.number
@@ -443,10 +443,12 @@ class Invoice:
                                 equivalence_tax_amount)
                         to_create[key]['invoice_lines'][0][1].append(line.id)
                     else:
+                        record_date = (invoice.accounting_date
+                            or invoice.invoice_date)
                         to_create[key] = {
                             'company': invoice.company.id,
                             'fiscalyear': fiscalyear,
-                            'month': invoice.invoice_date.month,
+                            'month': record_date.month,
                             'party_name': party.rec_name[:40],
                             'party_nif': (party.vat_number[:9]
                                 if party.vat_country == 'ES' else ''),
