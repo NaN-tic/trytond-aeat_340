@@ -362,6 +362,11 @@ class InvoiceLine:
 class Invoice:
     __name__ = 'account.invoice'
 
+    @property
+    def aeat340_record_month(self):
+        print "ALLA"
+        return self.invoice_date.month
+
     @classmethod
     def create_aeat340_records(cls, invoices):
         pool = Pool()
@@ -446,7 +451,7 @@ class Invoice:
                         to_create[key] = {
                             'company': invoice.company.id,
                             'fiscalyear': fiscalyear,
-                            'month': invoice.invoice_date.month,
+                            'month': invoice.aeat340_record_month,
                             'party_name': party.rec_name[:40],
                             'party_nif': (party.vat_number[:9]
                                 if party.vat_country == 'ES' else ''),
