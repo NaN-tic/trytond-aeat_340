@@ -363,7 +363,6 @@ class Invoice:
 
     @property
     def aeat340_record_month(self):
-        print "ALLA"
         return self.invoice_date.month
 
     @classmethod
