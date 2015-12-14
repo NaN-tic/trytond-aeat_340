@@ -157,14 +157,14 @@ class Record(ModelSQL, ModelView):
             PurchaseLine = Pool().get('purchase.line')
         except KeyError:
             PurchaseLine = None
-        if self.operation_key == 'B' and record.book_key in ['E', 'F']:
+        if self.operation_key == 'B' and self.book_key in ['E', 'F']:
             if SaleLine != None:
                 sales = set()
                 for inv_line in self.invoice_lines:
                     if isinstance(inv_line.origin, SaleLine):
                         sales.add(inv_line.origin.sale.id)
                 return len(sales)
-        if self.operation_key == 'B' and record.book_key in ['R', 'S']:
+        if self.operation_key == 'B' and self.book_key in ['R', 'S']:
             if PurchaseLine != None:
                 purchases = set()
                 for inv_line in self.invoice_lines:
