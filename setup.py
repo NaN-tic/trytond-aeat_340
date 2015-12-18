@@ -24,7 +24,7 @@ major_version = int(major_version)
 minor_version = int(minor_version)
 
 requires = [
-    'retrofix>=0.14',
+    'retrofix>=0.15',
     ]
 for dep in info.get('depends', []):
     if not re.match(r'(ir|res|webdav)(\W|$)', dep):
