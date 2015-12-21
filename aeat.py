@@ -451,13 +451,14 @@ class Report(Workflow, ModelSQL, ModelView):
         record.support_type = self.support_type
         record.contact_phone = self.contact_phone
         record.contact_name = self.contact_name.upper()
-        # record.declaration_number = '340{}{}{:0>4}'.format(
+        # record.declaration_number = int('340{}{}{:0>4}'.format(
         #     self.fiscalyear_code,
         #     self.period,
-        #     ) TODO: autoincrement number
+        #     <autoincrement>))
+        record.declaration_number = 0
         # record.complementary =
         # record.replacement =
-        record.previous_declaration_number = self.previous_number
+        record.previous_declaration_number = int(self.previous_number or 0)
         record.period = self.period
         record.record_count = self.record_count
         record.total_base = self.taxable_total
