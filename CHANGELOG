@@ -1,3 +1,7 @@
+* Require version 0.16 of retrofix library
+* Fix declaration_number and previous_declaration_number computation
+* Fix generation of aeat340 file
+
 Version 3.4.3 - 2015-12-18
 * Require new version 0.15 of retrofix library
 
