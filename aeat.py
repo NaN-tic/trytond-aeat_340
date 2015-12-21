@@ -448,11 +448,14 @@ class Report(Workflow, ModelSQL, ModelView):
         record = retrofix.Record(aeat340.PRESENTER_HEADER_RECORD)
         record.fiscalyear = str(self.fiscalyear_code)
         record.nif = self.company_vat
-        # record.presenter_name =
+        record.presenter_name = self.company.party.name.upper()
         record.support_type = self.support_type
         record.contact_phone = self.contact_phone
-        record.contact_name = self.contact_name
-        # record.declaration_number =
+        record.contact_name = self.contact_name.upper()
+        # record.declaration_number = '340{}{}{:0>4}'.format(
+        #     self.fiscalyear_code,
+        #     self.period,
+        #     ) TODO: autoincrement number
         # record.complementary =
         # record.replacement =
         record.previous_declaration_number = self.previous_number
@@ -614,7 +617,7 @@ class Issued(LineMixin, ModelSQL, ModelView):
 
     @fields.depends('operation_key', 'property_state')
     def on_change_with_property_state(self):
-        if self.operation_key == 'R':
+        if self.operation_key != 'R':
             return None
         return self.property_state
 
