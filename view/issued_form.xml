@@ -54,11 +54,13 @@
             <label name="corrective_invoice_number"/>
             <field name="corrective_invoice_number"/>
             <label name="property_state"/>
-            <field name="property_state"/>
+            <field name="property_state" colspan="3"/>
+            <newline/>
             <label name="cadaster_number"/>
             <field name="cadaster_number"/>
             <label name="cash_amount"/>
             <field name="cash_amount"/>
+            <newline/>
             <label name="invoice_fiscalyear"/>
             <field name="invoice_fiscalyear"/>
             <label name="property_transfer_amount"/>
