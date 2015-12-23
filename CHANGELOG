@@ -1,3 +1,4 @@
+* Add Normal operation Operation key for invoices with one tax
 * Changed type of field property_state to required selection with default value
 
 Version 3.4.4 - 2015-12-21
