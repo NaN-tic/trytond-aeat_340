@@ -1,7 +1,11 @@
 <tree string="AEAT 340 Issued Line">
+    <field name="invoice_number"/>
     <field name="issue_date"/>
+    <field name="operation_date"/>
     <field name="party_name"/>
     <field name="operation_key"/>
+    <field name="issued_invoice_count"/>
+    <field name="record_count"/>
     <field name="base"/>
     <field name="tax"/>
     <field name="total"/>
