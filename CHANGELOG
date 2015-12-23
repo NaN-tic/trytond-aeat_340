@@ -1,3 +1,4 @@
+* Add relate to invoices in issued and received AEAT records
 * Calculate the record_count value for operation_key C
 * Add Normal operation Operation key for invoices with one tax
 * Changed type of field property_state to required selection with default value
