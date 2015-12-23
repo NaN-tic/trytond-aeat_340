@@ -8,6 +8,7 @@ from trytond.model import ModelSQL, ModelView, Unique, fields
 from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
+from trytond.tools import grouped_slice
 from trytond.transaction import Transaction
 
 from .aeat import BOOK_KEY, OPERATION_KEY, PARTY_IDENTIFIER_TYPE
@@ -372,6 +373,7 @@ class Invoice:
     def create_aeat340_records(cls, invoices):
         pool = Pool()
         Configuration = pool.get('account.configuration')
+        InvoiceLine = pool.get('account.invoice.line')
         Record = pool.get('aeat.340.record')
         Tax = pool.get('account.tax')
 
@@ -389,16 +391,21 @@ class Invoice:
             return tax_amount
 
         to_create = {}
-        for invoice in invoices:
-            if not invoice.move or invoice.state == 'cancel':
-                continue
-            fiscalyear = invoice.move.period.fiscalyear
-            party = invoice.party
-            for line in invoice.lines:
-                if line.type != 'line':
-                    continue
-                if not line.aeat340_operation_key or not line.aeat340_book_key:
-                    continue
+        for sub_invoices in grouped_slice(invoices, count=100):
+            inv_lines = InvoiceLine.search([
+                    ('invoice', 'in', [i.id for i in sub_invoices]),
+                    ('invoice.move', '!=', None),
+                    ('invoice.move.state', '!=', 'cancel'),
+                    ('type', '=', 'line'),
+                    ('aeat340_operation_key', '!=', None),
+                    ('aeat340_book_key', '!=', None),
+                    ],
+                order=[('invoice', 'ASC')])
+            for line in inv_lines:
+                invoice = line.invoice
+                fiscalyear = invoice.move.period.fiscalyear
+                party = invoice.party
+
                 book_key = line.aeat340_book_key.book_key
                 operation_key = line.aeat340_operation_key
                 base = total = line.amount
@@ -558,7 +565,8 @@ class Reasign340RecordStart(ModelView):
     __name__ = "aeat.340.reasign.records.start"
 
     aeat_340_type = fields.Many2One('aeat.340.type', 'Book Key')
-    operation_key = fields.Selection(OPERATION_KEY, 'Operation Key')
+    operation_key = fields.Selection(OPERATION_KEY, 'Operation Key',
+        sort=False)
 
 
 class Reasign340RecordEnd(ModelView):
