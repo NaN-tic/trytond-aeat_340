@@ -1,3 +1,4 @@
+Version 3.4.5 - 2015-12-23
 * Update translations
 * Add useful fields to issued and received tree views
 * Improve performance of Invoice.create_aeat340_records()
