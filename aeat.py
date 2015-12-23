@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 import itertools
@@ -395,7 +394,9 @@ class Report(Workflow, ModelSQL, ModelView):
                         'records': [('add', [record.id])],
                         }
                     if issued or received:
-                        to_create[key]['record_count'] = 1
+                        to_create[key]['record_count'] = (
+                            len(record.invoice.aeat340_records)
+                            if record.operation_key == 'C' else 1),
                         if issued:
                             to_create[key].update({
                                     'equivalence_tax': record.equivalence_tax,
