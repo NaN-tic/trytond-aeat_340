@@ -29,6 +29,7 @@ BOOK_KEY = [
     ]
 
 OPERATION_KEY = [
+    (' ', 'Normal operation'),
     ('A', 'A - Invoice\'s Summary'),
     ('B', 'B - Ticket\'s Summary'),
     ('C', 'C - Invoice with several taxes'),
