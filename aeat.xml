@@ -55,16 +55,19 @@
             <field name="perm_delete" eval="True"/>
         </record>
 
+        <!-- aeat.340.report.issued -->
         <record model="ir.ui.view" id="aeat_340_report_issued_form_view">
             <field name="model">aeat.340.report.issued</field>
             <field name="type">form</field>
             <field name="name">issued_form</field>
         </record>
+
         <record model="ir.ui.view" id="aeat_340_report_issued_tree_view">
             <field name="model">aeat.340.report.issued</field>
             <field name="type">tree</field>
             <field name="name">issued_tree</field>
         </record>
+
         <record model="ir.action.act_window" id="act_aeat_340_report_issued">
             <field name="name">AEAT 340 Report Issued</field>
             <field name="res_model">aeat.340.report.issued</field>
@@ -80,6 +83,19 @@
             <field name="view" ref="aeat_340_report_issued_form_view"/>
             <field name="act_window" ref="act_aeat_340_report_issued"/>
         </record>
+
+        <record model="ir.action.act_window" id="act_invoice_form_issued">
+            <field name="name">Invoices</field>
+            <field name="res_model">account.invoice</field>
+            <field name="domain">[('aeat340_records.issued', 'in', Eval('active_ids'))]</field>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_issued_invoice_keyword1">
+            <field name="model">aeat.340.report.issued,-1</field>
+            <field name="keyword">form_relate</field>
+            <field name="action" ref="act_invoice_form_issued"/>
+        </record>
+
         <record model="ir.model.access" id="access_aeat_340_report_issued">
             <field name="model" search="[('model', '=', 'aeat.340.report.issued')]"/>
             <field name="perm_read" eval="True"/>
@@ -96,16 +112,19 @@
             <field name="perm_delete" eval="True"/>
         </record>
 
+        <!-- aeat.340.report.received -->
         <record model="ir.ui.view" id="aeat_340_report_received_form_view">
             <field name="model">aeat.340.report.received</field>
             <field name="type">form</field>
             <field name="name">received_form</field>
         </record>
+
         <record model="ir.ui.view" id="aeat_340_report_received_tree_view">
             <field name="model">aeat.340.report.received</field>
             <field name="type">tree</field>
             <field name="name">received_tree</field>
         </record>
+
         <record model="ir.action.act_window" id="act_aeat_340_report_received">
             <field name="name">AEAT 340 Report Received</field>
             <field name="res_model">aeat.340.report.received</field>
@@ -121,6 +140,19 @@
             <field name="view" ref="aeat_340_report_received_form_view"/>
             <field name="act_window" ref="act_aeat_340_report_received"/>
         </record>
+
+        <record model="ir.action.act_window" id="act_invoice_form_received">
+            <field name="name">Invoices</field>
+            <field name="res_model">account.invoice</field>
+            <field name="domain">[('aeat340_records.received', 'in', Eval('active_ids'))]</field>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_received_invoice_keyword1">
+            <field name="model">aeat.340.report.received,-1</field>
+            <field name="keyword">form_relate</field>
+            <field name="action" ref="act_invoice_form_received"/>
+        </record>
+
         <record model="ir.model.access" id="access_aeat_340_report_received">
             <field name="model" search="[('model', '=', 'aeat.340.report.received')]"/>
             <field name="perm_read" eval="True"/>
@@ -128,6 +160,7 @@
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
+
         <record model="ir.model.access" id="access_aeat_340_report_received_admin">
             <field name="model" search="[('model', '=', 'aeat.340.report.received')]"/>
             <field name="group" ref="group_aeat_340_admin"/>
@@ -137,6 +170,7 @@
             <field name="perm_delete" eval="True"/>
         </record>
 
+        <!-- aeat.340.report.investment -->
         <record model="ir.ui.view" id="aeat_340_report_investment_form_view">
             <field name="model">aeat.340.report.investment</field>
             <field name="type">form</field>

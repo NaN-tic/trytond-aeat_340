@@ -361,6 +361,8 @@ class InvoiceLine:
 
 class Invoice:
     __name__ = 'account.invoice'
+    aeat340_records = fields.One2Many('aeat.340.record', 'invoice',
+        'AEAT 340 Records', readonly=True)
 
     @property
     def aeat340_record_month(self):
