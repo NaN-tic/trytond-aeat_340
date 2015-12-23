@@ -1,3 +1,4 @@
+* Update translations
 * Add useful fields to issued and received tree views
 * Improve performance of Invoice.create_aeat340_records()
 * Add relate to invoices in issued and received AEAT records
