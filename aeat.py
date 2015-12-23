@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 import itertools
 import datetime
 import retrofix
-from retrofix import aeat340
 from decimal import Decimal
+from retrofix import aeat340
+from sql import Null
 
 from trytond import backend
 from trytond.model import ModelSQL, ModelView, fields, Workflow
@@ -31,7 +33,7 @@ OPERATION_KEY = [
     ('B', 'B - Ticket\'s Summary'),
     ('C', 'C - Invoice with several taxes'),
     ('D', 'D - Credit Note'),
-#    ('E', '(optional)'),
+    # ('E', '(optional)'),
     ('F', 'F - Travel agencies acquisitions'),
     ('G', 'G - Special arrangment parties on IVA or IGIC'),
     ('H', 'H - Gold inversion special arrangment'),
@@ -39,11 +41,11 @@ OPERATION_KEY = [
     ('J', 'J - Tickets'),
     ('K', 'K - Rectification of registry mistakes'),
     ('L', 'L - Acquisitions to retailers of IGIC'),
-#    ('M', '(optional)'),
+    # ('M', '(optional)'),
     ('N', 'N - Services to travel agencies'),
-#    ('O', '(optional)'),
-#    ('P', '(optional)'),
-#    ('Q', '(optional)'),
+    # ('O', '(optional)'),
+    # ('P', '(optional)'),
+    # ('Q', '(optional)'),
     ('R', 'R - Operations of lease of bussiness place'),
     ('S', 'S - Grants, aids and subsidies'),
     ('T', 'T - Intelectual properties charges'),
@@ -61,6 +63,20 @@ PARTY_IDENTIFIER_TYPE = [
     ('4', 'Official Document Emmited by the Country of Residence'),
     ('5', 'Certificate of fiscal resident'),
     ('6', 'Other proving document'),
+    ]
+
+PROPERTY_STATE = [
+    ('0', ''),
+    ('1',
+        '1. Property with cadastral reference located at any point in the '
+        'Spanish territory, except the Basque Country and Navarra.'),
+    ('2',
+        '2. Property located in the Autonomous Community of the Basque '
+        'Country or in the Comunidad Foral de Navarra.'),
+    ('3',
+        '3. Property in any of the above situations but without cadastral '
+        'reference.'),
+    ('4', '4. Property located in the foreign country.'),
     ]
 
 
@@ -584,7 +600,8 @@ class Issued(LineMixin, ModelSQL, ModelView):
     equivalence_tax_rate = fields.Numeric('Equivalence Tax Rate',
         digits=(16, 2))
     equivalence_tax = fields.Numeric('Equivalence Tax', digits=(16, 2))
-    property_state = fields.Char('Property State', size=1)
+    property_state = fields.Selection(PROPERTY_STATE, 'Property State',
+        required=True, sort=False)
     cadaster_number = fields.Char('Cadaster Number', size=25)
     cash_amount = fields.Numeric('Cash Amount', digits=(16, 2))
     invoice_fiscalyear = fields.Integer('Fiscal Year')
@@ -606,6 +623,13 @@ class Issued(LineMixin, ModelSQL, ModelView):
         copy_issued_inv_count = (table.column_exist('invoice_count')
             and not table.column_exist('issued_invoice_count'))
 
+        # Migration from 3.4.4: changed type and required of property_state
+        if table.column_exist('property_state'):
+            cursor.execute(
+                *sql_table.select(where=sql_table.property_state != Null))
+            if not cursor.fetchone():
+                table.drop_column('property_state')
+
         super(Issued, cls).__register__(module_name)
 
         # Migration from 3.4.0: renamed invoice_count to issued_invoice_count
@@ -615,10 +639,14 @@ class Issued(LineMixin, ModelSQL, ModelView):
                 values=[sql_table.invoice_count]))
             table.drop_column('invoice_count')
 
+    @staticmethod
+    def default_property_state():
+        return '0'
+
     @fields.depends('operation_key', 'property_state')
     def on_change_with_property_state(self):
         if self.operation_key != 'R':
-            return None
+            return self.default_property_state()
         return self.property_state
 
     @fields.depends('operation_key', 'cadaster_number')
