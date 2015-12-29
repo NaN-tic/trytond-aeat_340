@@ -406,6 +406,12 @@ class Invoice:
                 fiscalyear = invoice.move.period.fiscalyear
                 party = invoice.party
 
+                if (not invoice.move or invoice.move.state == 'cancel'
+                        or line.type != 'line'
+                        or line.aeat340_operation_key == None
+                        or not line.aeat340_book_key):
+                    # TODO: it shouldn't happen
+                    continue
                 book_key = line.aeat340_book_key.book_key
                 operation_key = line.aeat340_operation_key
                 if operation_key in (' ', 'C'):
