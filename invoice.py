@@ -277,7 +277,7 @@ class InvoiceLine:
             'invoice_type', 'product'],
         domain=[('id', 'in', Eval('aeat340_available_keys', []))],)
     aeat340_operation_key = fields.Selection(OPERATION_KEY,
-        'AEAT 340 Operation Key', states={
+        'AEAT 340 Operation Key', sort=False, states={
             'invisible': Eval('type') != 'line',
             'required': Eval('type') == 'line',
             },
@@ -332,7 +332,7 @@ class InvoiceLine:
 
     @classmethod
     def get_aeat340_operation_key(cls, invoice_type):
-        return 'D' if 'credit_note' in invoice_type else 'C'
+        return 'D' if 'credit_note' in invoice_type else ' '
 
     @classmethod
     def create(cls, vlist):
@@ -390,6 +390,7 @@ class Invoice:
             return tax_amount
 
         to_create = {}
+        inv_lines_to_write = []
         for sub_invoices in grouped_slice(invoices, count=100):
             inv_lines = InvoiceLine.search([
                     ('invoice', 'in', [i.id for i in sub_invoices]),
@@ -407,6 +408,26 @@ class Invoice:
 
                 book_key = line.aeat340_book_key.book_key
                 operation_key = line.aeat340_operation_key
+                if operation_key in (' ', 'C'):
+                    n_aeat340_taxes = len({it.tax.id
+                            for it in invoice.taxes
+                            if it.tax and it.tax.aeat340_book_keys})
+                    modified = False
+                    if operation_key == ' ' and n_aeat340_taxes > 1:
+                        operation_key = 'C'
+                        modified = True
+                        inv_lines_to_write.extend(([line], {
+                                    'aeat340_operation_key': operation_key,
+                                    }))
+                        pass
+                    elif operation_key == 'C' and n_aeat340_taxes <= 1:
+                        operation_key = ' '
+                        modified = True
+                    if modified and invoice.state not in ('posted', 'paid'):
+                        inv_lines_to_write.extend(([line], {
+                                    'aeat340_operation_key': operation_key,
+                                    }))
+
                 base = total = line.amount
                 for tax in line.taxes:
                     if not tax.childs:
@@ -494,7 +515,10 @@ class Invoice:
         with Transaction().set_user(0, set_context=True):
             Record.delete(Record.search([('invoice', 'in',
                             [i.id for i in invoices])]))
-            Record.create(to_create.values())
+            if inv_lines_to_write:
+                InvoiceLine.write(*inv_lines_to_write)
+            if to_create:
+                Record.create(to_create.values())
 
     @classmethod
     def draft(cls, invoices):
