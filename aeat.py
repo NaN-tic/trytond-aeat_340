@@ -488,7 +488,7 @@ class Report(Workflow, ModelSQL, ModelView):
         record.declaration_number = '0'
         # record.complementary =
         # record.replacement =
-        record.previous_declaration_number = int(self.previous_number or 0)
+        record.previous_declaration_number = self.previous_number or '0'
         record.period = self.period
         record.record_count = self.record_count
         record.total_base = self.taxable_total
