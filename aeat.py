@@ -364,9 +364,20 @@ class Report(Workflow, ModelSQL, ModelView):
                         elif received:
                             to_create[key]['received_invoice_count'] += (
                                 record.ticket_count)
-                        to_create[key]['last_invoice_number'] += str(
-                            int(to_create[key]['last_invoice_number'])
-                            + record.ticket_count)
+                        first_inv_number, last_inv_number = (
+                            record.get_first_last_invoice_number())
+                        if (first_inv_number
+                                and to_create[key]['first_invoice_number']
+                                and first_inv_number
+                                < to_create[key]['first_invoice_number']):
+                            to_create[key]['first_invoice_number'] = (
+                                first_inv_number)
+                        if (last_inv_number
+                                and to_create[key]['last_invoice_number']
+                                and last_inv_number
+                                < to_create[key]['last_invoice_number']):
+                            to_create[key]['last_invoice_number'] = (
+                                last_inv_number)
                     to_create[key]['records'][0][1].append(record.id)
                 else:
                     to_create[key] = {
@@ -413,11 +424,12 @@ class Report(Workflow, ModelSQL, ModelView):
                         elif received:
                             to_create[key]['received_invoice_count'] = (
                                 record.ticket_count or 1)
-                        # Set first/last invoice number in this way is a
-                        # simplification but it seems it's accepted
-                        to_create[key]['first_invoice_number'] = '1'
-                        to_create[key]['last_invoice_number'] = str(
-                            record.ticket_count or 1)
+                        first_inv_number, last_inv_number = (
+                            record.get_first_last_invoice_number())
+                        to_create[key]['first_invoice_number'] = (
+                            first_inv_number or '1')
+                        to_create[key]['last_invoice_number'] = (
+                            last_inv_number or '1')
                     elif record.operation_key == 'C':
                         # TODO: set number of records related to same invoice
                         pass
@@ -473,7 +485,7 @@ class Report(Workflow, ModelSQL, ModelView):
         #     self.fiscalyear_code,
         #     self.period,
         #     <autoincrement>))
-        record.declaration_number = 0
+        record.declaration_number = '0'
         # record.complementary =
         # record.replacement =
         record.previous_declaration_number = int(self.previous_number or 0)

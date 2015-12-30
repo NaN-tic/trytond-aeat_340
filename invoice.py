@@ -152,28 +152,53 @@ class Record(ModelSQL, ModelView):
         return self.invoice.number
 
     def get_ticket_count(self, name):
+        if self.operation_key == 'B' and self.book_key in ['E', 'F']:
+            sales = self._get_sales()
+            if sales:
+                return len(sales)
+        if self.operation_key == 'B' and self.book_key in ['R', 'S']:
+            purchases = self._get_purchases()
+            if purchases:
+                return len(purchases)
+
+    def get_first_last_invoice_number(self):
+        if self.operation_key == 'B' and self.book_key in ['E', 'F']:
+            sales = self._get_sales()
+            if sales:
+                sales = sorted(sales, key=lambda s: s.reference)
+                return (sales[0].reference, sales[-1].reference)
+        if self.operation_key == 'B' and self.book_key in ['R', 'S']:
+            purchases = self._get_purchases()
+            if purchases:
+                purchases = sorted(purchases,
+                    key=lambda p: p.reference)
+                return (purchases[0].reference, purchases[-1].reference)
+        ticket_count = self.ticket_count or 1
+        return ('1', str(ticket_count))
+
+    def _get_sales(self):
         try:
             SaleLine = Pool().get('sale.line')
         except KeyError:
             SaleLine = None
+        if SaleLine != None:
+            sales = set()
+            for inv_line in self.invoice_lines:
+                if isinstance(inv_line.origin, SaleLine):
+                    sales.add(inv_line.origin.sale.id)
+            return sales
+
+    def _get_purchases(self):
         try:
             PurchaseLine = Pool().get('purchase.line')
         except KeyError:
             PurchaseLine = None
-        if self.operation_key == 'B' and self.book_key in ['E', 'F']:
-            if SaleLine != None:
-                sales = set()
-                for inv_line in self.invoice_lines:
-                    if isinstance(inv_line.origin, SaleLine):
-                        sales.add(inv_line.origin.sale.id)
-                return len(sales)
-        if self.operation_key == 'B' and self.book_key in ['R', 'S']:
-            if PurchaseLine != None:
-                purchases = set()
-                for inv_line in self.invoice_lines:
-                    if isinstance(inv_line.origin, PurchaseLine):
-                        purchases.add(inv_line.origin.purchase.id)
-                return len(purchases)
+        if PurchaseLine != None:
+            purchases = set()
+            for inv_line in self.invoice_lines:
+                if isinstance(inv_line.origin, PurchaseLine):
+                    purchases.add(inv_line.origin.purchase.id)
+            return purchases
 
     @property
     def corrective_invoice_number(self):
