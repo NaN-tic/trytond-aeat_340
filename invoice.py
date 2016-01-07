@@ -3,6 +3,7 @@
 from decimal import Decimal
 from sql import Literal
 from sql.operators import In
+import logging
 
 from trytond.model import ModelSQL, ModelView, fields
 from trytond.wizard import Wizard, StateView, StateTransition, Button
@@ -307,6 +308,18 @@ class InvoiceLine:
             'required': Eval('type') == 'line',
             },
         depends=DEPENDS)
+
+    @classmethod
+    def __setup__(cls):
+        super(InvoiceLine, cls).__setup__()
+        try:
+            cls._check_modify_exclude |= {
+                'aeat340_book_key',
+                'aeat340_operation_key',
+                }
+        except AttributeError:
+            logging.getLogger('account.invoice.line').warning(
+                "Missing backport of issue 4727 over account_invoice module")
 
     def on_change_product(self):
         Taxes = Pool().get('account.tax')
