@@ -207,38 +207,22 @@ class Report(Workflow, ModelSQL, ModelView):
                 ('cancelled', 'draft'),
                 ))
 
-    @staticmethod
-    def default_support_type():
-        return 'T'
-
-    @staticmethod
-    def default_type():
-        return 'N'
-
-    @staticmethod
-    def default_state():
-        return 'draft'
+    def get_rec_name(self, name):
+        return '%s - %s/%s' % (self.company.rec_name,
+            self.fiscalyear.name, self.period)
 
     @staticmethod
     def default_company():
         return Transaction().context.get('company')
+
+    def get_currency(self, name):
+        return self.company.currency.id
 
     @staticmethod
     def default_fiscalyear():
         FiscalYear = Pool().get('account.fiscalyear')
         return FiscalYear.find(
             Transaction().context.get('company'), exception=False)
-
-    def get_rec_name(self, name):
-        return '%s - %s/%s' % (self.company.rec_name,
-            self.fiscalyear.name, self.period)
-
-    def get_currency(self, name):
-        return self.company.currency.id
-
-    def get_filename(self, name):
-        return 'aeat340-%s-%s.txt' % (
-            self.fiscalyear_code, self.period)
 
     @fields.depends('fiscalyear')
     def on_change_with_fiscalyear_code(self):
@@ -247,19 +231,17 @@ class Report(Workflow, ModelSQL, ModelView):
             code = self.fiscalyear.start_date.year
         return code
 
-    @classmethod
-    def validate(cls, reports):
-        for report in reports:
-            report.check_euro()
+    @staticmethod
+    def default_type():
+        return 'N'
 
-    def check_euro(self):
-        if self.currency.code != 'EUR':
-            self.raise_user_error('invalid_currency', self.rec_name)
+    @staticmethod
+    def default_support_type():
+        return 'T'
 
-    @property
-    def lines(self):
-        return itertools.chain(self.issued_lines, self.received_lines,
-            self.investment_lines, self.intracommunity_lines)
+    @staticmethod
+    def default_state():
+        return 'draft'
 
     @classmethod
     def get_totals(cls, reports, names):
@@ -282,6 +264,24 @@ class Report(Workflow, ModelSQL, ModelView):
             if x not in names:
                 del res[x]
         return res
+
+    def get_filename(self, name):
+        return 'aeat340-%s-%s.txt' % (
+            self.fiscalyear_code, self.period)
+
+    @property
+    def lines(self):
+        return itertools.chain(self.issued_lines, self.received_lines,
+            self.investment_lines, self.intracommunity_lines)
+
+    @classmethod
+    def validate(cls, reports):
+        for report in reports:
+            report.check_euro()
+
+    def check_euro(self):
+        if self.currency.code != 'EUR':
+            self.raise_user_error('invalid_currency', self.rec_name)
 
     @classmethod
     @ModelView.button
