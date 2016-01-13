@@ -234,6 +234,11 @@ class Report(Workflow, ModelSQL, ModelView):
             code = None
         return code
 
+    @fields.depends('company')
+    def on_change_with_company_vat(self):
+        if self.company:
+            return self.company.party.vat_number
+
     @staticmethod
     def default_type():
         return 'N'
