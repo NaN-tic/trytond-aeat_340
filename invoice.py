@@ -587,6 +587,15 @@ class Invoice:
             Record.delete(Record.search([('invoice', 'in',
                             [i.id for i in invoices])]))
 
+    @classmethod
+    def copy(cls, invoices, default=None):
+        if default is None:
+            default = {}
+        else:
+            default = default.copy()
+        default['aeat340_records'] = None
+        return super(Invoice, cls).copy(invoices, default=default)
+
 
 class Recalculate340RecordStart(ModelView):
     """
