@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 import itertools
 import datetime
 import retrofix
+import unicodedata
 from decimal import Decimal
 from retrofix import aeat340
 from sql import Null
@@ -78,6 +80,30 @@ PROPERTY_STATE = [
         'reference.'),
     ('4', '4. Property located in the foreign country.'),
     ]
+
+
+def remove_accents(unicode_string):
+    if isinstance(unicode_string, str):
+        unicode_string_bak = unicode_string
+        try:
+            unicode_string = unicode_string_bak.decode('iso-8859-1')
+        except UnicodeDecodeError:
+            try:
+                unicode_string = unicode_string_bak.decode('utf-8')
+            except UnicodeDecodeError:
+                return unicode_string_bak
+
+    if not isinstance(unicode_string, unicode):
+        return unicode_string
+
+    # From http://www.leccionespracticas.com/uncategorized/eliminar-tildes-con-python-solucionado
+    unicode_string_nfd = ''.join(
+        (c for c in unicodedata.normalize('NFD', unicode_string)
+            if (unicodedata.category(c) != 'Mn'
+                or c in (u'\u0327', u'\u0303'))  # ç or ñ
+            ))
+    # It converts nfd to nfc to allow unicode.decode()
+    return unicodedata.normalize('NFC', unicode_string_nfd)
 
 
 class Report(Workflow, ModelSQL, ModelView):
@@ -508,6 +534,7 @@ class Report(Workflow, ModelSQL, ModelView):
             records.append(record)
 
         data = retrofix.record.write(records)
+        data = remove_accents(data).upper()
         if isinstance(data, unicode):
             data = data.encode('iso-8859-1')
         self.file_ = buffer(data)
