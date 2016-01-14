@@ -129,6 +129,14 @@
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
+        <record model="ir.model.access" id="access_aeat_340_record_account">
+            <field name="model" search="[('model', '=', 'aeat.340.record')]"/>
+            <field name="group" ref="account.group_account"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
 
         <menuitem action="act_aeat_340_record"
             id="menu_aeat_340_record"
