@@ -655,10 +655,8 @@ class LineMixin(object):
 
     @classmethod
     def write(cls, *args):
-        actions = iter(args)
-        for lines, _ in zip(actions, actions):
-            for line in lines:
-                line.check_state()
+        for line in sum(args[0::2], []):
+            line.check_state()
         super(LineMixin, cls).write(*args)
 
     def check_state(self):
