@@ -105,6 +105,10 @@ def remove_accents(unicode_string):
     # It converts nfd to nfc to allow unicode.decode()
     return unicodedata.normalize('NFC', unicode_string_nfd)
 
+_STATES = {
+    'readonly': Eval('state') != 'draft',
+    }
+_DEPENDS = ['state']
 
 class Report(Workflow, ModelSQL, ModelView):
     '''
@@ -113,50 +117,55 @@ class Report(Workflow, ModelSQL, ModelView):
     __name__ = 'aeat.340.report'
     company = fields.Many2One('company.company', 'Company', required=True,
         states={
-            'readonly': Eval('state') == 'done',
+            'readonly': Eval('state') != 'draft',
             }, depends=['state'])
     currency = fields.Function(fields.Many2One('currency.currency',
         'Currency'), 'get_currency')
     previous_number = fields.Char('Previous Declaration Number', size=13,
         states={
-            'readonly': Eval('state') == 'done',
+            'readonly': ~Eval('state').in_(['draft', 'calculated']),
             }, depends=['state'])
     representative_vat = fields.Char('L.R. VAT number', size=9,
         help='Legal Representative VAT number.', states={
-            'required': Eval('state') == 'calculated',
-            'readonly': Eval('state') == 'done',
+            'required': Eval('state').in_(['calculated', 'done']),
+            'readonly': ~Eval('state').in_(['draft', 'calculated']),
             }, depends=['state'])
     fiscalyear = fields.Many2One('account.fiscalyear', 'Fiscal Year',
-        states={
-            'readonly': Eval('state') == 'done',
+        required=True, states={
+            'readonly': Eval('state') != 'draft',
             }, depends=['state'])
-    fiscalyear_code = fields.Integer('Fiscal Year Code', required=True)
+    fiscalyear_code = fields.Integer('Fiscal Year Code', required=True,
+        states={
+            'readonly': Eval('state') != 'draft',
+            }, depends=['state'])
     company_vat = fields.Char('VAT', size=9, states={
-            'required': Eval('state') == 'calculated',
-            'readonly': Eval('state') == 'done',
+            'required': Eval('state').in_(['calculated', 'done']),
+            'readonly': ~Eval('state').in_(['draft', 'calculated']),
             }, depends=['state'])
     type = fields.Selection([
             ('N', 'Normal'),
             ('C', 'Complementary'),
             ('S', 'Substitutive')
-            ], 'Statement Type', required=True, states={
-                'readonly': Eval('state') == 'done',
+            ], 'Statement Type', required=True,
+        states={
+            'readonly': ~Eval('state').in_(['draft', 'calculated']),
             }, depends=['state'])
     support_type = fields.Selection([
             ('C', 'DVD'),
             ('T', 'Telematics'),
-            ], 'Support Type', required=True, states={
-                'readonly': Eval('state') == 'done',
+            ], 'Support Type', required=True,
+        states={
+            'readonly': ~Eval('state').in_(['draft', 'calculated']),
             }, depends=['state'])
     calculation_date = fields.DateTime('Calculation Date', readonly=True)
-    state = fields.Selection([
-            ('draft', 'Draft'),
-            ('calculated', 'Calculated'),
-            ('done', 'Done'),
-            ('cancelled', 'Cancelled')
-            ], 'State', readonly=True)
-    contact_phone = fields.Char('Phone', size=9)
-    contact_name = fields.Char('Name And Surname Contact', size=40)
+    contact_phone = fields.Char('Phone', size=9,
+        states={
+            'readonly': ~Eval('state').in_(['draft', 'calculated']),
+            }, depends=['state'])
+    contact_name = fields.Char('Name And Surname Contact', size=40,
+        states={
+            'readonly': ~Eval('state').in_(['draft', 'calculated']),
+            }, depends=['state'])
     period = fields.Selection([
             ('1T', 'First quarter'),
             ('2T', 'Second quarter'),
@@ -174,15 +183,26 @@ class Report(Workflow, ModelSQL, ModelView):
             ('10', 'October'),
             ('11', 'November'),
             ('12', 'December'),
-            ], 'Period', sort=False, required=True)
+            ], 'Period', sort=False, required=True,
+        states={
+            'readonly': Eval('state') != 'draft',
+            }, depends=['state'])
     issued_lines = fields.One2Many('aeat.340.report.issued', 'report',
-        'Issued')
+        'Issued', states={
+            'readonly': Eval('state') != 'calculated',
+            }, depends=['state'])
     received_lines = fields.One2Many('aeat.340.report.received', 'report',
-        'Received')
+        'Received', states={
+            'readonly': Eval('state') != 'calculated',
+            }, depends=['state'])
     investment_lines = fields.One2Many('aeat.340.report.investment', 'report',
-        'Investement Operations')
+        'Investement Operations', states={
+            'readonly': Eval('state') != 'calculated',
+            }, depends=['state'])
     intracommunity_lines = fields.One2Many('aeat.340.report.intracommunity',
-        'report', 'Intracommunity Operations')
+        'report', 'Intracommunity Operations', states={
+            'readonly': Eval('state') != 'calculated',
+            }, depends=['state'])
     taxable_total = fields.Function(fields.Numeric('Taxable Total',
             digits=(16, 2),), 'get_totals')
     sharetax_total = fields.Function(fields.Numeric('Share Tax Total',
@@ -196,6 +216,12 @@ class Report(Workflow, ModelSQL, ModelView):
             })
     filename = fields.Function(fields.Char("File Name"),
         'get_filename')
+    state = fields.Selection([
+            ('draft', 'Draft'),
+            ('calculated', 'Calculated'),
+            ('done', 'Done'),
+            ('cancelled', 'Cancelled')
+            ], 'State', readonly=True)
 
     @classmethod
     def __setup__(cls):
@@ -316,6 +342,12 @@ class Report(Workflow, ModelSQL, ModelView):
 
     @classmethod
     @ModelView.button
+    @Workflow.transition('draft')
+    def draft(cls, reports):
+        cls._delete_lines(reports)
+
+    @classmethod
+    @ModelView.button
     @Workflow.transition('calculated')
     def calculate(cls, reports):
         pool = Pool()
@@ -324,17 +356,8 @@ class Report(Workflow, ModelSQL, ModelView):
         Received = pool.get('aeat.340.report.received')
         Investment = pool.get('aeat.340.report.investment')
         Intracomunity = pool.get('aeat.340.report.intracommunity')
-        transaction = Transaction()
-        with transaction.set_user(0) and \
-                transaction.set_context(from_report=True):
-            Issued.delete(Issued.search([
-                ('report', 'in', [r.id for r in reports])]))
-            Received.delete(Received.search([
-                ('report', 'in', [r.id for r in reports])]))
-            Investment.delete(Investment.search([
-                ('report', 'in', [r.id for r in reports])]))
-            Intracomunity.delete(Intracomunity.search([
-                ('report', 'in', [r.id for r in reports])]))
+
+        cls._delete_lines(reports)
 
         issued_to_create = {}
         received_to_create = {}
@@ -471,7 +494,7 @@ class Report(Workflow, ModelSQL, ModelView):
                         to_create[key]['corrective_invoice_number'] = (
                             record.corrective_invoice_number[:40])
 
-        with transaction.set_user(0):
+        with Transaction().set_context(_check_access=False):
             Issued.create(sorted(issued_to_create.values(),
                     key=lambda x: x['issue_date']))
             Received.create(sorted(received_to_create.values(),
@@ -486,6 +509,22 @@ class Report(Workflow, ModelSQL, ModelView):
                 })
 
     @classmethod
+    def _delete_lines(cls, reports):
+        pool = Pool()
+        Issued = pool.get('aeat.340.report.issued')
+        Received = pool.get('aeat.340.report.received')
+        Investment = pool.get('aeat.340.report.investment')
+        Intracomunity = pool.get('aeat.340.report.intracommunity')
+        report_ids = [r.id for r in reports]
+        with Transaction().set_context(from_report=True, _check_access=False):
+            Issued.delete(Issued.search([('report', 'in', report_ids)]))
+            Received.delete(Received.search([('report', 'in', report_ids)]))
+            Investment.delete(Investment.search(
+                [('report', 'in', report_ids)]))
+            Intracomunity.delete(Intracomunity.search(
+                [('report', 'in', report_ids)]))
+
+    @classmethod
     @ModelView.button
     @Workflow.transition('done')
     def process(cls, reports):
@@ -496,12 +535,6 @@ class Report(Workflow, ModelSQL, ModelView):
     @ModelView.button
     @Workflow.transition('cancelled')
     def cancel(cls, reports):
-        pass
-
-    @classmethod
-    @ModelView.button
-    @Workflow.transition('draft')
-    def draft(cls, reports):
         pass
 
     def create_file(self):
@@ -577,45 +610,21 @@ class LineMixin(object):
         super(LineMixin, cls).__setup__()
         cls._error_messages.update({
                 'check_state_invalid': ('Line "%s" cannot be modified because '
-                    'its report is not in draft state.'),
+                    'its report is not in Calculated state.'),
                 'delete_state_invalid': ('Line "%s" cannot be deleted because '
-                    'its report is not in draft state.'),
+                    'its report is not in Draft state.'),
                 'invalid_book_key': ('Invalid Book Key "%(key)s" for record '
                     '"%(record)s".')
                 })
-
-    @staticmethod
-    def default_company():
-        return Transaction().context.get('company')
-
-    @classmethod
-    def validate(cls, lines):
-        super(LineMixin, cls).validate(lines)
-        for line in lines:
-            line.check_state()
-            line.check_key()
-
-    def check_state(self):
-        if self.report and self.report.state != 'draft':
-            self.raise_user_error('check_state_invalid', self.rec_name)
 
     def get_rec_name(self, name):
         report = self.report.rec_name + ':' if self.report else ''
         return "%s %s-%s : %s" % (report, self.book_key,
                 self.operation_key, self.invoice_number)
 
-    def check_key(self):
-        if self._possible_keys and self.book_key not in self._possible_keys:
-            self.raise_user_error('invalid_book_key',
-                {'key': self.book_key, 'record': self.rec_name})
-
-    @classmethod
-    def delete(cls, lines):
-        if not Transaction().context.get('from_report'):
-            for line in lines:
-                if line.report and line.report.state != 'draft':
-                    cls.raise_user_error('delete_state_invalid', line.rec_name)
-        super(LineMixin, cls).delete(lines)
+    @staticmethod
+    def default_company():
+        return Transaction().context.get('company')
 
     @fields.depends('operation_key', 'cost')
     def on_change_with_cost(self):
@@ -631,6 +640,40 @@ class LineMixin(object):
             value = getattr(self, column)
             if value:
                 setattr(record, column, getattr(self, column))
+
+    @classmethod
+    def validate(cls, lines):
+        super(LineMixin, cls).validate(lines)
+        for line in lines:
+            line.check_key()
+
+    def check_key(self):
+        if self._possible_keys and self.book_key not in self._possible_keys:
+            self.raise_user_error('invalid_book_key', {
+                    'key': self.book_key,
+                    'record': self.rec_name,
+                    })
+
+    @classmethod
+    def write(cls, *args):
+        actions = iter(args)
+        for lines, _ in zip(actions, actions):
+            for line in lines:
+                line.check_state()
+        super(LineMixin, cls).write(*args)
+
+    def check_state(self):
+        if self.report and self.report.state != 'calculated':
+            self.raise_user_error('check_state_invalid', self.rec_name)
+
+    @classmethod
+    def delete(cls, lines):
+        if not Transaction().context.get('from_report'):
+            for line in lines:
+                if (line.report
+                        and line.report.state not in ('draft', 'calculated')):
+                    cls.raise_user_error('delete_state_invalid', line.rec_name)
+        super(LineMixin, cls).delete(lines)
 
 
 class Issued(LineMixin, ModelSQL, ModelView):
