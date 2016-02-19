@@ -413,19 +413,20 @@ class Invoice:
         Configuration = pool.get('account.configuration')
         InvoiceLine = pool.get('account.invoice.line')
         Record = pool.get('aeat.340.record')
-        Tax = pool.get('account.tax')
 
         config = Configuration(1)
 
         def compute_tax_amount(line, tax):
-            context = line.invoice.get_tax_context()
+            context = line.invoice._get_tax_context()
             with Transaction().set_context(**context):
-                taxes = Tax.compute([tax], line.unit_price, line.quantity)
-                tax_amount = 0
-                for tax in taxes:
-                    key, val = line.invoice._compute_tax(tax,
-                        line.invoice.type)
-                    tax_amount += val['amount']
+                #taxes = Tax.compute([tax], line.unit_price, line.quantity)
+                taxes = line._get_taxes()
+                tax_amount = Decimal(0)
+                for t in taxes:
+                    #key, val = line.invoice._compute_taxes(tax,
+                        #line.invoice.type)
+                    if t['tax'] == tax.id:
+                        tax_amount += t['amount']
             return tax_amount
 
         to_create = {}
@@ -526,14 +527,15 @@ class Invoice:
                             'fiscalyear': fiscalyear,
                             'month': invoice.aeat340_record_month,
                             'party_name': party.rec_name[:40],
-                            'party_nif': (party.vat_number[:9]
-                                if party.vat_country == 'ES' else ''),
-                            'party_country': party.vat_country,
+                            'party_nif': party.vat_code[2:11] if party.vat_code
+                                and party.vat_code[:2] == 'ES' else '',
+                            'party_country': party.vat_code[:2]
+                                if party.vat_code else None,
                             'party_identifier_type': '1',
                             'base': base,
                             'tax': tax_amount,
-                            'equivalence_tax': (equivalence_tax_amount
-                                if equivalence_tax_rate else None),
+                            'equivalence_tax': equivalence_tax_amount
+                                if equivalence_tax_rate else None,
                             'tax_rate': tax_rate,
                             'equivalence_tax_rate': equivalence_tax_rate,
                             'total': total,
@@ -548,8 +550,8 @@ class Invoice:
                         continue
                     to_create[key]['base'] = invoice.currency.round(
                         to_create[key]['base'])
-                    to_create[key]['tax_amount'] = invoice.currency.round(
-                        to_create[key]['tax_amount'])
+                    to_create[key]['tax'] = invoice.currency.round(
+                        to_create[key]['tax'])
                     to_create[key]['total'] = invoice.currency.round(
                         to_create[key]['total'])
                     if to_create[key]['equivalence_tax_rate']:
