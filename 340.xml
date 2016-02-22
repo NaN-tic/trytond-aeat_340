@@ -869,20 +869,6 @@ this repository contains the full copyright notices and license terms. -->
         <record model="account.tax.template" id="account_es.igic_X13_5_compras_bi">
             <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
         </record>
-        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X0_E">
-            <field name="tax" ref="account_es.igic_X0"/>
-            <field name="aeat_340_type" ref="aeat_340_key_E"/>
-        </record>
-        <record model="account.tax.template" id="account_es.igic_X0">
-            <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
-        </record>
-        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_ISP_E">
-            <field name="tax" ref="account_es.igic_ISP"/>
-            <field name="aeat_340_type" ref="aeat_340_key_E"/>
-        </record>
-        <record model="account.tax.template" id="account_es.igic_ISP">
-            <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
-        </record>
         <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IO_E">
             <field name="tax" ref="account_es.igic_IO"/>
             <field name="aeat_340_type" ref="aeat_340_key_E"/>
@@ -1225,6 +1211,27 @@ this repository contains the full copyright notices and license terms. -->
             <field name="aeat_340_type" ref="aeat_340_key_R"/>
         </record>
         <record model="account.tax.template" id="account_es.iva_reagp_compras_12_2">
+            <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_R">
+            <field name="tax" ref="account_es.iva_ISP_compras"/>
+            <field name="aeat_340_type" ref="aeat_340_key_R"/>
+        </record>
+        <record model="account.tax.template" id="account_es.iva_ISP_compras">
+            <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_1_R">
+            <field name="tax" ref="account_es.iva_ISP_compras_1"/>
+            <field name="aeat_340_type" ref="aeat_340_key_R"/>
+        </record>
+        <record model="account.tax.template" id="account_es.iva_ISP_compras_1">
+            <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_2_R">
+            <field name="tax" ref="account_es.iva_ISP_compras_2"/>
+            <field name="aeat_340_type" ref="aeat_340_key_R"/>
+        </record>
+        <record model="account.tax.template" id="account_es.iva_ISP_compras_2">
             <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
         </record>
     </data>
@@ -2325,20 +2332,6 @@ this repository contains the full copyright notices and license terms. -->
         <record model="account.tax.template" id="account_es_pyme.igic_pymes_X13_5_compras_bi">
             <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
         </record>
-        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_pymes_X0_E">
-            <field name="tax" ref="account_es_pyme.igic_pymes_X0"/>
-            <field name="aeat_340_type" ref="aeat_340_key_E"/>
-        </record>
-        <record model="account.tax.template" id="account_es_pyme.igic_pymes_X0">
-            <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
-        </record>
-        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_pymes_ISP_E">
-            <field name="tax" ref="account_es_pyme.igic_pymes_ISP"/>
-            <field name="aeat_340_type" ref="aeat_340_key_E"/>
-        </record>
-        <record model="account.tax.template" id="account_es_pyme.igic_pymes_ISP">
-            <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
-        </record>
         <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_pymes_IO_E">
             <field name="tax" ref="account_es_pyme.igic_pymes_IO"/>
             <field name="aeat_340_type" ref="aeat_340_key_E"/>
@@ -2681,6 +2674,27 @@ this repository contains the full copyright notices and license terms. -->
             <field name="aeat_340_type" ref="aeat_340_key_R"/>
         </record>
         <record model="account.tax.template" id="account_es_pyme.iva_pymes_reagp_compras_12_2">
+            <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_pymes_ISP_compras_R">
+            <field name="tax" ref="account_es_pyme.iva_pymes_ISP_compras"/>
+            <field name="aeat_340_type" ref="aeat_340_key_R"/>
+        </record>
+        <record model="account.tax.template" id="account_es_pyme.iva_pymes_ISP_compras">
+            <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_pymes_ISP_compras_1_R">
+            <field name="tax" ref="account_es_pyme.iva_pymes_ISP_compras_1"/>
+            <field name="aeat_340_type" ref="aeat_340_key_R"/>
+        </record>
+        <record model="account.tax.template" id="account_es_pyme.iva_pymes_ISP_compras_1">
+            <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_pymes_ISP_compras_2_R">
+            <field name="tax" ref="account_es_pyme.iva_pymes_ISP_compras_2"/>
+            <field name="aeat_340_type" ref="aeat_340_key_R"/>
+        </record>
+        <record model="account.tax.template" id="account_es_pyme.iva_pymes_ISP_compras_2">
             <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
         </record>
     </data>
