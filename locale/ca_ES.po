@@ -1207,15 +1207,15 @@ msgstr "Recalcula registres AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_record"
 msgid "AEAT 340 Record"
-msgstr "Registre AEAT 340"
+msgstr "Registres AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report"
 msgid "AEAT 340 Report"
-msgstr "Informe AEAT 340"
+msgstr "Informes AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_intracommunity"
 msgid "AEAT 340 Intracommunity"
-msgstr "Intracomunitari AEAT 340"
+msgstr "Intracomunitaris AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_investment"
 msgid "AEAT 340 Investment"
@@ -1623,7 +1623,7 @@ msgstr "DVD"
 
 msgctxt "selection:aeat.340.report,support_type:"
 msgid "Telematics"
-msgstr "Telemàtica"
+msgstr "Telemàtic"
 
 msgctxt "selection:aeat.340.report,type:"
 msgid "Complementary"

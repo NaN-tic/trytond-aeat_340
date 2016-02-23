@@ -351,7 +351,7 @@ msgstr "Archivo"
 
 msgctxt "field:aeat.340.report,filename:"
 msgid "File Name"
-msgstr "Nombre fichero"
+msgstr "Nombre archivo"
 
 msgctxt "field:aeat.340.report,fiscalyear:"
 msgid "Fiscal Year"
@@ -1175,19 +1175,19 @@ msgstr "Facturas"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_record"
 msgid "AEAT 340 Record"
-msgstr "Registro AEAT 340"
+msgstr "Registros AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report"
 msgid "AEAT 340 Report"
-msgstr "Informe AEAT 340"
+msgstr "Informes AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_intracommunity"
 msgid "AEAT 340 Intracommunity"
-msgstr "Intracomunitario AEAT 340"
+msgstr "Intracomunitarios AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_investment"
 msgid "AEAT 340 Investment"
-msgstr "Inversión AEAT 340"
+msgstr "Inversiones AEAT 340"
 
 msgctxt "model:ir.ui.menu,name:menu_aeat_340_report_issued"
 msgid "AEAT 340 Issued"
@@ -1591,7 +1591,7 @@ msgstr "DVD"
 
 msgctxt "selection:aeat.340.report,support_type:"
 msgid "Telematics"
-msgstr "Telemática"
+msgstr "Telemático"
 
 msgctxt "selection:aeat.340.report,type:"
 msgid "Complementary"
