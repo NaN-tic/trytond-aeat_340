@@ -31,7 +31,6 @@ class Type(ModelSQL, ModelView):
     Keys types for AEAT 340 Report
     """
     __name__ = 'aeat.340.type'
-    _rec_name = 'book_key'
 
     book_key = fields.Selection(BOOK_KEY, 'Book key',
         required=True)
@@ -46,6 +45,13 @@ class Type(ModelSQL, ModelView):
         cls._error_messages.update({
                 'unique_book_key': 'Book key must be unique.',
                 })
+
+    def get_rec_name(self, name):
+        opts = self.fields_get('book_key')['book_key']['selection']
+        for key, value in opts:
+            if self.book_key == key:
+                return value
+        return self.book_key
 
 
 class TypeTax(ModelSQL):

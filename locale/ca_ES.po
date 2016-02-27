@@ -107,11 +107,11 @@ msgstr "Claus tipus de llibre disponibles"
 
 msgctxt "field:account.tax,aeat340_default_in_book_key:"
 msgid "Default In Book Key"
-msgstr "Tipus de llibre per defecte (Factures de compra)"
+msgstr "Tipus de llibre per defecte (factures de compra)"
 
 msgctxt "field:account.tax,aeat340_default_out_book_key:"
 msgid "Default Out Book Key"
-msgstr "Tipus de llibre per defecte (Factures de venda)"
+msgstr "Tipus de llibre per defecte (factures de venda)"
 
 msgctxt "field:account.tax.template,aeat340_book_keys:"
 msgid "Available Book Keys"
@@ -119,11 +119,11 @@ msgstr "Claus tipus de llibre disponibles"
 
 msgctxt "field:account.tax.template,aeat340_default_in_book_key:"
 msgid "Default In Book Key"
-msgstr "Tipus de llibre per defecte (Factures de compra)"
+msgstr "Tipus de llibre per defecte (factures de compra)"
 
 msgctxt "field:account.tax.template,aeat340_default_out_book_key:"
 msgid "Default Out Book Key"
-msgstr "Tipus de llibre per defecte (Factures de venda)"
+msgstr "Tipus de llibre per defecte (factures de venda)"
 
 msgctxt "field:account.tax.template,recargo_equivalencia:"
 msgid "Recargo Equivalencia"
@@ -1247,7 +1247,7 @@ msgstr "D - Abonament"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisicions d'agències de viatges"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1275,7 +1275,7 @@ msgstr "L - Adquisicions a minoristes d'IGIC"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatge"
+msgstr "N - Serveis a agències de viatges"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "None of the Above"
@@ -1331,7 +1331,7 @@ msgstr "D - Abonament"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisicions d'agències de viatges"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1359,7 +1359,7 @@ msgstr "L - Adquisicions a minoristes d'IGIC"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatge"
+msgstr "N - Serveis a agències de viatges"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "None of the Above"
@@ -1443,7 +1443,7 @@ msgstr "D - Abonament"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisicions d'agències de viatges"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1471,7 +1471,7 @@ msgstr "L - Adquisicions a minoristes d'IGIC"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatge"
+msgstr "N - Serveis a agències de viatges"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "None of the Above"
@@ -1679,7 +1679,7 @@ msgstr "D - Abonament"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisicions d'agències de viatges"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1707,7 +1707,7 @@ msgstr "L - Adquisicions a minoristes d'IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatge"
+msgstr "N - Serveis a agències de viatges"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "None of the Above"
@@ -1815,7 +1815,7 @@ msgstr "D - Abonament"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisicions d'agències de viatges"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1843,7 +1843,7 @@ msgstr "L - Adquisicions a minoristes d'IGIC"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatge"
+msgstr "N - Serveis a agències de viatges"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "None of the Above"
@@ -1951,7 +1951,7 @@ msgstr "D - Abonament"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisicions d'agències de viatges"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1979,7 +1979,7 @@ msgstr "L - Adquisicions a minoristes d'IGIC"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatge"
+msgstr "N - Serveis a agències de viatges"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "None of the Above"
@@ -2118,7 +2118,7 @@ msgstr "D - Abonament"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisicions d'agències de viatge"
+msgstr "F - Adquisicions d'agències de viatges"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -2146,7 +2146,7 @@ msgstr "L - Adquisicions a minoristes d'IGIC"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Serveis a agències de viatge"
+msgstr "N - Serveis a agències de viatges"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "None of the Above"
@@ -2375,11 +2375,11 @@ msgstr "General"
 
 msgctxt "view:aeat.340.report:"
 msgid "Intracommunity"
-msgstr "Intracomunitari"
+msgstr "Intracomunitàries"
 
 msgctxt "view:aeat.340.report:"
 msgid "Investment"
-msgstr "Inversió"
+msgstr "Inversions"
 
 msgctxt "view:aeat.340.report:"
 msgid "Issued"
