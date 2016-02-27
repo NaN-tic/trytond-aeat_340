@@ -95,7 +95,7 @@ msgstr "Tipo de libro AEAT 340"
 
 msgctxt "field:account.invoice.line,aeat340_operation_key:"
 msgid "AEAT 340 Operation Key"
-msgstr "Clave de operación AEAT 340"
+msgstr "Clave operación AEAT 340"
 
 msgctxt "field:account.tax,aeat340_book_keys:"
 msgid "Available Book Keys"
@@ -103,11 +103,11 @@ msgstr "Tipos de libro disponibles"
 
 msgctxt "field:account.tax,aeat340_default_in_book_key:"
 msgid "Default In Book Key"
-msgstr "Tipo de libro por defecto (Compras)"
+msgstr "Tipo de libro por defecto (facturas de proveedor)"
 
 msgctxt "field:account.tax,aeat340_default_out_book_key:"
 msgid "Default Out Book Key"
-msgstr "Tipo de libro por defecto (Ventas)"
+msgstr "Tipo de libro por defecto (facturas de cliente)"
 
 msgctxt "field:account.tax.template,aeat340_book_keys:"
 msgid "Available Book Keys"
@@ -115,11 +115,11 @@ msgstr "Tipos de libro disponibles"
 
 msgctxt "field:account.tax.template,aeat340_default_in_book_key:"
 msgid "Default In Book Key"
-msgstr "Tipo de libro por defecto (Compras)"
+msgstr "Tipo de libro por defecto (facturas de proveedor)"
 
 msgctxt "field:account.tax.template,aeat340_default_out_book_key:"
 msgid "Default Out Book Key"
-msgstr "Tipo de libro por defecto (Ventas)"
+msgstr "Tipo de libro por defecto (facturas de cliente)"
 
 msgctxt "field:account.tax.template,recargo_equivalencia:"
 msgid "Recargo Equivalencia"
@@ -235,7 +235,7 @@ msgstr "Identificador del tercero"
 
 msgctxt "field:aeat.340.record,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipo de identificador del tercero"
+msgstr "Tipo identificador del tercero"
 
 msgctxt "field:aeat.340.record,party_name:"
 msgid "Party Name"
@@ -511,7 +511,7 @@ msgstr "Identificador del tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipo de identificador del tercero"
+msgstr "Tipo identificador del tercero"
 
 msgctxt "field:aeat.340.report.intracommunity,party_name:"
 msgid "Party Name"
@@ -627,7 +627,7 @@ msgstr "Identificador del tercero"
 
 msgctxt "field:aeat.340.report.investment,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipo de identificador del tercero"
+msgstr "Tipo identificador del tercero"
 
 msgctxt "field:aeat.340.report.investment,party_name:"
 msgid "Party Name"
@@ -787,7 +787,7 @@ msgstr "Identificador del tercero"
 
 msgctxt "field:aeat.340.report.issued,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipo de identificador del tercero"
+msgstr "Tipo identificador del tercero"
 
 msgctxt "field:aeat.340.report.issued,party_name:"
 msgid "Party Name"
@@ -919,7 +919,7 @@ msgstr "Identificador del tercero"
 
 msgctxt "field:aeat.340.report.received,party_identifier_type:"
 msgid "Party Identifier Type"
-msgstr "Tipo de identificador del tercero"
+msgstr "Tipo identificador del tercero"
 
 msgctxt "field:aeat.340.report.received,party_name:"
 msgid "Party Name"
@@ -1207,7 +1207,7 @@ msgstr "D - Factura rectificativa"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisiciones agencias de viaje"
+msgstr "F - Adquisiciones agencias de viajes"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1235,7 +1235,7 @@ msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Servicios a agencias de viaje"
+msgstr "N - Servicios a agencias de viajes"
 
 msgctxt "selection:account.invoice.line,aeat340_operation_key:"
 msgid "None of the Above"
@@ -1287,7 +1287,7 @@ msgstr "D - Factura rectificativa"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisiciones agencias de viaje"
+msgstr "F - Adquisiciones agencias de viajes"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1315,7 +1315,7 @@ msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Servicios a agencias de viaje"
+msgstr "N - Servicios a agencias de viajes"
 
 msgctxt "selection:aeat.340.reasign.records.start,operation_key:"
 msgid "None of the Above"
@@ -1351,15 +1351,15 @@ msgstr "X - Compensaciones agrícolas, ganaderas y/o pesqueras"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Bienes inversión IGIC"
+msgstr "Bienes de inversión IGIC"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Facturas Emitidas IGIC"
+msgstr "Facturas emitidas IGIC"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Facturas Recibidas IGIC"
+msgstr "Facturas recibidas IGIC"
 
 msgctxt "selection:aeat.340.record,book_key:"
 msgid "Investment Goods"
@@ -1395,7 +1395,7 @@ msgstr "D - Factura rectificativa"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisiciones agencias de viaje"
+msgstr "F - Adquisiciones agencias de viajes"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1423,7 +1423,7 @@ msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Servicios a agencias de viaje"
+msgstr "N - Servicios a agencias de viajes"
 
 msgctxt "selection:aeat.340.record,operation_key:"
 msgid "None of the Above"
@@ -1583,15 +1583,15 @@ msgstr "Sustitutiva"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Bienes inversión IGIC"
+msgstr "Bienes de inversión IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Facturas Emitidas IGIC"
+msgstr "Facturas emitidas IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Facturas Recibidas IGIC"
+msgstr "Facturas recibidas IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,book_key:"
 msgid "Investment Goods"
@@ -1627,7 +1627,7 @@ msgstr "D - Factura rectificativa"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisiciones agencias de viaje"
+msgstr "F - Adquisiciones agencias de viajes"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1655,7 +1655,7 @@ msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Servicios a agencias de viaje"
+msgstr "N - Servicios a agencias de viajes"
 
 msgctxt "selection:aeat.340.report.intracommunity,operation_key:"
 msgid "None of the Above"
@@ -1715,15 +1715,15 @@ msgstr "Pasaporte"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Bienes inversión IGIC"
+msgstr "Bienes de inversión IGIC"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Facturas Emitidas IGIC"
+msgstr "Facturas emitidas IGIC"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Facturas Recibidas IGIC"
+msgstr "Facturas recibidas IGIC"
 
 msgctxt "selection:aeat.340.report.investment,book_key:"
 msgid "Investment Goods"
@@ -1759,7 +1759,7 @@ msgstr "D - Factura rectificativa"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisiciones agencias de viaje"
+msgstr "F - Adquisiciones agencias de viajes"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1787,7 +1787,7 @@ msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Servicios a agencias de viaje"
+msgstr "N - Servicios a agencias de viajes"
 
 msgctxt "selection:aeat.340.report.investment,operation_key:"
 msgid "None of the Above"
@@ -1847,15 +1847,15 @@ msgstr "Pasaporte"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Bienes inversión IGIC"
+msgstr "Bienes de inversión IGIC"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Facturas Emitidas IGIC"
+msgstr "Facturas emitidas IGIC"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Facturas Recibidas IGIC"
+msgstr "Facturas recibidas IGIC"
 
 msgctxt "selection:aeat.340.report.issued,book_key:"
 msgid "Investment Goods"
@@ -1891,7 +1891,7 @@ msgstr "D - Factura rectificativa"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisiciones agencias de viaje"
+msgstr "F - Adquisiciones agencias de viajes"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -1919,7 +1919,7 @@ msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Servicios a agencias de viaje"
+msgstr "N - Servicios a agencias de viajes"
 
 msgctxt "selection:aeat.340.report.issued,operation_key:"
 msgid "None of the Above"
@@ -1979,15 +1979,15 @@ msgstr "Pasaporte"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Bienes inversión IGIC"
+msgstr "Bienes de inversión IGIC"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Facturas Emitidas IGIC"
+msgstr "Facturas emitidas IGIC"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Facturas Recibidas IGIC"
+msgstr "Facturas recibidas IGIC"
 
 msgctxt "selection:aeat.340.report.received,book_key:"
 msgid "Investment Goods"
@@ -2023,7 +2023,7 @@ msgstr "D - Factura rectificativa"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "F - Travel agencies acquisitions"
-msgstr "F - Adquisiciones agencias de viaje"
+msgstr "F - Adquisiciones agencias de viajes"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "G - Special arrangment parties on IVA or IGIC"
@@ -2051,7 +2051,7 @@ msgstr "L - Adquisiciones a comerciantes minoristas del IGIC"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "N - Services to travel agencies"
-msgstr "N - Servicios a agencias de viaje"
+msgstr "N - Servicios a agencias de viajes"
 
 msgctxt "selection:aeat.340.report.received,operation_key:"
 msgid "None of the Above"
@@ -2111,15 +2111,15 @@ msgstr "Pasaporte"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "IGIC Investment Goods"
-msgstr "Bienes inversión IGIC"
+msgstr "Bienes de inversión IGIC"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "IGIC Issued Invoices"
-msgstr "Facturas Emitidas IGIC"
+msgstr "Facturas emitidas IGIC"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "IGIC Received Invoices"
-msgstr "Facturas Recibidas IGIC"
+msgstr "Facturas recibidas IGIC"
 
 msgctxt "selection:aeat.340.type,book_key:"
 msgid "Investment Goods"
@@ -2276,11 +2276,11 @@ msgstr "General"
 
 msgctxt "view:aeat.340.report:"
 msgid "Intracommunity"
-msgstr "Intracomunitario"
+msgstr "Intracomunitarias"
 
 msgctxt "view:aeat.340.report:"
 msgid "Investment"
-msgstr "Inversión"
+msgstr "Inversiones"
 
 msgctxt "view:aeat.340.report:"
 msgid "Issued"
