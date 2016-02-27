@@ -24,6 +24,8 @@
             <field name="issue_date"/>
             <label name="operation_date"/>
             <field name="operation_date"/>
+            <label name="base" colspan="3"/>
+            <field name="base"/>
             <label name="tax_rate"/>
             <field name="tax_rate"/>
             <label name="tax"/>
@@ -32,9 +34,7 @@
             <field name="equivalence_tax_rate"/>
             <label name="equivalence_tax"/>
             <field name="equivalence_tax"/>
-            <label name="base"/>
-            <field name="base"/>
-            <label name="total"/>
+            <label name="total" colspan="3"/>
             <field name="total"/>
             <label name="cost"/>
             <field name="cost"/>
