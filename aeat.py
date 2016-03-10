@@ -703,11 +703,11 @@ class Issued(LineMixin, ModelSQL, ModelView):
     @classmethod
     def __register__(cls, module_name):
         TableHandler = backend.get('TableHandler')
-        cursor = Transaction().cursor
+        cursor = Transaction().connection.cursor()
         sql_table = cls.__table__()
 
         # Migration from 3.4.0: renamed invoice_count to issued_invoice_count
-        table = TableHandler(cursor, cls, module_name)
+        table = TableHandler(cls, module_name)
         copy_issued_inv_count = (table.column_exist('invoice_count')
             and not table.column_exist('issued_invoice_count'))
 
@@ -767,11 +767,11 @@ class Received(LineMixin, ModelSQL, ModelView):
     @classmethod
     def __register__(cls, module_name):
         TableHandler = backend.get('TableHandler')
-        cursor = Transaction().cursor
+        cursor = Transaction().connection.cursor()
         sql_table = cls.__table__()
 
         # Migration from 3.4.1: renamed invoice_count to received_invoice_count
-        table = TableHandler(cursor, cls, module_name)
+        table = TableHandler(cls, module_name)
         copy_issued_inv_count = (table.column_exist('invoice_count')
             and not table.column_exist('received_invoice_count'))
 
