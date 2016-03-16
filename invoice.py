@@ -553,8 +553,8 @@ class Invoice:
                         continue
                     to_create[key]['base'] = invoice.currency.round(
                         to_create[key]['base'])
-                    to_create[key]['tax_amount'] = invoice.currency.round(
-                        to_create[key]['tax_amount'])
+                    to_create[key]['tax'] = invoice.currency.round(
+                        to_create[key]['tax'])
                     to_create[key]['total'] = invoice.currency.round(
                         to_create[key]['total'])
                     if to_create[key]['equivalence_tax_rate']:
