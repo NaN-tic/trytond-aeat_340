@@ -21,8 +21,6 @@ __all__ = ['Type', 'TypeTax', 'TypeTemplateTax',
     'Recalculate340Record', 'Reasign340RecordStart',
     'Reasign340RecordEnd', 'Reasign340Record']
 
-__metaclass__ = PoolMeta
-
 
 class Type(ModelSQL, ModelView):
     """
@@ -225,6 +223,7 @@ class AEAT340RecordInvoiceLine(ModelSQL):
 
 
 class TemplateTax:
+    __metaclass__ = PoolMeta
     __name__ = 'account.tax.template'
 
     aeat340_book_keys = fields.Many2Many('aeat.340.type-account.tax.template',
@@ -276,6 +275,7 @@ class TemplateTax:
 
 
 class Tax:
+    __metaclass__ = PoolMeta
     __name__ = 'account.tax'
 
     aeat340_book_keys = fields.Many2Many('aeat.340.type-account.tax',
@@ -296,6 +296,7 @@ DEPENDS = ['type']
 
 
 class InvoiceLine:
+    __metaclass__ = PoolMeta
     __name__ = 'account.invoice.line'
     aeat340_available_keys = fields.Function(fields.One2Many('aeat.340.type',
         None, 'AEAT 340 Available Keys',
@@ -405,6 +406,7 @@ class InvoiceLine:
 
 
 class Invoice:
+    __metaclass__ = PoolMeta
     __name__ = 'account.invoice'
     aeat340_records = fields.One2Many('aeat.340.record', 'invoice',
         'AEAT 340 Records', readonly=True)
