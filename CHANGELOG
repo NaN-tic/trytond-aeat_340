@@ -1,3 +1,4 @@
+Version 4.0.0 - 2016-05-03
 * Allow to manipulate aeat.340.record to account group members
 * Remove accents and convert strint to upper case when generate file
 
