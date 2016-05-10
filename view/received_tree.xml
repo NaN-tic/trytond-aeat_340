@@ -3,6 +3,7 @@
     <field name="issue_date"/>
     <field name="operation_date"/>
     <field name="party_name"/>
+    <field name="party_identifier_type"/>
     <field name="operation_key"/>
     <field name="received_invoice_count"/>
     <field name="record_count"/>
