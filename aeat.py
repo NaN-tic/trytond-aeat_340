@@ -110,6 +110,7 @@ _STATES = {
     }
 _DEPENDS = ['state']
 
+
 class Report(Workflow, ModelSQL, ModelView):
     '''
     AEAT 340 Report
@@ -125,11 +126,11 @@ class Report(Workflow, ModelSQL, ModelView):
         states={
             'readonly': ~Eval('state').in_(['draft', 'calculated']),
             }, depends=['state'])
-    representative_vat = fields.Char('L.R. VAT number', size=9,
-        help='Legal Representative VAT number.', states={
-            'required': Eval('state').in_(['calculated', 'done']),
+    representative_vat = fields.Char('L.R. VAT number', size=9, states={
             'readonly': ~Eval('state').in_(['draft', 'calculated']),
-            }, depends=['state'])
+            }, depends=['state'],
+        help='Legal Representative VAT number when the presenter is under '
+        'fourteen.')
     fiscalyear = fields.Many2One('account.fiscalyear', 'Fiscal Year',
         required=True, states={
             'readonly': Eval('state') != 'draft',
@@ -225,10 +226,18 @@ class Report(Workflow, ModelSQL, ModelView):
 
     @classmethod
     def __setup__(cls):
-        super(cls, Report).__setup__()
+        super(Report, cls).__setup__()
         cls._error_messages.update({
                 'invalid_currency': ('Currency in AEAT 340 report "%s" must be'
-                    ' Euro.')
+                    ' Euro.'),
+                'foreign_vat_check_identifier_type': (
+                    'There are %(line_type)s lines of report "%(report)s" of '
+                    'party "%(party)s" which doesn\'t have an spanish VAT '
+                    'number. The "Party Identifier Type" of theses lines has '
+                    'been set as "Official Document Emmited by the Country of '
+                    'Residence" but it maybe it isn\'t correct.\n'
+                    'Please, check the lines of this party before process the '
+                    'report.'),
                 })
         cls._buttons.update({
                 'draft': {
@@ -356,6 +365,14 @@ class Report(Workflow, ModelSQL, ModelView):
         Received = pool.get('aeat.340.report.received')
         Investment = pool.get('aeat.340.report.investment')
         Intracomunity = pool.get('aeat.340.report.intracommunity')
+        Model = pool.get('ir.model')
+
+        models = Model.search([
+                ('model', 'in', ('aeat.340.report.issued',
+                    'aeat.340.report.received', 'aeat.340.report.investment',
+                    'aeat.340.report.intracommunity')),
+                ])
+        model_names = {m.model: m.name for m in models}
 
         cls._delete_lines(reports)
 
@@ -388,14 +405,18 @@ class Report(Workflow, ModelSQL, ModelView):
                 issued = received = False
                 if record.book_key in ['E', 'F']:
                     to_create = issued_to_create
+                    line_type = Issued
                     issued = True
                 elif record.book_key in ['R', 'S']:
                     to_create = received_to_create
+                    line_type = Received
                     received = True
                 elif record.book_key in ['I', 'J']:
                     to_create = investment_to_create
+                    line_type = Investment
                 else:
                     to_create = intracomunity_to_create
+                    line_type = Intracommunity
 
                 if 'credit_note' in record.invoice.type:
                     sign = -1
@@ -435,64 +456,18 @@ class Report(Workflow, ModelSQL, ModelView):
                                 last_inv_number)
                     to_create[key]['records'][0][1].append(record.id)
                 else:
-                    to_create[key] = {
-                        # TODO: set company?
-                        'report': report.id,
-                        'party_nif': record.party_nif,
-                        # TODO: set representative_nif?
-                        'party_name': record.party_name[:40],
-                        'party_country': record.party_country,
-                        'party_identifier_type': record.party_identifier_type,
-                        # TODO: set party_identifier?
-                        'book_key': record.book_key,
-                        'operation_key': record.operation_key,
-                        'issue_date': record.issue_date,
-                        'operation_date': record.operation_date,
-                        'tax_rate': record.tax_rate,
-                        'base': record.base * sign,
-                        'tax': record.tax * sign,
-                        'total': record.total * sign,
-                        # TODO: set cost?
-                        'invoice_number': record.invoice_number[:40],
-                        'record_number': (record.invoice.move.number
-                            if record.invoice and record.invoice.move
-                            else None),
-                        'records': [('add', [record.id])],
-                        }
-                    if issued or received:
-                        to_create[key]['record_count'] = (
-                            len(record.invoice.aeat340_records)
-                            if record.operation_key == 'C' else 1),
-                        if issued:
-                            to_create[key].update({
-                                    'equivalence_tax': record.equivalence_tax,
-                                    'equivalence_tax_rate': (
-                                        record.equivalence_tax_rate),
-                                    'issued_invoice_count': 1,
-                                    })
-                        elif received:
-                            to_create[key]['received_invoice_count'] = 1
-                    if record.operation_key == 'B' and (issued or received):
-                        if issued:
-                            to_create[key]['issued_invoice_count'] = (
-                                record.ticket_count or 1)
-                        elif received:
-                            to_create[key]['received_invoice_count'] = (
-                                record.ticket_count or 1)
-                        first_inv_number, last_inv_number = (
-                            record.get_first_last_invoice_number())
-                        to_create[key]['first_invoice_number'] = (
-                            first_inv_number or '1')
-                        to_create[key]['last_invoice_number'] = (
-                            last_inv_number or '1')
-                    elif record.operation_key == 'C':
-                        # TODO: set number of records related to same invoice
-                        pass
-                    elif (record.operation_key == 'D'
-                            and record.corrective_invoice_number
-                            and issued):
-                        to_create[key]['corrective_invoice_number'] = (
-                            record.corrective_invoice_number[:40])
+                    if record.party.vat_country != 'ES':
+                        cls.raise_user_warning(
+                            'foreign_vat_%s_%s_%s' % (report.id,
+                                line_type.__name__, record.party.id),
+                            'foreign_vat_check_identifier_type', {
+                                'line_type': model_names[line_type.__name__],
+                                'report': report.rec_name,
+                                'party': record.party.rec_name,
+                                })
+
+                    to_create[key] = report._get_report_line_vals(record,
+                        line_type, sign)
 
         with Transaction().set_context(_check_access=False):
             Issued.create(sorted(issued_to_create.values(),
@@ -507,6 +482,83 @@ class Report(Workflow, ModelSQL, ModelView):
         cls.write(reports, {
                 'calculation_date': datetime.datetime.now(),
                 })
+
+    def _get_report_line_vals(self, record, line_type, sign):
+        assert line_type.__name__ in (
+                'aeat.340.report.issued',
+                'aeat.340.report.received',
+                'aeat.340.report.investment',
+                'aeat.340.report.intracommunity')
+        vals = {
+            'report': self.id,
+            'company': record.company.id,
+            'party_nif': (record.party.vat_number[:9]
+                if record.party.vat_country == 'ES' else ''),
+            # TODO: set representative_nif?
+            'party_name': record.party.name[:40],
+            'party_country': (
+                record.party.addresses[0].country.code
+                if (record.party.addresses
+                    and record.party.addresses[0].country
+                    and record.party.addresses[0].country.code)
+                else record.party.vat_country),
+            'party_identifier_type': ('1'
+                if record.party.vat_country == 'ES'
+                else '4'),
+            'party_identifier': (record.party.vat_number[:20]
+                if record.party.vat_country != 'ES' else ''),
+            'book_key': record.book_key,
+            'operation_key': record.operation_key,
+            'issue_date': record.issue_date,
+            'operation_date': record.operation_date,
+            'tax_rate': record.tax_rate,
+            'base': record.base * sign,
+            'tax': record.tax * sign,
+            'total': record.total * sign,
+            # TODO: set cost?
+            'invoice_number': record.invoice_number[:40],
+            'record_number': (record.invoice.move.number
+                if record.invoice and record.invoice.move
+                else None),
+            'records': [('add', [record.id])],
+            }
+        if line_type.__name__ in ('aeat.340.report.issued',
+                'aeat.340.report.received'):
+            vals['record_count'] = (
+                len(record.invoice.aeat340_records)
+                if record.operation_key == 'C' else 1),
+            if line_type.__name__ == 'aeat.340.report.issued':
+                vals.update({
+                        'equivalence_tax': record.equivalence_tax,
+                        'equivalence_tax_rate': (
+                            record.equivalence_tax_rate),
+                        'issued_invoice_count': 1,
+                        })
+            else:
+                vals['received_invoice_count'] = 1
+
+            if record.operation_key == 'B':
+                if line_type.__name__ == 'aeat.340.report.issued':
+                    vals['issued_invoice_count'] = (
+                        record.ticket_count or 1)
+                else:
+                    vals['received_invoice_count'] = (
+                        record.ticket_count or 1)
+                first_inv_number, last_inv_number = (
+                    record.get_first_last_invoice_number())
+                vals['first_invoice_number'] = (
+                    first_inv_number or '1')
+                vals['last_invoice_number'] = (
+                    last_inv_number or '1')
+        if record.operation_key == 'C':
+            # TODO: set number of records related to same invoice
+            pass
+        elif (record.operation_key == 'D'
+                and record.corrective_invoice_number
+                and line_type.__name__ == 'aeat.340.report.issued'):
+            vals['corrective_invoice_number'] = (
+                record.corrective_invoice_number[:40])
+        return vals
 
     @classmethod
     def _delete_lines(cls, reports):
@@ -559,7 +611,7 @@ class Report(Workflow, ModelSQL, ModelView):
         record.total_base = self.taxable_total
         record.total_tax = self.sharetax_total
         record.total = self.total
-        # record.representative_nif =
+        record.representative_nif = self.representative_vat
         records.append(record)
         for line in self.lines:
             record = line.get_record()
@@ -578,8 +630,8 @@ class Report(Workflow, ModelSQL, ModelView):
 class LineMixin(object):
     _rec_name = 'party_name'
 
-    company = fields.Many2One('company.company', 'Company', required=True)
     report = fields.Many2One('aeat.340.report', 'Report', ondelete='CASCADE')
+    company = fields.Many2One('company.company', 'Company', required=True)
     party_nif = fields.Char('Party CIF/NIF', size=9)
     representative_nif = fields.Char('Representative NIF', size=9)
     party_name = fields.Char('Party Name', size=40)

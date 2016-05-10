@@ -2,7 +2,9 @@
 <!--The COPYRIGHT file at the top level of this repository
 contains the full copyright notices and license terms. -->
 <form string="AEAT 340 Record">
-    <label name="party_nif"/>
+    <label name="party"/>
+    <field name="party"/>
+    <!--<label name="party_nif"/>
     <field name="party_nif"/>
     <label name="party_name"/>
     <field name="party_name"/>
@@ -11,7 +13,7 @@ contains the full copyright notices and license terms. -->
     <label name="party_identifier"/>
     <field name="party_identifier"/>
     <label name="party_country"/>
-    <field name="party_country"/>
+    <field name="party_country"/>-->
     <newline/>
     <label name="invoice"/>
     <field name="invoice"/>
