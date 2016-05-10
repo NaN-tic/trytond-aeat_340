@@ -1,3 +1,6 @@
+* Set representative_vat of report
+* Improve set party data in report lines from party
+* Replace party data fields of aeat.340.record by relation to party
 * Allow to manipulate aeat.340.record to account group members
 * Remove accents and convert strint to upper case when generate file
 
