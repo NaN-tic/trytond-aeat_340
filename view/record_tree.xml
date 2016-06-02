@@ -2,7 +2,8 @@
     <field name="fiscalyear"/>
     <field name="month"/>
     <field name="issue_date"/>
-    <field name="party_name"/>
+    <field name="party"/>
+    <!--<field name="party_name"/>-->
     <field name="book_key"/>
     <field name="operation_key"/>
     <field name="base"/>

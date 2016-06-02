@@ -1,10 +1,12 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from decimal import Decimal
-from sql import Literal
+from sql import Literal, Null
+from sql.aggregate import Count
 from sql.operators import In
 import logging
 
+from trytond import backend
 from trytond.model import ModelSQL, ModelView, fields
 from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond.pool import Pool, PoolMeta
@@ -12,7 +14,7 @@ from trytond.pyson import Eval
 from trytond.tools import grouped_slice
 from trytond.transaction import Transaction
 
-from .aeat import BOOK_KEY, OPERATION_KEY, PARTY_IDENTIFIER_TYPE
+from .aeat import BOOK_KEY, OPERATION_KEY
 
 __all__ = ['Type', 'TypeTax', 'TypeTemplateTax',
     'Record', 'AEAT340RecordInvoiceLine',
@@ -107,17 +109,16 @@ class Record(ModelSQL, ModelView):
     """
     __name__ = 'aeat.340.record'
 
+    invoice = fields.Many2One('account.invoice', 'Invoice', readonly=True)
+    invoice_lines = fields.Many2Many('aeat.340.record-account.invoice.line',
+        'aeat340_record', 'invoice_line', 'Invoice Lines')
     company = fields.Many2One('company.company', 'Company', required=True,
         readonly=True)
     fiscalyear = fields.Many2One('account.fiscalyear', 'Fiscal Year',
         required=True, readonly=True)
     month = fields.Integer('Month', readonly=True)
-    party_nif = fields.Char('Party CIF/NIF', size=9)
-    party_name = fields.Char('Party Name', size=40)
-    party_country = fields.Char('Party Country', size=2)
-    party_identifier_type = fields.Selection(PARTY_IDENTIFIER_TYPE,
-        'Party Identifier Type', required=True)
-    party_identifier = fields.Char('Party Identifier', size=20)
+    party = fields.Many2One('party.party', 'Party', required=True,
+        readonly=True)
     book_key = fields.Selection(BOOK_KEY, 'Book Key', sort=False,
         required=True)
     operation_key = fields.Selection(OPERATION_KEY, 'Operation Key',
@@ -137,9 +138,6 @@ class Record(ModelSQL, ModelView):
     equivalence_tax_rate = fields.Numeric('Equivalence Tax Rate',
         digits=(16, 2))
     equivalence_tax = fields.Numeric('Equivalence Tax', digits=(16, 2))
-    invoice = fields.Many2One('account.invoice', 'Invoice', readonly=True)
-    invoice_lines = fields.Many2Many('aeat.340.record-account.invoice.line',
-        'aeat340_record', 'invoice_line', 'Invoice Lines')
     issued = fields.Many2One('aeat.340.report.issued', 'Issued',
         readonly=True)
     received = fields.Many2One('aeat.340.report.received', 'Received',
@@ -148,6 +146,66 @@ class Record(ModelSQL, ModelView):
         readonly=True)
     intracommunity = fields.Many2One('aeat.340.report.intracommunity',
         'Intracommunity')
+
+    @classmethod
+    def __register__(cls, module_name):
+        pool = Pool()
+        Party = pool.get('party.party')
+        TableHandler = backend.get('TableHandler')
+
+        super(Record, cls).__register__(module_name)
+
+        # Migration from 3.4.5: add party field instead of party data fields
+        cursor = Transaction().cursor
+        handler = TableHandler(cursor, cls, module_name)
+        party_name_exists = handler.column_exist('party_name')
+        if party_name_exists:
+            # first time module migrated or not all records has been migrated
+            table = cls.__table__()
+            party = Party.__table__()
+
+            select_query = table.join(party,
+                type_='LEFT',
+                condition=(
+                    ((table.party_nif != Null)
+                        & (table.party_nif != '')
+                        & (party.vat_number == table.party_nif))
+                    | (party.name == table.party_name))
+                ).select(
+                    table.id, party.id,
+                    where=(table.party == Null),
+                    group_by=(table.id, party.id),
+                    having=(Count(party.id) != 1))
+            cursor.execute(*select_query)
+            party_not_found_ids = [r[0] for r in cursor.fetchall()]
+
+            update_query = table.update([table.party], [party.id],
+                from_=[party],
+                where=(
+                    ((table.party_nif != Null)
+                        & (table.party_nif != '')
+                        & (party.vat_number == table.party_nif))
+                    | (party.name == table.party_name)))
+
+            if party_not_found_ids:
+                logger = logging.getLogger(cls.__name__)
+                logger.warning('It can\'t found the correct party for %s %s. '
+                    'Maybe there are any party with the same name or '
+                    'vat_number than record or there are more than one '
+                    'matching party. Fix it manually.',
+                    len(party_not_found_ids), cls.__name__)
+                logger.warning('You can use this query: %s (params: %s)',
+                    select_query, select_query.params)
+                update_query.where &= ~table.id.in_(party_not_found_ids)
+                cursor.execute(*update_query)
+                handler.not_null_action('party_identifier_type',
+                    action='remove')
+            else:
+                cursor.execute(*update_query)
+                handler.drop_column('party_name')
+                handler.drop_column('party_nif')
+                handler.drop_column('party_country')
+                handler.drop_column('party_identifier_type')
 
     def get_issue_date(self, name):
         return self.invoice.invoice_date
@@ -447,8 +505,7 @@ class Invoice:
                 order=[('invoice', 'ASC')])
             for line in inv_lines:
                 invoice = line.invoice
-                fiscalyear = invoice.move.period.fiscalyear
-                party = invoice.party
+                fiscalyear_id = invoice.move.period.fiscalyear.id
 
                 if (not invoice.move or invoice.move.state == 'cancel'
                         or line.type != 'line'
@@ -518,34 +575,30 @@ class Invoice:
                     key = "%d-%d-%s-%s" % (invoice.id, tax.id,
                         operation_key, book_key)
                     if key in to_create:
+                        to_create[key]['invoice_lines'][0][1].append(line.id)
                         to_create[key]['base'] += base
                         to_create[key]['tax'] += tax_amount
                         to_create[key]['total'] += total
                         if equivalence_tax_rate:
                             to_create[key]['equivalence_tax'] += (
                                 equivalence_tax_amount)
-                        to_create[key]['invoice_lines'][0][1].append(line.id)
                     else:
                         to_create[key] = {
-                            'company': invoice.company.id,
-                            'fiscalyear': fiscalyear,
-                            'month': invoice.aeat340_record_month,
-                            'party_name': party.rec_name[:40],
-                            'party_nif': (party.vat_number[:9]
-                                if party.vat_country == 'ES' else ''),
-                            'party_country': party.vat_country,
-                            'party_identifier_type': '1',
-                            'base': base,
-                            'tax': tax_amount,
-                            'equivalence_tax': (equivalence_tax_amount
-                                if equivalence_tax_rate else None),
-                            'tax_rate': tax_rate,
-                            'equivalence_tax_rate': equivalence_tax_rate,
-                            'total': total,
-                            'operation_key': operation_key,
-                            'book_key': book_key,
                             'invoice': invoice.id,
                             'invoice_lines': [('add', [line.id])],
+                            'company': invoice.company.id,
+                            'fiscalyear': fiscalyear_id,
+                            'month': invoice.aeat340_record_month,
+                            'party': invoice.party.id,
+                            'book_key': book_key,
+                            'operation_key': operation_key,
+                            'tax_rate': tax_rate,
+                            'base': base,
+                            'tax': tax_amount,
+                            'total': total,
+                            'equivalence_tax_rate': equivalence_tax_rate,
+                            'equivalence_tax': (equivalence_tax_amount
+                                if equivalence_tax_rate else None),
                             }
             if config.tax_rounding == 'document':
                 for key in to_create:

@@ -20,10 +20,10 @@ contains the full copyright notices and license terms. -->
             <field name="contact_name"/>
             <label name="contact_phone"/>
             <field name="contact_phone"/>
-            <label name="representative_vat"/>
-            <field name="representative_vat"/>
             <label name="company_vat"/>
             <field name="company_vat"/>
+            <label name="representative_vat"/>
+            <field name="representative_vat"/>
             <label name="type"/>
             <field name="type"/>
             <label name="support_type"/>
