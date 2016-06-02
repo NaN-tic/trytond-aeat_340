@@ -1,3 +1,4 @@
+Version 3.4.6 - 2016-06-02
 * Set representative_vat of report
 * Improve set party data in report lines from party
 * Replace party data fields of aeat.340.record by relation to party
