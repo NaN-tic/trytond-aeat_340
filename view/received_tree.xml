@@ -1,3 +1,6 @@
+<?xml version="1.0"?>
+<!--The COPYRIGHT file at the top level of this repository
+contains the full copyright notices and license terms. -->
 <tree string="AEAT 340 Recieved Line">
     <field name="invoice_number"/>
     <field name="issue_date"/>
