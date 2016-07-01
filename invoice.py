@@ -152,8 +152,8 @@ class Record(ModelSQL, ModelView):
         super(Record, cls).__register__(module_name)
 
         # Migration from 3.4.5: add party field instead of party data fields
-        cursor = Transaction().cursor
-        handler = TableHandler(cursor, cls, module_name)
+        cursor = Transaction().connection.cursor()
+        handler = TableHandler(cls, module_name)
         party_name_exists = handler.column_exist('party_name')
         if party_name_exists:
             # first time module migrated or not all records has been migrated
