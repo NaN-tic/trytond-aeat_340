@@ -492,21 +492,21 @@ class Report(Workflow, ModelSQL, ModelView):
         vals = {
             'report': self.id,
             'company': record.company.id,
-            'party_nif': (record.party.vat_number[:9]
-                if record.party.vat_country == 'ES' else ''),
+            'party_nif': (record.party.vat_code[2:9]
+                if record.party.vat_code[:2] == 'ES' else ''),
             # TODO: set representative_nif?
             'party_name': record.party.name[:40],
             'party_country': (
                 record.party.addresses[0].country.code
-                if (record.party.addresses
-                    and record.party.addresses[0].country
-                    and record.party.addresses[0].country.code)
+                if (record.party.addresses and
+                    record.party.addresses[0].country and
+                    record.party.addresses[0].country.code)
                 else record.party.vat_country),
             'party_identifier_type': ('1'
                 if record.party.vat_country == 'ES'
                 else '4'),
-            'party_identifier': (record.party.vat_number[:20]
-                if record.party.vat_country != 'ES' else ''),
+            'party_identifier': (record.party.vat_code[:20]
+                if record.party.vat_code[:2] != 'ES' else ''),
             'book_key': record.book_key,
             'operation_key': record.operation_key,
             'issue_date': record.issue_date,
