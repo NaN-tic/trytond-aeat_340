@@ -1,9 +1,9 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from decimal import Decimal
-from sql import Literal, Null
+from sql import Literal, Null, Union
 from sql.aggregate import Count
-from sql.operators import In
+from sql.operators import In, Concat
 import logging
 
 from trytond import backend
@@ -147,6 +147,7 @@ class Record(ModelSQL, ModelView):
     def __register__(cls, module_name):
         pool = Pool()
         Party = pool.get('party.party')
+        PartyIdentifier = pool.get('party.identifier')
         TableHandler = backend.get('TableHandler')
 
         super(Record, cls).__register__(module_name)
@@ -155,33 +156,83 @@ class Record(ModelSQL, ModelView):
         cursor = Transaction().connection.cursor()
         handler = TableHandler(cls, module_name)
         party_name_exists = handler.column_exist('party_name')
+
+        party_handler = TableHandler(Party, 'party')
+        party_vat_number_exist = party_handler.column_exist('vat_number')
+
+        table = cls.__table__()
+        party = Party.__table__()
+        identifier = PartyIdentifier.__table__()
         if party_name_exists:
-            # first time module migrated or not all records has been migrated
-            table = cls.__table__()
-            party = Party.__table__()
+            party_not_found_ids = False
+            update_queries = []
+            if party_vat_number_exist:
+                # first time module migrated or not all records has been
+                # migrated
+                select_query = table.join(party,
+                    type_='LEFT',
+                    condition=(
+                        ((table.party_nif != Null) &
+                            (table.party_nif != '') &
+                            (party.vat_number == table.party_nif)) |
+                        (party.name == table.party_name))
+                    ).select(
+                        table.id, party.id,
+                        where=(table.party == Null),
+                        group_by=(table.id, party.id),
+                        having=(Count(party.id) != 1))
+                cursor.execute(*select_query)
+                party_not_found_ids = [r[0] for r in cursor.fetchall()]
 
-            select_query = table.join(party,
-                type_='LEFT',
-                condition=(
-                    ((table.party_nif != Null)
-                        & (table.party_nif != '')
-                        & (party.vat_number == table.party_nif))
-                    | (party.name == table.party_name))
-                ).select(
-                    table.id, party.id,
-                    where=(table.party == Null),
-                    group_by=(table.id, party.id),
-                    having=(Count(party.id) != 1))
-            cursor.execute(*select_query)
-            party_not_found_ids = [r[0] for r in cursor.fetchall()]
+                update_queries.append(table.update([table.party], [party.id],
+                    from_=[party],
+                    where=(
+                        ((table.party_nif != Null) &
+                            (table.party_nif != '') &
+                            (party.vat_number == table.party_nif)) |
+                        (party.name == table.party_name))))
 
-            update_query = table.update([table.party], [party.id],
-                from_=[party],
-                where=(
-                    ((table.party_nif != Null)
-                        & (table.party_nif != '')
-                        & (party.vat_number == table.party_nif))
-                    | (party.name == table.party_name)))
+            elif party_name_exists:
+                # Migrate from 3.4 to 4.0 directly
+                select_query = Union(
+                    table
+                    .join(identifier, type_='LEFT',
+                        condition=(
+                            (table.party_nif != Null) &
+                            (table.party_nif != '') &
+                            (identifier.code ==
+                                Concat(table.party_country, table.party_nif))))
+                    .select(
+                        table.id,
+                        group_by=(table.id, identifier.party),
+                        having=(Count(identifier.party) != 1)),
+                    table
+                    .join(party, type_='LEFT',
+                        condition=(table.party_name == party.name))
+                    .select(
+                        table.id,
+                        group_by=(table.id, party.id),
+                        having=(Count(party.id) != 1)),
+                    )
+
+                cursor.execute(*select_query)
+                party_not_found_ids = [r[0] for r in cursor.fetchall()]
+
+                update_queries.append(table
+                    .update([table.party], [identifier.party],
+                        from_=[identifier],
+                        where=(
+                            (table.party_nif != Null) &
+                            (table.party_nif != '') &
+                            (identifier.code ==
+                                Concat(table.party_country, table.party_nif))
+                            )
+                        )
+                    )
+                update_queries.append(table
+                    .update([table.party], [party.id],
+                        from_=[party],
+                        where=(party.name == table.party_name)))
 
             if party_not_found_ids:
                 logger = logging.getLogger(cls.__name__)
@@ -192,12 +243,14 @@ class Record(ModelSQL, ModelView):
                     len(party_not_found_ids), cls.__name__)
                 logger.warning('You can use this query: %s (params: %s)',
                     select_query, select_query.params)
-                update_query.where &= ~table.id.in_(party_not_found_ids)
-                cursor.execute(*update_query)
-                handler.not_null_action('party_identifier_type',
-                    action='remove')
+                for update_query in update_queries:
+                    update_query.where &= ~table.id.in_(party_not_found_ids)
+                    cursor.execute(*update_query)
+                    handler.not_null_action('party_identifier_type',
+                        action='remove')
             else:
-                cursor.execute(*update_query)
+                for update_query in update_queries:
+                    cursor.execute(*update_query)
                 handler.drop_column('party_name')
                 handler.drop_column('party_nif')
                 handler.drop_column('party_country')
