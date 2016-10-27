@@ -850,6 +850,20 @@ this repository contains the full copyright notices and license terms. -->
         <record model="account.tax.template" id="account_es.iva_ISP_compras_2">
             <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
         </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_no_sujeto_E">
+            <field name="tax" ref="account_es.iva_rep_no_sujeto"/>
+            <field name="aeat_340_type" ref="aeat_340_key_E"/>
+        </record>
+        <record model="account.tax.template" id="account_es.iva_rep_no_sujeto">
+            <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_no_sujeto_R">
+            <field name="tax" ref="account_es.iva_sop_no_sujeto"/>
+            <field name="aeat_340_type" ref="aeat_340_key_R"/>
+        </record>
+        <record model="account.tax.template" id="account_es.iva_sop_no_sujeto">
+            <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+        </record>
     </data>
     <data depends="account_es" grouped="1">
         <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_ex_R">
@@ -1841,6 +1855,20 @@ this repository contains the full copyright notices and license terms. -->
             <field name="aeat_340_type" ref="aeat_340_key_R"/>
         </record>
         <record model="account.tax.template" id="account_es_pyme.iva_pymes_ISP_compras_2">
+            <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_pymes_rep_no_sujeto_E">
+            <field name="tax" ref="account_es_pyme.iva_pymes_rep_no_sujeto"/>
+            <field name="aeat_340_type" ref="aeat_340_key_E"/>
+        </record>
+        <record model="account.tax.template" id="account_es_pyme.iva_pymes_rep_no_sujeto">
+            <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+        </record>
+        <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_pymes_sop_no_sujeto_R">
+            <field name="tax" ref="account_es_pyme.iva_pymes_sop_no_sujeto"/>
+            <field name="aeat_340_type" ref="aeat_340_key_R"/>
+        </record>
+        <record model="account.tax.template" id="account_es_pyme.iva_pymes_sop_no_sujeto">
             <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
         </record>
     </data>
