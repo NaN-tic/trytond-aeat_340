@@ -147,7 +147,7 @@ msgstr "Recargo equivalencia"
 
 msgctxt "field:aeat.340.reasign.records.end,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.reasign.records.start,aeat_340_type:"
 msgid "Book Key"
@@ -155,7 +155,7 @@ msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.reasign.records.start,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.reasign.records.start,operation_key:"
 msgid "Operation Key"
@@ -163,11 +163,11 @@ msgstr "Clave operación"
 
 msgctxt "field:aeat.340.recalculate.records.end,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.recalculate.records.start,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.record,base:"
 msgid "Base"
@@ -183,11 +183,11 @@ msgstr "Empresa"
 
 msgctxt "field:aeat.340.record,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.record,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.record,equivalence_tax:"
 msgid "Equivalence Tax"
@@ -203,7 +203,7 @@ msgstr "Ejercicio fiscal"
 
 msgctxt "field:aeat.340.record,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.record,intracommunity:"
 msgid "Intracommunity"
@@ -275,11 +275,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.record,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.record,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.record-account.invoice.line,aeat340_record:"
 msgid "AEAT 340 Record"
@@ -287,11 +287,11 @@ msgstr "Registro AEAT 340"
 
 msgctxt "field:aeat.340.record-account.invoice.line,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.record-account.invoice.line,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.record-account.invoice.line,id:"
 msgid "ID"
@@ -307,11 +307,11 @@ msgstr "Nombre"
 
 msgctxt "field:aeat.340.record-account.invoice.line,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.record-account.invoice.line,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.report,calculation_date:"
 msgid "Calculation Date"
@@ -335,11 +335,11 @@ msgstr "Teléfono"
 
 msgctxt "field:aeat.340.report,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report,currency:"
 msgid "Currency"
@@ -363,7 +363,7 @@ msgstr "Código ejercicio fiscal"
 
 msgctxt "field:aeat.340.report,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report,intracommunity_lines:"
 msgid "Intracommunity Operations"
@@ -427,11 +427,11 @@ msgstr "Tipo declaración"
 
 msgctxt "field:aeat.340.report,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.report,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.report.intracommunity,base:"
 msgid "Base"
@@ -451,11 +451,11 @@ msgstr "Coste"
 
 msgctxt "field:aeat.340.report.intracommunity,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report.intracommunity,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report.intracommunity,declaring_key:"
 msgid "Declared Key"
@@ -467,7 +467,7 @@ msgstr "Descripción del bien"
 
 msgctxt "field:aeat.340.report.intracommunity,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.intracommunity,intracommunity_country:"
 msgid "Intracommunity Country"
@@ -567,11 +567,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.intracommunity,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.report.intracommunity,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.report.investment,base:"
 msgid "Base"
@@ -591,11 +591,11 @@ msgstr "Coste"
 
 msgctxt "field:aeat.340.report.investment,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report.investment,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report.investment,good_identifier:"
 msgid "Good Identifier"
@@ -603,7 +603,7 @@ msgstr "Identificación del bien"
 
 msgctxt "field:aeat.340.report.investment,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.investment,invoice_number:"
 msgid "Invoice Number"
@@ -691,11 +691,11 @@ msgstr "Fecha inicio uso"
 
 msgctxt "field:aeat.340.report.investment,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.report.investment,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.report.investment,yearly_regularitzation:"
 msgid "Yearly Regularization"
@@ -731,11 +731,11 @@ msgstr "Coste"
 
 msgctxt "field:aeat.340.report.issued,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report.issued,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report.issued,equivalence_tax:"
 msgid "Equivalence Tax"
@@ -751,7 +751,7 @@ msgstr "Primer número de factura"
 
 msgctxt "field:aeat.340.report.issued,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.issued,invoice_fiscalyear:"
 msgid "Fiscal Year"
@@ -847,11 +847,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.issued,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.report.issued,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.report.received,base:"
 msgid "Base"
@@ -871,11 +871,11 @@ msgstr "Coste"
 
 msgctxt "field:aeat.340.report.received,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.report.received,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.report.received,deducible_amount:"
 msgid "Deducible Amount"
@@ -887,7 +887,7 @@ msgstr "Primer número de factura"
 
 msgctxt "field:aeat.340.report.received,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.report.received,invoice_number:"
 msgid "Invoice Number"
@@ -971,11 +971,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.received,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.report.received,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.type,book_key:"
 msgid "Book key"
@@ -983,15 +983,15 @@ msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.type,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.type,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.type,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.type,rec_name:"
 msgid "Name"
@@ -999,11 +999,11 @@ msgstr "Nombre"
 
 msgctxt "field:aeat.340.type,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.type,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.type-account.tax,aeat_340_type:"
 msgid "Book Key"
@@ -1011,15 +1011,15 @@ msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.type-account.tax,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.type-account.tax,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.type-account.tax,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.type-account.tax,rec_name:"
 msgid "Name"
@@ -1031,11 +1031,11 @@ msgstr "Impuestos"
 
 msgctxt "field:aeat.340.type-account.tax,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.type-account.tax,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "field:aeat.340.type-account.tax.template,aeat_340_type:"
 msgid "Book Key"
@@ -1043,15 +1043,15 @@ msgstr "Tipo de libro"
 
 msgctxt "field:aeat.340.type-account.tax.template,create_date:"
 msgid "Create Date"
-msgstr "Fecha creación"
+msgstr "Fecha de creación"
 
 msgctxt "field:aeat.340.type-account.tax.template,create_uid:"
 msgid "Create User"
-msgstr "Usuario creación"
+msgstr "Usuario de creación"
 
 msgctxt "field:aeat.340.type-account.tax.template,id:"
 msgid "ID"
-msgstr "ID"
+msgstr "Identificador"
 
 msgctxt "field:aeat.340.type-account.tax.template,rec_name:"
 msgid "Name"
@@ -1063,11 +1063,11 @@ msgstr "Plantilla impuestos"
 
 msgctxt "field:aeat.340.type-account.tax.template,write_date:"
 msgid "Write Date"
-msgstr "Fecha modificación"
+msgstr "Fecha de modificación"
 
 msgctxt "field:aeat.340.type-account.tax.template,write_uid:"
 msgid "Write User"
-msgstr "Usuario modificación"
+msgstr "Usuario de modificación"
 
 msgctxt "help:account.tax.template,recargo_equivalencia:"
 msgid "Indicates if the tax is Recargo de Equivalencia"
