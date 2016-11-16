@@ -183,11 +183,11 @@ msgstr "Empresa"
 
 msgctxt "field:aeat.340.record,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.record,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.record,equivalence_tax:"
 msgid "Equivalence Tax"
@@ -275,11 +275,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.record,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.record,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.record-account.invoice.line,aeat340_record:"
 msgid "AEAT 340 Record"
@@ -287,11 +287,11 @@ msgstr "Registre AEAT 340"
 
 msgctxt "field:aeat.340.record-account.invoice.line,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.record-account.invoice.line,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.record-account.invoice.line,id:"
 msgid "ID"
@@ -307,11 +307,11 @@ msgstr "Nom"
 
 msgctxt "field:aeat.340.record-account.invoice.line,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.record-account.invoice.line,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.report,calculation_date:"
 msgid "Calculation Date"
@@ -335,11 +335,11 @@ msgstr "Telèfon"
 
 msgctxt "field:aeat.340.report,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.report,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.report,currency:"
 msgid "Currency"
@@ -427,11 +427,11 @@ msgstr "Tipus de declaració"
 
 msgctxt "field:aeat.340.report,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.report,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.report.intracommunity,base:"
 msgid "Base"
@@ -451,11 +451,11 @@ msgstr "Cost"
 
 msgctxt "field:aeat.340.report.intracommunity,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.report.intracommunity,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.report.intracommunity,declaring_key:"
 msgid "Declared Key"
@@ -567,11 +567,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.intracommunity,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.report.intracommunity,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.report.investment,base:"
 msgid "Base"
@@ -591,11 +591,11 @@ msgstr "Cost"
 
 msgctxt "field:aeat.340.report.investment,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.report.investment,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.report.investment,good_identifier:"
 msgid "Good Identifier"
@@ -691,11 +691,11 @@ msgstr "Data d'inici d'ús."
 
 msgctxt "field:aeat.340.report.investment,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.report.investment,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.report.investment,yearly_regularitzation:"
 msgid "Yearly Regularization"
@@ -731,11 +731,11 @@ msgstr "Cost"
 
 msgctxt "field:aeat.340.report.issued,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.report.issued,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.report.issued,equivalence_tax:"
 msgid "Equivalence Tax"
@@ -847,11 +847,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.issued,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.report.issued,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.report.received,base:"
 msgid "Base"
@@ -871,11 +871,11 @@ msgstr "Cost"
 
 msgctxt "field:aeat.340.report.received,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.report.received,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.report.received,deducible_amount:"
 msgid "Deducible Amount"
@@ -971,11 +971,11 @@ msgstr "Total"
 
 msgctxt "field:aeat.340.report.received,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.report.received,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.type,book_key:"
 msgid "Book key"
@@ -983,11 +983,11 @@ msgstr "Clau tipus de llibre"
 
 msgctxt "field:aeat.340.type,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.type,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.type,id:"
 msgid "ID"
@@ -999,11 +999,11 @@ msgstr "Nom"
 
 msgctxt "field:aeat.340.type,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.type,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.type-account.tax,aeat_340_type:"
 msgid "Book Key"
@@ -1011,11 +1011,11 @@ msgstr "Clau tipus de llibre"
 
 msgctxt "field:aeat.340.type-account.tax,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.type-account.tax,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.type-account.tax,id:"
 msgid "ID"
@@ -1031,11 +1031,11 @@ msgstr "Impost"
 
 msgctxt "field:aeat.340.type-account.tax,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.type-account.tax,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "field:aeat.340.type-account.tax.template,aeat_340_type:"
 msgid "Book Key"
@@ -1043,11 +1043,11 @@ msgstr "Clau tipus de llibre"
 
 msgctxt "field:aeat.340.type-account.tax.template,create_date:"
 msgid "Create Date"
-msgstr "Data creació"
+msgstr "Data de creació"
 
 msgctxt "field:aeat.340.type-account.tax.template,create_uid:"
 msgid "Create User"
-msgstr "Usuari creació"
+msgstr "Usuari de creació"
 
 msgctxt "field:aeat.340.type-account.tax.template,id:"
 msgid "ID"
@@ -1063,11 +1063,11 @@ msgstr "Plantilla d'impost"
 
 msgctxt "field:aeat.340.type-account.tax.template,write_date:"
 msgid "Write Date"
-msgstr "Data modificació"
+msgstr "Data de modificació"
 
 msgctxt "field:aeat.340.type-account.tax.template,write_uid:"
 msgid "Write User"
-msgstr "Usuari modificació"
+msgstr "Usuari de modificació"
 
 msgctxt "help:account.tax.template,recargo_equivalencia:"
 msgid "Indicates if the tax is Recargo de Equivalencia"
