@@ -387,6 +387,7 @@ class InvoiceLine:
     @fields.depends('invoice', 'taxes')
     def on_change_product(self):
         Taxes = Pool().get('account.tax')
+        type_ = None
 
         super(InvoiceLine, self).on_change_product()
         if self.invoice and self.invoice.type:
