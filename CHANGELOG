@@ -1,3 +1,6 @@
+Version 3.4.6 - 2016-12-14
+* Bug fixes (see mercurial logs for details)
+
 Version 3.4.6 - 2016-06-02
 * Set representative_vat of report
 * Improve set party data in report lines from party
