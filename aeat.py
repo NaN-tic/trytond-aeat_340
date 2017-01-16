@@ -424,7 +424,7 @@ class Report(Workflow, ModelSQL, ModelView):
                 else:
                     sign = 1
                 if record.operation_key == 'D':
-                    assert _credit_note
+                    assert _credit_note is True
 
                 if key in to_create:
                     to_create[key]['base'] += record.base * sign
