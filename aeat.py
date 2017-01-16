@@ -418,7 +418,7 @@ class Report(Workflow, ModelSQL, ModelView):
                     to_create = intracomunity_to_create
                     line_type = Intracommunity
 
-                _credit_note = all(l.amount <= 0 for l in record.lines)
+                _credit_note = all(l.amount <= 0 for l in record.invoice.lines)
                 if _credit_note:
                     sign = -1
                 else:
