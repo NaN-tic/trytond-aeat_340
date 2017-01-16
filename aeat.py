@@ -419,12 +419,13 @@ class Report(Workflow, ModelSQL, ModelView):
                     to_create = intracomunity_to_create
                     line_type = Intracommunity
 
-                if 'credit_note' in record.invoice.type:
+                _credit_note = all(l.amount <= 0 for l in record.invoice.lines)
+                if _credit_note:
                     sign = -1
                 else:
                     sign = 1
                 if record.operation_key == 'D':
-                    assert 'credit_note' in record.invoice.type
+                    assert _credit_note is True
 
                 if key in to_create:
                     to_create[key]['base'] += record.base * sign
