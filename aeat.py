@@ -456,7 +456,7 @@ class Report(Workflow, ModelSQL, ModelView):
                                 last_inv_number)
                     to_create[key]['records'][0][1].append(record.id)
                 else:
-                    if record.party.vat_country != 'ES':
+                    if record.party.vat_code[:2] != 'ES':
                         cls.raise_user_warning(
                             'foreign_vat_%s_%s_%s' % (report.id,
                                 line_type.__name__, record.party.id),
@@ -501,9 +501,9 @@ class Report(Workflow, ModelSQL, ModelView):
                 if (record.party.addresses and
                     record.party.addresses[0].country and
                     record.party.addresses[0].country.code)
-                else record.party.vat_country),
+                else record.party.vat_code[:2]),
             'party_identifier_type': ('1'
-                if record.party.vat_country == 'ES'
+                if record.party.vat_code[:2] == 'ES'
                 else '4'),
             'party_identifier': (record.party.vat_code[:20]
                 if record.party.vat_code[:2] != 'ES' else ''),
