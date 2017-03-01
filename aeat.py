@@ -3,10 +3,10 @@
 # copyright notices and license terms.
 import itertools
 import datetime
-import retrofix
 import unicodedata
 from decimal import Decimal
-from retrofix import aeat340
+from retrofix import aeat303
+from retrofix.record import Record, write as retrofix_write
 from sql import Null
 
 from trytond import backend
@@ -590,7 +590,7 @@ class Report(Workflow, ModelSQL, ModelView):
 
     def create_file(self):
         records = []
-        record = retrofix.Record(aeat340.PRESENTER_HEADER_RECORD)
+        record = Record(aeat340.PRESENTER_HEADER_RECORD)
         record.fiscalyear = str(self.fiscalyear_code)
         record.nif = self.company_vat
         record.presenter_name = self.company.party.name.upper()
@@ -618,7 +618,7 @@ class Report(Workflow, ModelSQL, ModelView):
             record.nif = self.company_vat
             records.append(record)
 
-        data = retrofix.record.write(records)
+        data = retrofix_write(records)
         data = remove_accents(data).upper()
         if isinstance(data, unicode):
             data = data.encode('iso-8859-1')
@@ -795,7 +795,7 @@ class Issued(LineMixin, ModelSQL, ModelView):
         return self.cadaster_number
 
     def get_record(self):
-        record = retrofix.Record(aeat340.ISSUED_RECORD)
+        record = Record(aeat340.ISSUED_RECORD)
         self.set_values(record)
         return record
 
@@ -836,7 +836,7 @@ class Received(LineMixin, ModelSQL, ModelView):
             table.drop_column('invoice_count')
 
     def get_record(self):
-        record = retrofix.Record(aeat340.RECEIVED_RECORD)
+        record = Record(aeat340.RECEIVED_RECORD)
         self.set_values(record)
         return record
 
@@ -859,7 +859,7 @@ class Investment(LineMixin, ModelSQL, ModelView):
     _possible_keys = ['I', 'J']
 
     def get_record(self):
-        record = retrofix.Record(aeat340.INVESTMENT_RECORD)
+        record = Record(aeat340.INVESTMENT_RECORD)
         self.set_values(record)
         return record
 
@@ -885,6 +885,6 @@ class Intracommunity(LineMixin, ModelSQL, ModelView):
     _possible_keys = ['U']
 
     def get_record(self):
-        record = retrofix.Record(aeat340.INTRACOMMUNITY_RECORD)
+        record = Record(aeat340.INTRACOMMUNITY_RECORD)
         self.set_values(record)
         return record
