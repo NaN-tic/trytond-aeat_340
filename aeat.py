@@ -5,7 +5,7 @@ import itertools
 import datetime
 import unicodedata
 from decimal import Decimal
-from retrofix import aeat303
+from retrofix import aeat340
 from retrofix.record import Record, write as retrofix_write
 from sql import Null
 
