@@ -594,15 +594,14 @@ class Report(Workflow, ModelSQL, ModelView):
     def auto_sequence(self):
         pool = Pool()
         Report = pool.get('aeat.340.report')
-        i = 1
-        for report in Report.search([
+        count = Report.search([
                 ('state', '=', 'done'),
-                ], order=[
-                    ('fiscalyear', 'DESC'),
-                    ('period', 'DESC'),
-                ]):
-            i += 1
-        return i
+                ],
+            order=[
+                ('fiscalyear', 'DESC'),
+                ('period', 'DESC'),
+            ], count=True)
+        return count + 1
 
     def create_file(self):
         records = []
