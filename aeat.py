@@ -612,10 +612,10 @@ class Report(Workflow, ModelSQL, ModelView):
         record.support_type = self.support_type
         record.contact_phone = self.contact_phone
         record.contact_name = self.contact_name.upper()
-        record.declaration_number = int('340{}{}{:0>4}'.format(
+        record.declaration_number = '340{}{}{:0>4}'.format(
             self.fiscalyear_code,
             self.period,
-            self.auto_sequence()))
+            self.auto_sequence())
         # record.complementary =
         # record.replacement =
         record.previous_declaration_number = self.previous_number or '0'
