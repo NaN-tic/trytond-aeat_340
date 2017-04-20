@@ -355,7 +355,7 @@ msgstr "Ejercicio fiscal"
 
 msgctxt "field:aeat.340.report,fiscalyear_code:"
 msgid "Fiscal Year Code"
-msgstr "Código ejercicio fiscal"
+msgstr "Año ejercicio fiscal"
 
 msgctxt "field:aeat.340.report,id:"
 msgid "ID"
