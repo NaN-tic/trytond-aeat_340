@@ -390,6 +390,7 @@ class InvoiceLine:
         type_ = None
 
         super(InvoiceLine, self).on_change_product()
+        type_ = None
         if self.invoice and self.invoice.type:
             type_ = self.invoice.type
         elif self.invoice_type:
