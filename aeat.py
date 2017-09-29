@@ -295,8 +295,8 @@ class Report(Workflow, ModelSQL, ModelView):
 
     @fields.depends('company')
     def on_change_with_company_vat(self):
-        if self.company and self.company.party.vat_code:
-            return self.company.party.vat_code[2:]
+        if self.company and self.company.party.tax_identifier:
+            return self.company.party.tax_identifier.code[2:]
 
     @staticmethod
     def default_type():
@@ -458,8 +458,8 @@ class Report(Workflow, ModelSQL, ModelView):
                                 last_inv_number)
                     to_create[key]['records'][0][1].append(record.id)
                 else:
-                    if (not record.party or not record.party.vat_code or
-                            record.party.vat_code[:2] != 'ES'):
+                    if (not record.party or not record.party.tax_identifier or
+                            record.party.tax_identifier.code[:2] != 'ES'):
                         cls.raise_user_warning(
                             'foreign_vat_%s_%s_%s' % (report.id,
                                 line_type.__name__, record.party.id),
@@ -495,8 +495,9 @@ class Report(Workflow, ModelSQL, ModelView):
         vals = {
             'report': self.id,
             'company': record.company.id,
-            'party_nif': (record.party.vat_code[2:9]
-                if record.party.vat_code[:2] == 'ES' else ''),
+            'party_nif': (record.party.tax_identifier.code[2:9]
+                if record.party.tax_identifier and
+                record.party.tax_identifier.code[:2] == 'ES' else ''),
             # TODO: set representative_nif?
             'party_name': record.party.name[:40],
             'party_country': (
@@ -504,12 +505,14 @@ class Report(Workflow, ModelSQL, ModelView):
                 if (record.party.addresses and
                     record.party.addresses[0].country and
                     record.party.addresses[0].country.code)
-                else record.party.vat_code[:2]),
+                else record.party.tax_identifier.code[:2]),
             'party_identifier_type': ('1'
-                if record.party.vat_code[:2] == 'ES'
+                if record.party.tax_identifier and
+                record.party.tax_identifier.code[:2] == 'ES'
                 else '4'),
-            'party_identifier': (record.party.vat_code[:20]
-                if record.party.vat_code[:2] != 'ES' else ''),
+            'party_identifier': (record.party.tax_identifier.code[:20]
+                if record.party.tax_identifier and
+                record.party.tax_identifier.code[:2] != 'ES' else ''),
             'book_key': record.book_key,
             'operation_key': record.operation_key,
             'issue_date': record.issue_date,
