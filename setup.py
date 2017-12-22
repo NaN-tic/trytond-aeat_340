@@ -12,10 +12,9 @@ try:
 except ImportError:
     from ConfigParser import ConfigParser
 
-MODULE2PREFIX = {
-    'account_es': 'trytonspain',
-    'account_es_pyme': 'trytonspain',
-}
+MODULE = 'aeat_340'
+PREFIX = 'trytonspain'
+MODULE2PREFIX = {}
 
 
 def read(fname):
@@ -29,10 +28,9 @@ def get_require_version(name):
         require = '%s >= %s.%s.dev0, < %s.%s'
     else:
         require = '%s >= %s.%s, < %s.%s'
-    require %= (
-        name, major_version, minor_version, major_version, minor_version + 1)
+    require %= (name, major_version, minor_version,
+        major_version, minor_version + 1)
     return require
-
 
 config = ConfigParser()
 config.readfp(open('tryton.cfg'))
@@ -44,42 +42,39 @@ version = info.get('version', '0.0.1')
 major_version, minor_version, _ = version.split('.', 2)
 major_version = int(major_version)
 minor_version = int(minor_version)
-name = 'trytonspain_aeat_340'
-download_url = 'https://bitbucket.org/trytonspain/trytond-aeat_340'
 
-requires = ['retrofix>=0.21']
+requires = []
 for dep in info.get('depends', []):
     if not re.match(r'(ir|res)(\W|$)', dep):
         prefix = MODULE2PREFIX.get(dep, 'trytond')
         requires.append(get_require_version('%s_%s' % (prefix, dep)))
 requires.append(get_require_version('trytond'))
 
-tests_require = []
+tests_require = [get_require_version('proteus')]
 dependency_links = []
 if minor_version % 2:
     # Add development index for testing with proteus
     dependency_links.append('https://trydevpi.tryton.org/')
 
-setup(
-    name=name,
+setup(name='%s_%s' % (PREFIX, MODULE),
     version=version,
-    description='Tryton Aeat 340 Module',
+    description='Tryton aeat_340 Module',
     long_description=read('README'),
     author='TrytonSpain',
     author_email='info@trytonspain.com',
     url='https://bitbucket.org/trytonspain/',
-    download_url=download_url,
+    download_url="https://bitbucket.org/trytonspain/trytond-%s" % MODULE,
     keywords='',
-    package_dir={'trytond.modules.aeat_340': '.'},
+    package_dir={'trytond.modules.%s' % MODULE: '.'},
     packages=[
-        'trytond.modules.aeat_340',
-        'trytond.modules.aeat_340.tests',
-    ],
+        'trytond.modules.%s' % MODULE,
+        'trytond.modules.%s.tests' % MODULE,
+        ],
     package_data={
-        'trytond.modules.aeat_340': (info.get('xml', []) + [
-            'tryton.cfg', 'view/*.xml', 'locale/*.po', '*.odt',
-            'icons/*.svg', 'tests/*.rst']),
-    },
+        'trytond.modules.%s' % MODULE: (info.get('xml', [])
+            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', '*.odt',
+                'icons/*.svg', 'tests/*.rst']),
+        },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Plugins',
@@ -103,23 +98,26 @@ setup(
         'Natural Language :: Spanish',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Office/Business',
-    ],
+        ],
     license='GPL-3',
     install_requires=requires,
     dependency_links=dependency_links,
     zip_safe=False,
     entry_points="""
     [trytond.modules]
-    aeat_340 = trytond.modules.aeat_340
-    """,
+    %s = trytond.modules.%s
+    """ % (MODULE, MODULE),
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
     tests_require=tests_require,
     use_2to3=True,
-)
+    convert_2to3_doctests=[
+        'tests/scenario_aeat_340.rst',
+        ],
+    )
