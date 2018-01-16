@@ -242,7 +242,7 @@ class Record(ModelSQL, ModelView):
             SaleLine = Pool().get('sale.line')
         except KeyError:
             SaleLine = None
-        if SaleLine != None:
+        if SaleLine is not None:
             sales = set()
             for inv_line in self.invoice_lines:
                 if isinstance(inv_line.origin, SaleLine):
@@ -254,7 +254,7 @@ class Record(ModelSQL, ModelView):
             PurchaseLine = Pool().get('purchase.line')
         except KeyError:
             PurchaseLine = None
-        if PurchaseLine != None:
+        if PurchaseLine is not None:
             purchases = set()
             for inv_line in self.invoice_lines:
                 if isinstance(inv_line.origin, PurchaseLine):
@@ -515,7 +515,7 @@ class Invoice:
 
                 if (not invoice.move or invoice.move.state == 'cancel'
                         or line.type != 'line'
-                        or line.aeat340_operation_key == None
+                        or line.aeat340_operation_key is None
                         or not line.aeat340_book_key):
                     # TODO: it shouldn't happen
                     continue
