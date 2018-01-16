@@ -487,12 +487,9 @@ class Invoice:
         def compute_tax_amount(line, tax):
             context = line.invoice._get_tax_context()
             with Transaction().set_context(**context):
-                #taxes = Tax.compute([tax], line.unit_price, line.quantity)
                 taxes = line._get_taxes()
                 tax_amount = Decimal(0)
                 for t in taxes:
-                    #key, val = line.invoice._compute_taxes(tax,
-                        #line.invoice.type)
                     if t['tax'] == tax.id:
                         tax_amount += t['amount']
             return tax_amount
