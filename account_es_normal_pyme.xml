@@ -1,0 +1,1988 @@
+<?xml version='1.0'?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+  <data depends="account_es_normal_pyme" grouped="1">
+      <!-- normal -->
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X0_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X0_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X0_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X0_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X0_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X0_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X0_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X0_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X4_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X4_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X4_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X4_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X4_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X4_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X4_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X4_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X10_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X10_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X10_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X10_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X10_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X10_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X10_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X10_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X21_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X21_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X21_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X21_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X21_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X21_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X21_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X21_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X0_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_X0_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X0_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_16_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_ISP_compras_0_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_ISP_compras_0_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IO_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IO_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IO_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IO_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IO_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bc_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bc_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_1_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bi_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_2_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bi_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bc_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bc_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_1_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bi_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_2_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bi_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bc_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bc_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_1_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bi_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_2_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bi_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_ser_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_ser_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_ser_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_suplido_compras_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.suplido_compras_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.suplido_compras_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_suplido_ventas_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.suplido_ventas_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.suplido_ventas_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X0_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X0_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X0_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X0_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X0_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X0_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X0_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X0_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X3_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X3_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X3_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X3_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X3_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X3_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X3_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X3_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X7_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X7_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X7_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X7_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X7_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X7_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X7_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X7_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X9_5_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X9_5_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X9_5_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X9_5_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X9_5_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X9_5_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X9_5_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X9_5_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X13_5_compras_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X13_5_compras_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X13_5_compras_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X13_5_compras_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X13_5_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X13_5_compras_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_X13_5_compras_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X13_5_compras_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IO_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IO_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IO_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IO_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IO_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bc_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bc_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_1_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bi_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_2_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bi_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bc_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bc_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_1_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bi_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_2_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bi_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bc_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bc_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_1_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bi_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_2_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bi_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bc_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bc_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bi_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_1_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_1_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bi_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_2_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_2_U_normal">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bi_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_reagp_compras_12_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_reagp_compras_12_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_reagp_compras_12_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_ISP_compras_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_ISP_compras_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_1_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_ISP_compras_1_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_ISP_compras_1_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_2_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_ISP_compras_2_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_ISP_compras_2_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_no_sujeto_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_no_sujeto_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_no_sujeto_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_no_sujeto_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_no_sujeto_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_no_sujeto_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_ex_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_ex_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_ex_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_4_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_4_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_4_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_10_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_10_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_10_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_21_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_21_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_21_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_ex_inv_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_ex_inv_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_ex_inv_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_ex_inv_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_ex_inv_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_4_inv_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_4_inv_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_4_inv_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_4_inv_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_4_inv_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_10_inv_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_10_inv_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_10_inv_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_10_inv_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_10_inv_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_21_inv_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_21_inv_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_21_inv_I_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_21_inv_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_21_inv_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_ex_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_ex_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_ex_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_4_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_4_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_4_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_10_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_10_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_10_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_21_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_21_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_21_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_4_recc_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_4_recc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_4_recc_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_10_recc_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_10_recc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_10_recc_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_21_recc_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_21_recc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_21_recc_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_4_recc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_4_recc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_4_recc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_10_recc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_10_recc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_10_recc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_21_recc_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_21_recc_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_21_recc_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_alq_ex_R_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_alq_ex_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_alq_ex_normal">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_alq_ex_E_normal">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_alq_ex_normal"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_alq_ex_normal">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+
+      <!-- pyme -->
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X0_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X0_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X0_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X0_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X0_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X0_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X0_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X0_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X4_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X4_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X4_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X4_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X4_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X4_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X4_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X4_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X10_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X10_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X10_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X10_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X10_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X10_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X10_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X10_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X21_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X21_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X21_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X21_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X21_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X21_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X21_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X21_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_X0_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_X0_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_X0_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_16_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_ISP_compras_0_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_ISP_compras_0_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IO_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IO_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IO_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IO_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IO_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bc_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bc_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bc_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_1_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bi_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_2_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_4_bi_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_4_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_4_bi_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bc_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bc_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bc_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_1_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bi_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_2_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_10_bi_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_10_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_10_bi_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bc_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bc_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bc_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_1_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bi_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_2_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_bi_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_bi_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_ser_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_ser_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_IC_compras_21_ser_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_IC_compras_21_ser_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_IC_compras_21_ser_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_suplido_compras_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.suplido_compras_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.suplido_compras_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_suplido_ventas_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.suplido_ventas_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.suplido_ventas_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X0_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X0_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X0_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X0_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X0_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X0_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X0_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X0_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X3_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X3_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X3_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X3_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X3_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X3_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X3_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X3_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X7_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X7_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X7_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X7_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X7_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X7_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X7_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X7_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X9_5_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X9_5_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X9_5_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X9_5_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X9_5_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X9_5_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X9_5_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X9_5_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X13_5_compras_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X13_5_compras_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X13_5_compras_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X13_5_compras_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X13_5_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_X13_5_compras_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_X13_5_compras_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_X13_5_compras_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IO_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IO_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IO_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IO_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IO_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bc_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bc_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bc_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_1_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bi_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_2_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_3_bi_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_3_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_3_bi_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bc_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bc_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bc_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_1_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bi_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_2_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_7_bi_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_7_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_7_bi_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bc_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bc_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bc_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_1_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bi_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_2_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_9_5_bi_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_9_5_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_9_5_bi_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bc_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bc_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bc_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bc_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bi_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_1_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_1_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bi_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_2_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_igic_IC_compras_13_5_bi_2_U_pyme">
+          <field name="tax" ref="account_es_normal_pyme.igic_IC_compras_13_5_bi_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_U"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.igic_IC_compras_13_5_bi_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_reagp_compras_12_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_reagp_compras_12_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_reagp_compras_12_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_ISP_compras_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_ISP_compras_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_1_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_ISP_compras_1_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_ISP_compras_1_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_ISP_compras_2_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_ISP_compras_2_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_ISP_compras_2_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_no_sujeto_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_no_sujeto_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_no_sujeto_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_no_sujeto_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_no_sujeto_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_no_sujeto_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_ex_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_ex_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_ex_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_4_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_4_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_4_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_10_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_10_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_10_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_21_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_21_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_21_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_ex_inv_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_ex_inv_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_ex_inv_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_ex_inv_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_ex_inv_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_4_inv_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_4_inv_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_4_inv_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_4_inv_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_4_inv_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_10_inv_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_10_inv_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_10_inv_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_10_inv_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_10_inv_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_21_inv_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_21_inv_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_21_inv_I_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_21_inv_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_I"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_21_inv_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_ex_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_ex_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_ex_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_4_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_4_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_4_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_10_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_10_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_10_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_21_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_21_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_21_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_4_recc_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_4_recc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_4_recc_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_10_recc_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_10_recc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_10_recc_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_21_recc_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_21_recc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_21_recc_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_4_recc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_4_recc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_4_recc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_10_recc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_10_recc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_10_recc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_21_recc_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_21_recc_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_21_recc_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_sop_alq_ex_R_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_sop_alq_ex_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_R"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_sop_alq_ex_pyme">
+          <field name="aeat340_default_in_book_key" ref="aeat_340_key_R"/>
+      </record>
+      <record model="aeat.340.type-account.tax.template" id="aeat_340_template_type_iva_rep_alq_ex_E_pyme">
+          <field name="tax" ref="account_es_normal_pyme.iva_rep_alq_ex_pyme"/>
+          <field name="aeat_340_type" ref="aeat_340_key_E"/>
+      </record>
+      <record model="account.tax.template" id="account_es_normal_pyme.iva_rep_alq_ex_pyme">
+          <field name="aeat340_default_out_book_key" ref="aeat_340_key_E"/>
+      </record>
+  </data>
+</tryton>
