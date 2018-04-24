@@ -16,8 +16,6 @@ MODULE = 'aeat_340'
 PREFIX = 'trytonspain'
 MODULE2PREFIX = {
     'account_es': 'trytonspain',
-    'account_es_normal_pyme': 'trytonspain',
-    'account_es_pyme': 'trytonspain',
 }
 
 
@@ -56,8 +54,6 @@ requires.append(get_require_version('trytond'))
 
 tests_require = [get_require_version('proteus'),
     get_require_version('trytond_account_es'),
-    get_require_version('trytonspain_account_es_normal_pyme'),
-    get_require_version('trytonspain_account_es_pyme'),
     get_require_version('trytond_account_invoice'),
     ]
 dependency_links = []
